@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEBTOON GW Ads — Rate Card 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ─────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0d0e11;
+    --surface:  #15171c;
+    --border:   rgba(255,255,255,0.07);
+    --border2:  rgba(255,255,255,0.13);
+    --text:     #e8e9ec;
+    --muted:    #7a7e8a;
+    --accent:   #4ade80;
+    --accent2:  #22d3ee;
+    --tag-bg:   rgba(74,222,128,0.08);
+    --tag-text: #4ade80;
+    --radius:   10px;
+    --font:     'DM Sans', sans-serif;
+    --mono:     'DM Mono', monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Layout ───────────────────────────────────── */
+  .shell {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar ──────────────────────────────────── */
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    padding: 28px 0;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    padding: 0 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo-mark {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+  .logo-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .logo-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .nav { padding: 16px 0; flex: 1; }
+  .nav-group { margin-bottom: 20px; }
+  .nav-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 20px 6px;
+  }
+  .nav-item {
+    display: block;
+    padding: 7px 20px;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s;
+    border-left: 2px solid transparent;
+    text-decoration: none;
+  }
+  .nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: var(--tag-bg); }
+
+  .sidebar-footer {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  #last-updated { color: var(--accent); }
+
+  /* ── Main ─────────────────────────────────────── */
+  .main {
+    padding: 40px 48px;
+    max-width: 1100px;
+  }
+
+  .page-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .page-header p { color: var(--muted); font-size: 13px; }
+
+  /* ── Controls ─────────────────────────────────── */
+  .controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .ctrl-label { font-size: 12px; color: var(--muted); margin-right: 2px; }
+
+  .seg {
+    display: flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .seg button {
+    padding: 6px 14px;
+    font-size: 12px;
+    font-family: var(--font);
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .seg button.active { background: var(--accent); color: #0d0e11; font-weight: 600; }
+  .seg button:hover:not(.active) { color: var(--text); background: rgba(255,255,255,0.04); }
+
+  select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 12px;
+    padding: 6px 12px;
+    outline: none;
+    cursor: pointer;
+  }
+  select:focus { border-color: var(--accent); }
+
+  /* ── Section ──────────────────────────────────── */
+  .section { margin-bottom: 52px; scroll-margin-top: 20px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .section-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+  }
+  .section-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── Table ────────────────────────────────────── */
+  .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead tr {
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border2);
+  }
+  th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent2);
+    text-align: right;
+  }
+  .placement-name { font-weight: 500; color: var(--text); }
+  .device-tag {
+    font-size: 10px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+  .country-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    font-family: var(--mono);
+  }
+  .tier-pref { color: var(--accent); font-weight: 500; font-size: 12px; }
+  .tier-std  { color: var(--muted);  font-size: 12px; }
+  .total-row td { background: rgba(255,255,255,0.03); font-weight: 600; }
+  .section-divider {
+    height: 1px;
+    background: var(--border2);
+    margin: 6px 0;
+  }
+
+  /* ── Cards (Package summary) ──────────────────── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .pkg-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+  .pkg-card-country {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pkg-card-price {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--mono);
+    color: var(--accent2);
+    margin-bottom: 2px;
+  }
+  .pkg-card-sub { font-size: 11px; color: var(--muted); }
+
+  /* ── Loading / Error ──────────────────────────── */
+  .loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 48px 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .spinner {
+    width: 16px; height: 16px;
+    border: 2px solid var(--border2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-box {
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #f87171;
+  }
+
+  /* ── Tabs (for PKG options) ───────────────────── */
+  .tabs { display: flex; gap: 4px; margin-bottom: 16px; }
+  .tab {
+    padding: 6px 16px;
+    font-size: 12px;
+    font-family: var(--font);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .tab.active { background: var(--accent); border-color: var(--accent); color: #0d0e11; font-weight: 600; }
+  .tab:hover:not(.active) { border-color: var(--border2); color: var(--text); }
+
+  /* ── Responsive ───────────────────────────────── */
+  @media (max-width: 768px) {
+    .shell { grid-template-columns: 1fr; }
+    .sidebar { position: static; height: auto; }
+    .main { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  IMPORTANT: Apps Script URL을 아래에 입력하세요            -->
+<!--  배포 후 생성된 URL을 복붙                                  -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<script>
+const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+</script>
+
+<div class="shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-mark">WEBTOON GW</div>
+      <div class="logo-title">Direct Sales<br>Rate Card</div>
+      <div class="logo-sub">2026 · Global</div>
+    </div>
+    <nav class="nav">
+      <div class="nav-group">
+        <div class="nav-label">Display Ads</div>
+        <a class="nav-item active" onclick="scrollTo('da-cpm')">CPM Pricing</a>
+        <a class="nav-item" onclick="scrollTo('pha')">Premium Home Ad</a>
+        <a class="nav-item" onclick="scrollTo('vtv')">Viewer-top Video</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-label">Packages</div>
+        <a class="nav-item" onclick="scrollTo('splash')">Splash PKG</a>
+        <a class="nav-item" onclick="scrollTo('takeover')">Brand Takeover PKG</a>
+        <a class="nav-item" onclick="scrollTo('bep')">Branded Epilogue Story</a>
+        <a class="nav-item" onclick="scrollTo('bbn')">Branded Banner</a>
+        <a class="nav-item" onclick="scrollTo('bes')">Branded Episode</a>
+        <a class="nav-item" onclick="scrollTo('bwt')">Brand Webtoon / BCP</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      Last updated<br>
+      <span id="last-updated">—</span>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main" id="main-content">
+
+    <div class="page-header">
+      <h1>2026 WEBTOON GW Ads Rate Card</h1>
+      <p>Global Direct Sales · All prices in USD unless otherwise noted · For inquiries contact your sales representative</p>
+    </div>
+
+    <!-- Currency toggle (global) -->
+    <div class="controls">
+      <span class="ctrl-label">Currency</span>
+      <div class="seg" id="currency-seg">
+        <button class="active" onclick="setCurrency('usd')">USD</button>
+        <button onclick="setCurrency('local')">Local</button>
+        <button onclick="setCurrency('krw')">KRW</button>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="loading"><div class="spinner"></div>Loading rate card data…</div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────
+let DATA = null;
+let currency = 'usd';
+let splashTab = 'A';
+let btTab = 'Standard';
+let brandingCreator = 'kr';
+
+// ── Navigation ────────────────────────────────────────────────
+function scrollTo(id) {
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  event.target.classList.add('active');
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── Currency Toggle ───────────────────────────────────────────
+function setCurrency(c) {
+  currency = c;
+  document.querySelectorAll('#currency-seg button').forEach((b, i) => {
+    b.classList.toggle('active', (i === 0 && c === 'usd') || (i === 1 && c === 'local') || (i === 2 && c === 'krw'));
+  });
+  if (DATA) renderAll();
+}
+
+const krwFmt = (v) => {
+  if (v === '' || v === null || v === undefined || v === 0) return '—';
+  const n = parseFloat(v);
+  if (isNaN(n)) return '—';
+  return '₩' + Math.round(n).toLocaleString();
+};
+
+// ── Fetch ─────────────────────────────────────────────────────
+async function fetchData() {
+  try {
+    const res = await fetch(APPS_SCRIPT_URL);
+    DATA = await res.json();
+    document.getElementById('last-updated').textContent = DATA.meta.lastUpdate || '—';
+    renderAll();
+  } catch(e) {
+    document.getElementById('content').innerHTML =
+      `<div class="error-box">⚠ Failed to load data. Check Apps Script URL or CORS settings.<br><small>${e.message}</small></div>`;
+  }
+}
+
+// ── Render All ────────────────────────────────────────────────
+function renderAll() {
+  const el = document.getElementById('content');
+  el.innerHTML = [
+    renderDACpm(),
+    renderPHA(),
+    renderViewerTop(),
+    renderSplash(),
+    renderBrandTakeover(),
+    renderBEP(),
+    renderBBN(),
+    renderBES(),
+    renderBWT(),
+  ].join('');
+}
+
+// ── Helpers ───────────────────────────────────────────────────
+const fmt = (v) => {
+  if (v === '' || v === null || v === undefined) return '—';
+  const n = parseFloat(v);
+  if (isNaN(n)) return v;
+  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000)    return n.toLocaleString();
+  return n % 1 === 0 ? n.toString() : n.toFixed(2);
+};
+const money = (v, symbol = '$') => v ? `${symbol}${fmt(v)}` : '—';
+const num   = (v) => `<td class="num">${fmt(v)}</td>`;
+
+const countries_da = ['US/CA', 'ID', 'TH', 'TW(HK,SG)', 'MX', 'LATAM5', 'FR/DE', 'SEA', 'EU'];
+
+// ── DA CPM ────────────────────────────────────────────────────
+function renderDACpm() {
+  const rows = DATA.displayAds.map(d => {
+    const vals = currency === 'krw' ? d.krw : currency === 'usd' ? d.usd : d.local;
+    return `<tr>
+      <td><span class="placement-name">${d.placement}</span><br><span class="device-tag">${d.device}</span></td>
+      ${countries_da.map(c => `<td class="num">${currency === 'krw' ? krwFmt(vals[c]) : fmt(vals[c])}</td>`).join('')}
+    </tr>`;
+  }).join('');
+
+  return `<section class="section" id="da-cpm">
+    <div class="section-header">
+      <span class="section-title">Display Ads CPM Pricing</span>
+      <span class="section-tag">CPM</span>
+    </div>
+    <p class="section-desc">
+      Cost Per Mille (CPM) pricing for all display ad placements. Prices shown in ${currency === 'krw' ? 'KRW (1 USD = ₩1,450)' : currency === 'usd' ? 'USD' : 'local currency'}.
+      Title Roadblock (100% SOV): +30% premium on standard CPM (Viewer-end Ad, Series Home Ad) · +15% for Viewer-top Video Ad.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Placement</th>
+          ${countries_da.map(c => `<th>${c}</th>`).join('')}
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+// ── PHA ───────────────────────────────────────────────────────
+function renderPHA() {
+  const rows = DATA.premiumHomeAd.map(d => {
+    const price = currency === 'krw' ? krwFmt(d.cptKrw) : currency === 'usd' ? money(d.cptUsd) : money(d.cptLocal, '');
+    return `<tr>
+      <td><span class="country-badge">${d.country}</span></td>
+      ${num(d.ecpm)}
+      <td class="num">${fmt(d.expectedImpression)}</td>
+      <td class="num">${price}</td>
+    </tr>`;
+  }).join('');
+
+  return `<section class="section" id="pha">
+    <div class="section-header">
+      <span class="section-title">Premium Home Ad</span>
+      <span class="section-tag">CPT</span>
+    </div>
+    <p class="section-desc">
+      App home screen takeover · CPT (Cost Per Time) fixed pricing · Country targeting required.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Country</th><th>eCPM (USD)</th><th>Est. Impression</th><th>CPT Price</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+// ── Viewer-top Video ──────────────────────────────────────────
+function renderViewerTop() {
+  const rows = DATA.viewerTopVideo.map(d => {
+    const price = currency === 'krw' ? krwFmt(d.cpmKrw) : currency === 'usd' ? money(d.cpmUsd) : money(d.cpmLocal, '');
+    return `<tr>
+      <td><span class="country-badge">${d.country}</span></td>
+      <td class="num">${price}</td>
+    </tr>`;
+  }).join('');
+
+  return `<section class="section" id="vtv">
+    <div class="section-header">
+      <span class="section-title">Viewer-top Video Ad</span>
+      <span class="section-tag">CPM · 15s Non-skip</span>
+    </div>
+    <p class="section-desc">
+      Mobile 16:9 · 15s non-skippable · Exposed in every free episode (except ep 1–10 of each title).
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Country</th><th>CPM Price</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+// ── Splash PKG ────────────────────────────────────────────────
+function renderSplash() {
+  const data = splashTab === 'A' ? DATA.splashPkg.optionA : DATA.splashPkg.optionB;
+
+  const rows = data.map(d => {
+    const products = d.products.map(p =>
+      `<tr><td style="padding-left:28px;color:var(--muted);font-size:12px">${p.name}</td><td class="num">${fmt(p.impression)}</td><td class="num">${currency === 'krw' ? krwFmt(p.value * 1450) : money(p.value)}</td></tr>`
+    ).join('');
+    return `
+      <tr><td colspan="3" style="padding-bottom:0;padding-top:12px">
+        <span class="country-badge">${d.country}</span>
+      </td></tr>
+      ${products}
+      <tr class="total-row"><td style="padding-left:28px;font-size:12px">Total Package</td><td></td><td class="num">${currency === 'krw' ? krwFmt(d.total * 1450) : money(d.total)}</td></tr>`;
+  }).join('<tr><td colspan="3"><div class="section-divider"></div></td></tr>');
+
+  const priceColHeader = currency === 'krw' ? 'Package Price (KRW)' : 'Package Price (USD)';
+  const krwNote = currency === 'krw'
+    ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>`
+    : '';
+
+  return `<section class="section" id="splash">
+    <div class="section-header">
+      <span class="section-title">Splash Ad Package</span>
+      <span class="section-tag">App Launch Takeover</span>
+    </div>
+    <p class="section-desc">
+      Package sales only · Country targeting required ·
+      Option A: Splash + Premium Home Ad · Option B: Splash + PHA + Series Home Ad
+    </p>
+    <div class="tabs">
+      <button class="tab ${splashTab==='A'?'active':''}" onclick="setSplashTab('A')">Option A · Splash + PHA</button>
+      <button class="tab ${splashTab==='B'?'active':''}" onclick="setSplashTab('B')">Option B · Splash + PHA + Series Home</button>
+    </div>
+    ${krwNote}
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Country / Product</th><th>Est. Impression</th><th>${priceColHeader}</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+function setSplashTab(t) { splashTab = t; renderAll(); }
+
+// ── Brand Takeover ────────────────────────────────────────────
+function renderBrandTakeover() {
+  const filtered = DATA.brandTakeoverPkg.filter(d =>
+    btTab === 'Standard' ? d.tier.includes('Standard') : d.tier.includes('Premium')
+  );
+
+  const rows = filtered.map(d => `<tr>
+    <td><span class="country-badge">${d.country}</span></td>
+    <td class="${d.tier.includes('Premium') ? 'tier-pref' : 'tier-std'}">${d.tier.includes('Premium') ? 'Premium' : 'Standard'}</td>
+    <td class="num">${currency === 'krw' ? krwFmt(d.krwPrice) : currency === 'usd' ? money(d.usdPrice) : fmt(d.localCurrency)}</td>
+  </tr>`).join('');
+
+  return `<section class="section" id="takeover">
+    <div class="section-header">
+      <span class="section-title">Brand Takeover Package</span>
+      <span class="section-tag">Weekly Package</span>
+    </div>
+    <p class="section-desc">
+      Standard (Image-Oriented): 10% discount · 1 week · min. 4 impressions per user ·
+      Premium (Video-Integrated): 20% discount · 1 week · min. 5 impressions per user
+    </p>
+    <div class="tabs">
+      <button class="tab ${btTab==='Standard'?'active':''}" onclick="setBtTab('Standard')">Standard · Image-Oriented</button>
+      <button class="tab ${btTab==='Premium'?'active':''}" onclick="setBtTab('Premium')">Premium · Video-Integrated</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Country</th><th>Tier</th>
+          <th>${currency === 'usd' ? 'USD Price' : currency === 'krw' ? 'KRW Price' : 'Price'}</th>
+          ${currency !== 'krw' && currency !== 'usd' ? '<th>Local Currency</th>' : ''}
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+function setBtTab(t) { btTab = t; renderAll(); }
+
+// ── Branding PKG helper ───────────────────────────────────────
+function renderBrandingTable(data, title, id, tag, desc) {
+  const d = brandingCreator === 'kr' ? data.krCreator : data.localCreator;
+
+  const rows = d.map(r => `<tr>
+    <td><span class="country-badge">${r.country}</span></td>
+    <td class="tier-pref">${currency === 'krw' ? krwFmt(r.preferred * 1450) : money(r.preferred)}</td>
+    <td class="tier-std">${currency === 'krw' ? krwFmt(r.standard * 1450) : money(r.standard)}</td>
+  </tr>`).join('');
+
+  const krwNote = currency === 'krw'
+    ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>`
+    : '';
+
+  return `<section class="section" id="${id}">
+    <div class="section-header">
+      <span class="section-title">${title}</span>
+      <span class="section-tag">${tag}</span>
+    </div>
+    <p class="section-desc">${desc}</p>
+    <div class="tabs">
+      <button class="tab ${brandingCreator==='kr'?'active':''}" onclick="setCreator('kr')">KR Creator</button>
+      <button class="tab ${brandingCreator==='local'?'active':''}" onclick="setCreator('local')">Local Creator</button>
+    </div>
+    ${krwNote}
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Country</th><th>Preferred</th><th>Standard</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+function setCreator(c) { brandingCreator = c; renderAll(); }
+
+function renderBEP() {
+  return renderBrandingTable(DATA.bepPkg, 'Branded Epilogue Story PKG', 'bep', 'With Creator',
+    'Branded story placed in the epilogue section of a webtoon episode · Package price in USD');
+}
+function renderBBN() {
+  return renderBrandingTable(DATA.bbnPkg, 'Branded Banner PKG', 'bbn', 'With Creator',
+    'Branded banner placed within webtoon episodes · Package price in USD');
+}
+function renderBES() {
+  const d = brandingCreator === 'kr' ? DATA.besPkg.krCreator : DATA.besPkg.localCreator;
+  const rows = d.map(r => `<tr>
+    <td><span class="country-badge">${r.country}</span></td>
+    <td class="tier-pref">${currency === 'krw' ? krwFmt(r.preferred * 1450) : money(r.preferred)}</td>
+    <td class="tier-std">${currency === 'krw' ? krwFmt(r.standard * 1450) : money(r.standard)}</td>
+  </tr>`).join('');
+
+  const krwNote = currency === 'krw'
+    ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>`
+    : '';
+
+  return `<section class="section" id="bes">
+    <div class="section-header">
+      <span class="section-title">Branded Episode PKG</span>
+      <span class="section-tag">With Creator</span>
+    </div>
+    <p class="section-desc">Full branded episode created in collaboration with webtoon creator · Package price in USD</p>
+    <div class="tabs">
+      <button class="tab ${brandingCreator==='kr'?'active':''}" onclick="setCreator('kr')">KR Creator</button>
+      <button class="tab ${brandingCreator==='local'?'active':''}" onclick="setCreator('local')">Local Creator</button>
+    </div>
+    ${krwNote}
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Country</th><th>Preferred</th><th>Standard</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+// ── BWT / BCP ─────────────────────────────────────────────────
+function renderBWT() {
+  const renderEpBlock = (epData, label) => {
+    const rows = epData.map(d => `<tr>
+      <td><span class="country-badge">${d.country}</span></td>
+      <td class="tier-pref">${currency === 'krw' ? krwFmt(d.bcp.preferred * 1450) : money(d.bcp.preferred)}</td>
+      <td class="tier-std">${currency === 'krw' ? krwFmt(d.bcp.standard * 1450) : money(d.bcp.standard)}</td>
+      <td class="tier-pref">${currency === 'krw' ? krwFmt(d.bwt.preferred * 1450) : money(d.bwt.preferred)}</td>
+      <td class="tier-std">${currency === 'krw' ? krwFmt(d.bwt.standard * 1450) : money(d.bwt.standard)}</td>
+    </tr>`).join('');
+
+    return `<div style="margin-bottom:20px">
+      <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:8px">${label}</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Country</th>
+            <th>BCP · Preferred</th><th>BCP · Standard</th>
+            <th>BWT · Preferred</th><th>BWT · Standard</th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  };
+
+  return `<section class="section" id="bwt">
+    <div class="section-header">
+      <span class="section-title">Brand Webtoon / BCP PKG</span>
+      <span class="section-tag">Original Content</span>
+    </div>
+    <p class="section-desc">
+      BCP (Brand Custom Publication): original branded webtoon creation ·
+      BWT (Brand Webtoon): full webtoon series with DA/Offerwall bundle ·
+      Prices shown are total package price in USD
+    </p>
+    ${currency === 'krw' ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>` : ''}
+    ${renderEpBlock(DATA.bwtbcpPkg.ep8, '8 Episodes')}
+    ${renderEpBlock(DATA.bwtbcpPkg.ep4, '4 Episodes')}
+  </section>`;
+}
+
+// ── Init ──────────────────────────────────────────────────────
+fetchData();
+</script>
+</body>
+</html>
