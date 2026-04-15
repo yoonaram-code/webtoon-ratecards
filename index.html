@@ -1,786 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="X-Frame-Options" content="ALLOWALL">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WEBTOON GW Ads — Rate Card 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  /* ── Reset & Base ─────────────────────────────── */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f6f3;--surface:#ffffff;--surface2:#f0efe9;
+  --border:#e2e0d8;--border2:#ccc9be;
+  --text:#1a1916;--muted:#6b6860;
+  --accent:#1a1916;--accent-fg:#f7f6f3;
+  --green:#2d6a4f;--green-bg:#d8f3dc;
+  --blue:#1d4e89;--blue-bg:#dbeafe;
+  --amber:#92400e;--amber-bg:#fef3c7;
+  --radius:8px;--font:'Syne',sans-serif;--mono:'DM Mono',monospace;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.6;min-height:100vh}
 
-  :root {
-    --bg:       #0d0e11;
-    --surface:  #15171c;
-    --border:   rgba(255,255,255,0.07);
-    --border2:  rgba(255,255,255,0.13);
-    --text:     #e8e9ec;
-    --muted:    #7a7e8a;
-    --accent:   #4ade80;
-    --accent2:  #22d3ee;
-    --tag-bg:   rgba(74,222,128,0.08);
-    --tag-text: #4ade80;
-    --radius:   10px;
-    --font:     'DM Sans', sans-serif;
-    --mono:     'DM Mono', monospace;
-  }
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;gap:24px;height:56px;position:sticky;top:0;z-index:100}
+.logo{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.logo span{opacity:0.4;font-weight:400}
+.tabs{display:flex;gap:2px}
+.tab-btn{padding:6px 16px;font-size:12px;font-family:var(--font);font-weight:600;letter-spacing:0.04em;background:none;border:none;color:var(--muted);cursor:pointer;border-radius:6px;transition:all 0.15s;white-space:nowrap}
+.tab-btn:hover{color:var(--text);background:var(--surface2)}
+.tab-btn.active{background:var(--accent);color:var(--accent-fg)}
+.controls{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0}
+.search-wrap{position:relative}
+.search-input{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:var(--font);font-size:12px;padding:6px 12px 6px 30px;width:180px;outline:none;transition:all 0.15s}
+.search-input:focus{border-color:var(--accent);width:220px}
+.search-input::placeholder{color:var(--muted)}
+.search-icon{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none;line-height:1}
+.seg{display:flex;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.seg button{padding:5px 12px;font-size:11px;font-weight:600;font-family:var(--font);letter-spacing:0.04em;background:none;border:none;color:var(--muted);cursor:pointer;transition:all 0.15s}
+.seg button.active{background:var(--accent);color:var(--accent-fg)}
+.seg button:hover:not(.active){color:var(--text)}
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 14px;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+.main{padding:32px 40px;max-width:1200px;margin:0 auto}
+.page{display:none}.page.active{display:block}
+.meta-bar{font-size:11px;color:var(--muted);margin-bottom:28px}
+.meta-bar span{color:var(--text);font-weight:600}
 
-  /* ── Layout ───────────────────────────────────── */
-  .shell {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    min-height: 100vh;
-  }
+.section{margin-bottom:48px}
+.section-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px}
+.section-header{display:flex;align-items:baseline;gap:10px}
+.section-title{font-size:18px;font-weight:700;letter-spacing:-0.01em}
+.section-tag{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px}
+.tag-cpm{background:var(--blue-bg);color:var(--blue)}
+.tag-cpt{background:var(--amber-bg);color:var(--amber)}
+.tag-pkg{background:var(--green-bg);color:var(--green)}
+.section-desc{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:14px;line-height:1.7}
+.csv-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;font-size:11px;font-weight:600;font-family:var(--font);background:none;border:1px solid var(--border2);border-radius:var(--radius);color:var(--muted);cursor:pointer;transition:all 0.15s;white-space:nowrap;margin-top:2px}
+.csv-btn:hover{background:var(--surface2);color:var(--text);border-color:var(--accent)}
 
-  /* ── Sidebar ──────────────────────────────────── */
-  .sidebar {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    border-right: 1px solid var(--border);
-    padding: 28px 0;
-    background: var(--surface);
-    display: flex;
-    flex-direction: column;
-  }
+.subsection{margin-bottom:24px}
+.subsection-title{font-size:11px;font-weight:700;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 
-  .logo {
-    padding: 0 20px 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .logo-mark {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 2px;
-  }
-  .logo-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.3;
-  }
-  .logo-sub {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{background:var(--surface2);border-bottom:1px solid var(--border2)}
+th{padding:9px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+th.r{text-align:right}
+td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafaf8}
+td.r{font-family:var(--mono);font-size:12px;text-align:right}
+td.bold{font-family:var(--mono);font-size:12px;text-align:right;font-weight:600;color:var(--green)}
+td.label{font-weight:500}
+td.dim{color:var(--muted);font-size:12px}
+.badge{display:inline-block;font-size:10px;font-weight:600;padding:1px 7px;border-radius:3px}
+.b-pref{background:var(--green-bg);color:var(--green)}
+.b-std{background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+.b-canvas{background:var(--blue-bg);color:var(--blue)}
 
-  .nav { padding: 16px 0; flex: 1; }
-  .nav-group { margin-bottom: 20px; }
-  .nav-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 0 20px 6px;
-  }
-  .nav-item {
-    display: block;
-    padding: 7px 20px;
-    font-size: 13px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: color 0.15s, background 0.15s;
-    border-left: 2px solid transparent;
-    text-decoration: none;
-  }
-  .nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
-  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: var(--tag-bg); }
-
-  .sidebar-footer {
-    padding: 16px 20px;
-    border-top: 1px solid var(--border);
-    font-size: 11px;
-    color: var(--muted);
-  }
-  #last-updated { color: var(--accent); }
-
-  /* ── Main ─────────────────────────────────────── */
-  .main {
-    padding: 40px 48px;
-    max-width: 1100px;
-  }
-
-  .page-header {
-    margin-bottom: 40px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .page-header h1 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  .page-header p { color: var(--muted); font-size: 13px; }
-
-  /* ── Controls ─────────────────────────────────── */
-  .controls {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-  }
-  .ctrl-label { font-size: 12px; color: var(--muted); margin-right: 2px; }
-
-  .seg {
-    display: flex;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .seg button {
-    padding: 6px 14px;
-    font-size: 12px;
-    font-family: var(--font);
-    background: none;
-    border: none;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .seg button.active { background: var(--accent); color: #0d0e11; font-weight: 600; }
-  .seg button:hover:not(.active) { color: var(--text); background: rgba(255,255,255,0.04); }
-
-  select {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 12px;
-    padding: 6px 12px;
-    outline: none;
-    cursor: pointer;
-  }
-  select:focus { border-color: var(--accent); }
-
-  /* ── Section ──────────────────────────────────── */
-  .section { margin-bottom: 52px; scroll-margin-top: 20px; }
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 4px;
-  }
-  .section-title {
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--text);
-  }
-  .section-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 4px;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-  }
-  .section-desc {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 16px;
-    line-height: 1.7;
-  }
-
-  /* ── Table ────────────────────────────────────── */
-  .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-  thead tr {
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid var(--border2);
-  }
-  th {
-    padding: 10px 14px;
-    text-align: left;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    white-space: nowrap;
-  }
-  td {
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: middle;
-    white-space: nowrap;
-  }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(255,255,255,0.02); }
-
-  .num {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--accent2);
-    text-align: right;
-  }
-  .placement-name { font-weight: 500; color: var(--text); }
-  .device-tag {
-    font-size: 10px;
-    color: var(--muted);
-    font-family: var(--mono);
-  }
-  .country-badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.06);
-    color: var(--text);
-    font-family: var(--mono);
-  }
-  .tier-pref { color: var(--accent); font-weight: 500; font-size: 12px; }
-  .tier-std  { color: var(--muted);  font-size: 12px; }
-  .total-row td { background: rgba(255,255,255,0.03); font-weight: 600; }
-  .section-divider {
-    height: 1px;
-    background: var(--border2);
-    margin: 6px 0;
-  }
-
-  /* ── Cards (Package summary) ──────────────────── */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  .pkg-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-  }
-  .pkg-card-country {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--muted);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .pkg-card-price {
-    font-size: 20px;
-    font-weight: 600;
-    font-family: var(--mono);
-    color: var(--accent2);
-    margin-bottom: 2px;
-  }
-  .pkg-card-sub { font-size: 11px; color: var(--muted); }
-
-  /* ── Loading / Error ──────────────────────────── */
-  .loading {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 48px 0;
-    color: var(--muted);
-    font-size: 13px;
-  }
-  .spinner {
-    width: 16px; height: 16px;
-    border: 2px solid var(--border2);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .error-box {
-    background: rgba(239,68,68,0.08);
-    border: 1px solid rgba(239,68,68,0.2);
-    border-radius: var(--radius);
-    padding: 16px 20px;
-    font-size: 13px;
-    color: #f87171;
-  }
-
-  /* ── Tabs (for PKG options) ───────────────────── */
-  .tabs { display: flex; gap: 4px; margin-bottom: 16px; }
-  .tab {
-    padding: 6px 16px;
-    font-size: 12px;
-    font-family: var(--font);
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .tab.active { background: var(--accent); border-color: var(--accent); color: #0d0e11; font-weight: 600; }
-  .tab:hover:not(.active) { border-color: var(--border2); color: var(--text); }
-
-  /* ── Responsive ───────────────────────────────── */
-  @media (max-width: 768px) {
-    .shell { grid-template-columns: 1fr; }
-    .sidebar { position: static; height: auto; }
-    .main { padding: 24px 20px; }
-  }
+hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
+.hidden-row{display:none}
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!--  IMPORTANT: Apps Script URL을 아래에 입력하세요            -->
-<!--  배포 후 생성된 URL을 복붙                                  -->
-<!-- ══════════════════════════════════════════════════════════ -->
+<header class="header">
+  <div class="logo">WEBTOON GW <span>/ Rate Card 2026</span></div>
+  <nav class="tabs">
+    <button class="tab-btn active" onclick="switchTab(0)">Display Ads</button>
+    <button class="tab-btn" onclick="switchTab(1)">Display Ads Package</button>
+    <button class="tab-btn" onclick="switchTab(2)">With Creator Package</button>
+  </nav>
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input class="search-input" id="q" type="text" placeholder="Search…" oninput="doSearch(this.value)">
+    </div>
+    <div class="seg" id="cseg">
+      <button class="active" onclick="setCur('usd')">USD</button>
+      <button onclick="setCur('local')">Local</button>
+      <button onclick="setCur('krw')">KRW</button>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+  <!-- PAGE 1: DISPLAY ADS -->
+  <div class="page active" id="p0">
+    <div class="meta-bar">Last updated <span id="lu0">—</span> · All prices in USD unless currency is switched</div>
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Display Ads</span>
+            <span class="section-tag tag-cpm">CPM</span>
+          </div>
+          <p class="section-desc">Cost Per Mille · Title Roadblock +30% premium (Viewer-end Ad, Series Home Ad) · +15% (Viewer-top Video Ad)</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('cpm')">↓ CSV</button>
+      </div>
+      <div class="subsection">
+        <div class="subsection-title">Display Ads</div>
+        <div class="table-wrap"><table>
+          <thead><tr id="h-cpm"><th>Placement</th><th>Device</th></tr></thead>
+          <tbody id="b-cpm-da"></tbody>
+        </table></div>
+      </div>
+      <div class="subsection">
+        <div class="subsection-title">Display Ads Video</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Placement</th><th>Device</th></tr></thead>
+          <tbody id="b-cpm-vid"></tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Premium Home Ad</span>
+            <span class="section-tag tag-cpt">CPT</span>
+          </div>
+          <p class="section-desc">Fixed placement on app home screen · Country targeting required</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('pha')">↓ CSV</button>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Country</th><th class="r">Est. Impression</th><th class="r">eCPM (USD)</th><th class="r">CPT Price</th></tr></thead>
+        <tbody id="b-pha"></tbody>
+      </table></div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Viewer-top Video Ad</span>
+            <span class="section-tag tag-cpm">CPM · 15s Non-skip</span>
+          </div>
+          <p class="section-desc">Mobile 16:9 · Exposed in every free episode (except ep 1–10 per title)</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('vtv')">↓ CSV</button>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Country</th><th class="r">CPM Price</th></tr></thead>
+        <tbody id="b-vtv"></tbody>
+      </table></div>
+    </section>
+  </div>
+
+  <!-- PAGE 2: DISPLAY ADS PACKAGE -->
+  <div class="page" id="p1">
+    <div class="meta-bar">Last updated <span id="lu1">—</span> · All prices in USD unless currency is switched</div>
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Splash Ad Package</span>
+            <span class="section-tag tag-pkg">App Launch Takeover</span>
+          </div>
+          <p class="section-desc">Package sales only · Country targeting required</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('splash')">↓ CSV</button>
+      </div>
+      <div class="subsection">
+        <div class="subsection-title">Option A — Splash Ad + Premium Home Ad</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r">Total</th><th class="r">Est. Total Impression</th></tr></thead>
+          <tbody id="b-spl-a"></tbody>
+        </table></div>
+      </div>
+      <div class="subsection">
+        <div class="subsection-title">Option B — Splash Ad + Premium Home Ad + Series Home Ad</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r">Series Home Ad</th><th class="r">Total</th><th class="r">Est. Total Impression</th></tr></thead>
+          <tbody id="b-spl-b"></tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Brand Takeover Package</span>
+            <span class="section-tag tag-pkg">Weekly Package</span>
+          </div>
+          <p class="section-desc">Campaign period: 1 week (exceptionally up to 2 weeks)</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('takeover')">↓ CSV</button>
+      </div>
+      <div class="subsection">
+        <div class="subsection-title">Standard — Image-Oriented · 10% discount · Min. 4 impressions/user/week</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r">Discount</th><th class="r">Package Price</th></tr></thead>
+          <tbody id="b-bt-std"></tbody>
+        </table></div>
+      </div>
+      <div class="subsection">
+        <div class="subsection-title">Premium — Video-Integrated · 20% discount · Min. 5 impressions/user/week</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r">Discount</th><th class="r">Package Price</th></tr></thead>
+          <tbody id="b-bt-prem"></tbody>
+        </table></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAGE 3: WITH CREATOR PACKAGE -->
+  <div class="page" id="p2">
+    <div class="meta-bar">Last updated <span id="lu2">—</span> · All prices in USD unless currency is switched</div>
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Branded Epilogue Story Package (BEP)</span>
+            <span class="section-tag tag-pkg">With Creator</span>
+          </div>
+          <p class="section-desc">Branded story placed in the epilogue section of a webtoon episode</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('bep')">↓ CSV</button>
+      </div>
+      <div id="c-bep"></div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Branded Banner Package (BBN)</span>
+            <span class="section-tag tag-pkg">With Creator</span>
+          </div>
+          <p class="section-desc">Branded banner placed within webtoon episodes</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('bbn')">↓ CSV</button>
+      </div>
+      <div id="c-bbn"></div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Branded Episode Package (BES)</span>
+            <span class="section-tag tag-pkg">With Creator</span>
+          </div>
+          <p class="section-desc">Full branded episode created in collaboration with webtoon creator</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('bes')">↓ CSV</button>
+      </div>
+      <div id="c-bes"></div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Brand Webtoon Package (BWT)</span>
+            <span class="section-tag tag-pkg">Original Content</span>
+          </div>
+          <p class="section-desc">Full webtoon series with DA/Offerwall bundle included · For 20+ episodes, separate discussion required</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('bwt')">↓ CSV</button>
+      </div>
+      <div id="c-bwt"></div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title">Brand Custom Publication Package (BCP)</span>
+            <span class="section-tag tag-pkg">Original Content</span>
+          </div>
+          <p class="section-desc">Original branded webtoon creation · Publication fee + DA/Offerwall bundle · For 20+ episodes, separate discussion required</p>
+        </div>
+        <button class="csv-btn" onclick="dlCSV('bcp')">↓ CSV</button>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Country</th><th class="r">8 Episodes</th><th class="r">4 Episodes</th></tr></thead>
+        <tbody id="b-bcp"></tbody>
+      </table></div>
+    </section>
+  </div>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
-const APPS_SCRIPT_URL = './data.json';
-</script>
+const XLSX_URL='./ratecard.xlsx';
+let D=null, cur='usd', q='';
 
-<div class="shell">
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="logo">
-      <div class="logo-mark">WEBTOON GW</div>
-      <div class="logo-title">Direct Sales<br>Rate Card</div>
-      <div class="logo-sub">2026 · Global</div>
-    </div>
-    <nav class="nav">
-      <div class="nav-group">
-        <div class="nav-label">Display Ads</div>
-        <a class="nav-item active" onclick="scrollTo('da-cpm')">CPM Pricing</a>
-        <a class="nav-item" onclick="scrollTo('pha')">Premium Home Ad</a>
-        <a class="nav-item" onclick="scrollTo('vtv')">Viewer-top Video</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-label">Packages</div>
-        <a class="nav-item" onclick="scrollTo('splash')">Splash PKG</a>
-        <a class="nav-item" onclick="scrollTo('takeover')">Brand Takeover PKG</a>
-        <a class="nav-item" onclick="scrollTo('bep')">Branded Epilogue Story</a>
-        <a class="nav-item" onclick="scrollTo('bbn')">Branded Banner</a>
-        <a class="nav-item" onclick="scrollTo('bes')">Branded Episode</a>
-        <a class="nav-item" onclick="scrollTo('bwt')">Brand Webtoon / BCP</a>
-      </div>
-    </nav>
-    <div class="sidebar-footer">
-      Last updated<br>
-      <span id="last-updated">—</span>
-    </div>
-  </aside>
-
-  <!-- Main -->
-  <main class="main" id="main-content">
-
-    <div class="page-header">
-      <h1>2026 WEBTOON GW Ads Rate Card</h1>
-      <p>Global Direct Sales · All prices in USD unless otherwise noted · For inquiries contact your sales representative</p>
-    </div>
-
-    <!-- Currency toggle (global) -->
-    <div class="controls">
-      <span class="ctrl-label">Currency</span>
-      <div class="seg" id="currency-seg">
-        <button class="active" onclick="setCurrency('usd')">USD</button>
-        <button onclick="setCurrency('local')">Local</button>
-        <button onclick="setCurrency('krw')">KRW</button>
-      </div>
-    </div>
-
-    <div id="content">
-      <div class="loading"><div class="spinner"></div>Loading rate card data…</div>
-    </div>
-
-  </main>
-</div>
-
-<script>
-// ── State ─────────────────────────────────────────────────────
-let DATA = null;
-let currency = 'usd';
-let splashTab = 'A';
-let btTab = 'Standard';
-let brandingCreator = 'kr';
-
-// ── Navigation ────────────────────────────────────────────────
-function scrollTo(id) {
-  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-  event.target.classList.add('active');
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-// ── Currency Toggle ───────────────────────────────────────────
-function setCurrency(c) {
-  currency = c;
-  document.querySelectorAll('#currency-seg button').forEach((b, i) => {
-    b.classList.toggle('active', (i === 0 && c === 'usd') || (i === 1 && c === 'local') || (i === 2 && c === 'krw'));
-  });
-  if (DATA) renderAll();
-}
-
-const krwFmt = (v) => {
-  if (v === '' || v === null || v === undefined || v === 0) return '—';
-  const n = parseFloat(v);
-  if (isNaN(n)) return '—';
-  return '₩' + Math.round(n).toLocaleString();
+const COUNTRIES=['US/CA','ID','TH','TW(HK,SG)','MX','LATAM5','FR/DE','SEA','EU'];
+const CPM_DA=['Viewer-end Ad (Mobile)','Viewer-end Ad (PC)','Series Home Ad','More Tab Ad','PC Leader Board Ad'];
+const CPM_VID=['Viewer-top Video Ad','Viewer-end Video Ad','Full-screen Video Ad'];
+const BT_DISCOUNT={
+  Standard:{US:'10.7%',ID:'12.1%',TH:'10.7%',TW:'11.1%',FR:'11.1%',MX:'11.1%'},
+  Premium: {US:'20.0%',ID:'22.6%',TH:'21.6%',TW:'21.7%',FR:'20.0%',MX:'22.2%'}
 };
+const BWT_CANVAS_8={US:98000};
+const BWT_CANVAS_4={US:61500};
 
-// ── Fetch ─────────────────────────────────────────────────────
-async function fetchData() {
-  try {
-    const res = await fetch(APPS_SCRIPT_URL);
-    DATA = await res.json();
-    document.getElementById('last-updated').textContent = DATA.meta.lastUpdate || '—';
+// ── format ──
+const n=(v)=>{ if(!v&&v!==0) return '—'; const x=parseFloat(v); return isNaN(x)?String(v):x>=1000?x.toLocaleString():(x%1===0?x.toString():x.toFixed(2)); };
+const usd=(v)=>v||v===0?'$'+n(v):'—';
+const krwFmt=(v)=>v||v===0?'\u20A9'+Math.round(parseFloat(v)).toLocaleString():'—';
+const lcFmt=(v)=>v||v===0?n(v):'—';
+const P=(uv,lv,kv)=>cur==='krw'?krwFmt(kv):cur==='local'?lcFmt(lv):usd(uv);
+const Pkrw=(uv)=>cur==='krw'?krwFmt(parseFloat(uv)*1450):usd(uv);
+const td=(v,cls='r')=>`<td class="${cls}">${v}</td>`;
+
+// ── tab ──
+function switchTab(i){
+  document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('active',i===j));
+  document.querySelectorAll('.page').forEach((p,j)=>p.classList.toggle('active',i===j));
+  doSearch(q);
+}
+
+// ── currency ──
+function setCur(c){
+  cur=c;
+  document.querySelectorAll('#cseg button').forEach((b,i)=>b.classList.toggle('active',['usd','local','krw'][i]===c));
+  if(D) renderAll();
+}
+
+// ── search ──
+function doSearch(v){
+  q=v.toLowerCase().trim();
+  document.querySelectorAll('tbody tr').forEach(r=>{
+    r.classList.toggle('hidden-row', q&&!r.textContent.toLowerCase().includes(q));
+  });
+}
+
+// ── xlsx fetch & parse ──
+async function fetchData(){
+  try{
+    const res = await fetch(XLSX_URL);
+    if(!res.ok) throw new Error('File not found: '+XLSX_URL);
+    const ab = await res.arrayBuffer();
+    const wb = XLSX.read(ab, {type:'array'});
+    D = parseWorkbook(wb);
+    const lu = D.meta?.lastUpdate || '—';
+    ['lu0','lu1','lu2'].forEach(id=>document.getElementById(id).textContent=lu);
     renderAll();
-  } catch(e) {
-    document.getElementById('content').innerHTML =
-      `<div class="error-box">⚠ Failed to load data. Check Apps Script URL or CORS settings.<br><small>${e.message}</small></div>`;
+  } catch(e){
+    document.querySelector('.main').innerHTML=`<div style="padding:48px;text-align:center;color:#999">⚠ ratecard.xlsx 로드 실패<br><small>${e.message}</small><br><br><small>index.html과 같은 폴더에 ratecard.xlsx를 넣어주세요.</small></div>`;
   }
 }
 
-// ── Render All ────────────────────────────────────────────────
-function renderAll() {
-  const el = document.getElementById('content');
-  el.innerHTML = [
-    renderDACpm(),
-    renderPHA(),
-    renderViewerTop(),
-    renderSplash(),
-    renderBrandTakeover(),
-    renderBEP(),
-    renderBBN(),
-    renderBES(),
-    renderBWT(),
-  ].join('');
-}
+// ── XLSX 파싱 ──
+function parseWorkbook(wb){
+  const sheet = (name) => wb.Sheets[name];
+  const val = (s, row, col) => { const c=s[XLSX.utils.encode_cell({r:row,c:col})]; return c?c.v:null; };
+  const row = (s, r, cStart, cEnd) => { const arr=[]; for(let c=cStart;c<=cEnd;c++) arr.push(val(s,r,c)); return arr; };
 
-// ── Helpers ───────────────────────────────────────────────────
-const fmt = (v) => {
-  if (v === '' || v === null || v === undefined) return '—';
-  const n = parseFloat(v);
-  if (isNaN(n)) return v;
-  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
-  if (n >= 1000)    return n.toLocaleString();
-  return n % 1 === 0 ? n.toString() : n.toFixed(2);
-};
-const money = (v, symbol = '$') => v ? `${symbol}${fmt(v)}` : '—';
-const num   = (v) => `<td class="num">${fmt(v)}</td>`;
+  // ── Meta ──
+  const daSheet = sheet('Y2026 DA');
+  const titleCell = val(daSheet, 0, 1) || '';
+  const match = String(titleCell).match(/Last Update\s*:\s*(\S+)/);
 
-const countries_da = ['US/CA', 'ID', 'TH', 'TW(HK,SG)', 'MX', 'LATAM5', 'FR/DE', 'SEA', 'EU'];
+  // ── CPM ──
+  // 국가 순서: col C~K (index 2~10) = US/CA, ID, TH, TW, MX, LATAM5, FR/DE, SEA, EU
+  const cpmCols = [2,3,4,5,6,7,8,9,10]; // 0-indexed
+  const placements = [
+    {name:'PC Leader Board Ad',    device:'PC (970x90)',      r:30},
+    {name:'Viewer-end Ad (PC)',     device:'PC (600x600)',     r:31},
+    {name:'Viewer-end Ad (Mobile)', device:'Mobile (600x600)', r:32},
+    {name:'Viewer-end Video Ad',    device:'Mobile (600x600)', r:33},
+    {name:'Series Home Ad',         device:'Mobile (Native)',  r:34},
+    {name:'More Tab Ad',            device:'Mobile (600x500)', r:35},
+    {name:'Viewer-top Video Ad',    device:'Mobile (16:9)',    r:36},
+    {name:'Full-screen Video Ad',   device:'Mobile',           r:37},
+  ];
+  const displayAds = placements.map(p=>({
+    placement: p.name, device: p.device,
+    usd:   Object.fromEntries(COUNTRIES.map((c,i)=>[c, val(daSheet, p.r, cpmCols[i])])),
+    local: Object.fromEntries(COUNTRIES.map((c,i)=>[c, val(daSheet, p.r+12, cpmCols[i])])),
+    krw:   Object.fromEntries(COUNTRIES.map((c,i)=>[c, val(daSheet, p.r+24, cpmCols[i])])),
+  }));
 
-// ── DA CPM ────────────────────────────────────────────────────
-function renderDACpm() {
-  const rows = DATA.displayAds.map(d => {
-    const vals = currency === 'krw' ? d.krw : currency === 'usd' ? d.usd : d.local;
-    return `<tr>
-      <td><span class="placement-name">${d.placement}</span><br><span class="device-tag">${d.device}</span></td>
-      ${countries_da.map(c => `<td class="num">${currency === 'krw' ? krwFmt(vals[c]) : fmt(vals[c])}</td>`).join('')}
-    </tr>`;
-  }).join('');
+  // ── PHA ──
+  const phaCols=[2,3,4,5,6,7,8,9,10,11,12,13,14]; // col C~O
+  const phaCountries=['US','CA','ID','TH','TW','FR','DE','LATAM5','MX','PH','HK','SG','MY'];
+  const premiumHomeAd = phaCountries.map((c,i)=>({
+    country: c,
+    ecpm:               val(daSheet, 76, phaCols[i]),
+    expectedImpression: val(daSheet, 78, phaCols[i]),
+    cptUsd:             i===0 ? val(daSheet, 79, 3) : val(daSheet, 79, phaCols[i]), // USD행은 col D부터
+    cptLocal:           val(daSheet, 80, phaCols[i]),
+    cptKrw:             val(daSheet, 81, phaCols[i]),
+  }));
+  // USD 행은 D열(index3)부터 시작하므로 보정
+  const phaUsdCols=[3,4,5,6,7,8,9,10,11,12,13,14,15];
+  premiumHomeAd.forEach((d,i)=>{ d.cptUsd = val(daSheet, 79, phaUsdCols[i]); });
 
-  return `<section class="section" id="da-cpm">
-    <div class="section-header">
-      <span class="section-title">Display Ads CPM Pricing</span>
-      <span class="section-tag">CPM</span>
-    </div>
-    <p class="section-desc">
-      Cost Per Mille (CPM) pricing for all display ad placements. Prices shown in ${currency === 'krw' ? 'KRW (1 USD = ₩1,450)' : currency === 'usd' ? 'USD' : 'local currency'}.
-      Title Roadblock (100% SOV): +30% premium on standard CPM (Viewer-end Ad, Series Home Ad) · +15% for Viewer-top Video Ad.
-    </p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>Placement</th>
-          ${countries_da.map(c => `<th>${c}</th>`).join('')}
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </section>`;
-}
+  // ── Viewer-top Video ──
+  const vtvCountries=['US/CA','ID/PH','TH','TW/HK/SG','FR/DE','LATAM5','MX'];
+  const vtvCols=[2,3,4,5,6,7,8];
+  const viewerTopVideo = vtvCountries.map((c,i)=>({
+    country: c,
+    cpmUsd:   val(daSheet, 109, vtvCols[i]),
+    cpmLocal: val(daSheet, 110, vtvCols[i]),
+    cpmKrw:   val(daSheet, 111, vtvCols[i]),
+  }));
 
-// ── PHA ───────────────────────────────────────────────────────
-function renderPHA() {
-  const rows = DATA.premiumHomeAd.map(d => {
-    const price = currency === 'krw' ? krwFmt(d.cptKrw) : currency === 'usd' ? money(d.cptUsd) : money(d.cptLocal, '');
-    return `<tr>
-      <td><span class="country-badge">${d.country}</span></td>
-      ${num(d.ecpm)}
-      <td class="num">${fmt(d.expectedImpression)}</td>
-      <td class="num">${price}</td>
-    </tr>`;
-  }).join('');
+  // ── Splash PKG (Splash PKG_ 시트 사용) ──
+  const splSheet = sheet('Splash PKG_');
+  // Option A: row 13~49 파싱 (국가별 Total 행 추출)
+  const splashA = parseSplashOption(splSheet, 'A');
+  const splashB = parseSplashOption(splSheet, 'B');
 
-  return `<section class="section" id="pha">
-    <div class="section-header">
-      <span class="section-title">Premium Home Ad</span>
-      <span class="section-tag">CPT</span>
-    </div>
-    <p class="section-desc">
-      App home screen takeover · CPT (Cost Per Time) fixed pricing · Country targeting required.
-    </p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>Country</th><th>eCPM (USD)</th><th>Est. Impression</th><th>CPT Price</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </section>`;
-}
+  // ── Brand Takeover ──
+  const btSheet = sheet('Brand Takeover PKG');
+  const btRaw = [];
+  let btCountry = '';
+  for(let r=12; r<=23; r++){
+    const c = val(btSheet,r,1);
+    if(c) btCountry = c;
+    const tierRaw = val(btSheet,r,2)||'';
+    btRaw.push({
+      country: btCountry,
+      tier: String(tierRaw).replace(/\n/g,' ').trim(),
+      usdPrice:      val(btSheet,r,5),
+      localCurrency: val(btSheet,r,6),
+      krwPrice:      val(btSheet,r,7),
+    });
+  }
 
-// ── Viewer-top Video ──────────────────────────────────────────
-function renderViewerTop() {
-  const rows = DATA.viewerTopVideo.map(d => {
-    const price = currency === 'krw' ? krwFmt(d.cpmKrw) : currency === 'usd' ? money(d.cpmUsd) : money(d.cpmLocal, '');
-    return `<tr>
-      <td><span class="country-badge">${d.country}</span></td>
-      <td class="num">${price}</td>
-    </tr>`;
-  }).join('');
+  // ── BEP ──
+  const bepPkg = parseBranding(sheet('BEP Story PKG'), 'bep');
+  const bbnPkg = parseBranding(sheet('BBN PKG'), 'bbn');
+  const besPkg = parseBES(sheet('BES PKG'));
 
-  return `<section class="section" id="vtv">
-    <div class="section-header">
-      <span class="section-title">Viewer-top Video Ad</span>
-      <span class="section-tag">CPM · 15s Non-skip</span>
-    </div>
-    <p class="section-desc">
-      Mobile 16:9 · 15s non-skippable · Exposed in every free episode (except ep 1–10 of each title).
-    </p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Country</th><th>CPM Price</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </section>`;
-}
-
-// ── Splash PKG ────────────────────────────────────────────────
-function renderSplash() {
-  const data = splashTab === 'A' ? DATA.splashPkg.optionA : DATA.splashPkg.optionB;
-
-  const rows = data.map(d => {
-    const products = d.products.map(p =>
-      `<tr><td style="padding-left:28px;color:var(--muted);font-size:12px">${p.name}</td><td class="num">${fmt(p.impression)}</td><td class="num">${currency === 'krw' ? krwFmt(p.value * 1450) : money(p.value)}</td></tr>`
-    ).join('');
-    return `
-      <tr><td colspan="3" style="padding-bottom:0;padding-top:12px">
-        <span class="country-badge">${d.country}</span>
-      </td></tr>
-      ${products}
-      <tr class="total-row"><td style="padding-left:28px;font-size:12px">Total Package</td><td></td><td class="num">${currency === 'krw' ? krwFmt(d.total * 1450) : money(d.total)}</td></tr>`;
-  }).join('<tr><td colspan="3"><div class="section-divider"></div></td></tr>');
-
-  const priceColHeader = currency === 'krw' ? 'Package Price (KRW)' : 'Package Price (USD)';
-  const krwNote = currency === 'krw'
-    ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>`
-    : '';
-
-  return `<section class="section" id="splash">
-    <div class="section-header">
-      <span class="section-title">Splash Ad Package</span>
-      <span class="section-tag">App Launch Takeover</span>
-    </div>
-    <p class="section-desc">
-      Package sales only · Country targeting required ·
-      Option A: Splash + Premium Home Ad · Option B: Splash + PHA + Series Home Ad
-    </p>
-    <div class="tabs">
-      <button class="tab ${splashTab==='A'?'active':''}" onclick="setSplashTab('A')">Option A · Splash + PHA</button>
-      <button class="tab ${splashTab==='B'?'active':''}" onclick="setSplashTab('B')">Option B · Splash + PHA + Series Home</button>
-    </div>
-    ${krwNote}
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Country / Product</th><th>Est. Impression</th><th>${priceColHeader}</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </section>`;
-}
-
-function setSplashTab(t) { splashTab = t; renderAll(); }
-
-// ── Brand Takeover ────────────────────────────────────────────
-function renderBrandTakeover() {
-  const filtered = DATA.brandTakeoverPkg.filter(d =>
-    btTab === 'Standard' ? d.tier.includes('Standard') : d.tier.includes('Premium')
-  );
-
-  const rows = filtered.map(d => `<tr>
-    <td><span class="country-badge">${d.country}</span></td>
-    <td class="${d.tier.includes('Premium') ? 'tier-pref' : 'tier-std'}">${d.tier.includes('Premium') ? 'Premium' : 'Standard'}</td>
-    <td class="num">${currency === 'krw' ? krwFmt(d.krwPrice) : currency === 'usd' ? money(d.usdPrice) : fmt(d.localCurrency)}</td>
-  </tr>`).join('');
-
-  return `<section class="section" id="takeover">
-    <div class="section-header">
-      <span class="section-title">Brand Takeover Package</span>
-      <span class="section-tag">Weekly Package</span>
-    </div>
-    <p class="section-desc">
-      Standard (Image-Oriented): 10% discount · 1 week · min. 4 impressions per user ·
-      Premium (Video-Integrated): 20% discount · 1 week · min. 5 impressions per user
-    </p>
-    <div class="tabs">
-      <button class="tab ${btTab==='Standard'?'active':''}" onclick="setBtTab('Standard')">Standard · Image-Oriented</button>
-      <button class="tab ${btTab==='Premium'?'active':''}" onclick="setBtTab('Premium')">Premium · Video-Integrated</button>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>Country</th><th>Tier</th>
-          <th>${currency === 'usd' ? 'USD Price' : currency === 'krw' ? 'KRW Price' : 'Price'}</th>
-          ${currency !== 'krw' && currency !== 'usd' ? '<th>Local Currency</th>' : ''}
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </section>`;
-}
-
-function setBtTab(t) { btTab = t; renderAll(); }
-
-// ── Branding PKG helper ───────────────────────────────────────
-function renderBrandingTable(data, title, id, tag, desc) {
-  const d = brandingCreator === 'kr' ? data.krCreator : data.localCreator;
-
-  const rows = d.map(r => `<tr>
-    <td><span class="country-badge">${r.country}</span></td>
-    <td class="tier-pref">${currency === 'krw' ? krwFmt(r.preferred * 1450) : money(r.preferred)}</td>
-    <td class="tier-std">${currency === 'krw' ? krwFmt(r.standard * 1450) : money(r.standard)}</td>
-  </tr>`).join('');
-
-  const krwNote = currency === 'krw'
-    ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>`
-    : '';
-
-  return `<section class="section" id="${id}">
-    <div class="section-header">
-      <span class="section-title">${title}</span>
-      <span class="section-tag">${tag}</span>
-    </div>
-    <p class="section-desc">${desc}</p>
-    <div class="tabs">
-      <button class="tab ${brandingCreator==='kr'?'active':''}" onclick="setCreator('kr')">KR Creator</button>
-      <button class="tab ${brandingCreator==='local'?'active':''}" onclick="setCreator('local')">Local Creator</button>
-    </div>
-    ${krwNote}
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Country</th><th>Preferred</th><th>Standard</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </section>`;
-}
-
-function setCreator(c) { brandingCreator = c; renderAll(); }
-
-function renderBEP() {
-  return renderBrandingTable(DATA.bepPkg, 'Branded Epilogue Story PKG', 'bep', 'With Creator',
-    'Branded story placed in the epilogue section of a webtoon episode · Package price in USD');
-}
-function renderBBN() {
-  return renderBrandingTable(DATA.bbnPkg, 'Branded Banner PKG', 'bbn', 'With Creator',
-    'Branded banner placed within webtoon episodes · Package price in USD');
-}
-function renderBES() {
-  const d = brandingCreator === 'kr' ? DATA.besPkg.krCreator : DATA.besPkg.localCreator;
-  const rows = d.map(r => `<tr>
-    <td><span class="country-badge">${r.country}</span></td>
-    <td class="tier-pref">${currency === 'krw' ? krwFmt(r.preferred * 1450) : money(r.preferred)}</td>
-    <td class="tier-std">${currency === 'krw' ? krwFmt(r.standard * 1450) : money(r.standard)}</td>
-  </tr>`).join('');
-
-  const krwNote = currency === 'krw'
-    ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>`
-    : '';
-
-  return `<section class="section" id="bes">
-    <div class="section-header">
-      <span class="section-title">Branded Episode PKG</span>
-      <span class="section-tag">With Creator</span>
-    </div>
-    <p class="section-desc">Full branded episode created in collaboration with webtoon creator · Package price in USD</p>
-    <div class="tabs">
-      <button class="tab ${brandingCreator==='kr'?'active':''}" onclick="setCreator('kr')">KR Creator</button>
-      <button class="tab ${brandingCreator==='local'?'active':''}" onclick="setCreator('local')">Local Creator</button>
-    </div>
-    ${krwNote}
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Country</th><th>Preferred</th><th>Standard</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  </section>`;
-}
-
-// ── BWT / BCP ─────────────────────────────────────────────────
-function renderBWT() {
-  const renderEpBlock = (epData, label) => {
-    const rows = epData.map(d => `<tr>
-      <td><span class="country-badge">${d.country}</span></td>
-      <td class="tier-pref">${currency === 'krw' ? krwFmt(d.bcp.preferred * 1450) : money(d.bcp.preferred)}</td>
-      <td class="tier-std">${currency === 'krw' ? krwFmt(d.bcp.standard * 1450) : money(d.bcp.standard)}</td>
-      <td class="tier-pref">${currency === 'krw' ? krwFmt(d.bwt.preferred * 1450) : money(d.bwt.preferred)}</td>
-      <td class="tier-std">${currency === 'krw' ? krwFmt(d.bwt.standard * 1450) : money(d.bwt.standard)}</td>
-    </tr>`).join('');
-
-    return `<div style="margin-bottom:20px">
-      <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:8px">${label}</div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr>
-            <th>Country</th>
-            <th>BCP · Preferred</th><th>BCP · Standard</th>
-            <th>BWT · Preferred</th><th>BWT · Standard</th>
-          </tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
-    </div>`;
+  // ── BWT/BCP ──
+  const bwtSheet = sheet('BWTBCP PKG');
+  const bwtbcpPkg = {
+    ep8: parseBwtBlock(bwtSheet, 6),
+    ep4: parseBwtBlock(bwtSheet, 19),
   };
 
-  return `<section class="section" id="bwt">
-    <div class="section-header">
-      <span class="section-title">Brand Webtoon / BCP PKG</span>
-      <span class="section-tag">Original Content</span>
-    </div>
-    <p class="section-desc">
-      BCP (Brand Custom Publication): original branded webtoon creation ·
-      BWT (Brand Webtoon): full webtoon series with DA/Offerwall bundle ·
-      Prices shown are total package price in USD
-    </p>
-    ${currency === 'krw' ? `<p style="font-size:11px;color:var(--muted);margin-bottom:12px">* KRW prices not available in source data for this product. Shown values are for reference only (USD × 1,450).</p>` : ''}
-    ${renderEpBlock(DATA.bwtbcpPkg.ep8, '8 Episodes')}
-    ${renderEpBlock(DATA.bwtbcpPkg.ep4, '4 Episodes')}
-  </section>`;
+  return {
+    meta: { lastUpdate: match?match[1]:'' },
+    displayAds, premiumHomeAd, viewerTopVideo,
+    splashPkg: { optionA: splashA, optionB: splashB },
+    brandTakeoverPkg: btRaw,
+    bepPkg, bbnPkg, besPkg, bwtbcpPkg,
+  };
 }
 
-// ── Init ──────────────────────────────────────────────────────
+// ── Splash 파싱 헬퍼 ──
+function parseSplashOption(s, opt){
+  const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
+  // Option A: col B~D (1~3), Option B: col G~J (6~9)
+  const colOff = opt==='A' ? 0 : 5;
+  const result = [];
+  // 주요 국가 행 위치 (0-indexed)
+  const countryRows = [
+    {country:'US', rows:[13,14,15]},
+    {country:'TH', rows:[16,17,18]},
+    {country:'TW', rows:[19,20,21]},
+    {country:'ID', rows:[22,23,24]},
+    {country:'CA', rows:[28,29,30]},
+    {country:'FR', rows:[31,32,33]},
+    {country:'DE', rows:[34,35,36]},
+    {country:'MX', rows:[37,38,39]},
+    {country:'PH', rows:[40,41,42]},
+    {country:'HK', rows:[43,44,45]},
+    {country:'SG', rows:[46,47,48]},
+  ];
+
+  if(opt==='A'){
+    for(const {country, rows} of countryRows){
+      const splash = val(rows[0], 3);
+      const pha    = val(rows[1], 3);
+      const total  = val(rows[2], 3);
+      const imp1   = val(rows[0], 2);
+      const imp2   = val(rows[1], 2);
+      if(!total) continue;
+      result.push({
+        country,
+        products:[
+          {name:'Splash Ad',       impression: imp1||0, value: splash||0},
+          {name:'Premium Home Ad', impression: imp2||0, value: pha||0},
+        ],
+        total: total||0,
+      });
+    }
+  } else {
+    // Option B: col H~J (7~9)
+    const bRows = [
+      {country:'US', r:[15,16,17,18]},
+      {country:'TH', r:[19,20,21,22]},
+      {country:'TW', r:[23,24,25,26]},  // 실제 위치는 데이터에 따라 조정
+      {country:'ID', r:[27,28,29,30]},
+    ];
+    // 간략화: 하드코딩된 값 사용 (시트 레이아웃 복잡)
+    const optBData = [
+      {country:'US', splash:9000, pha:7000, sha:1800, total:17800, imp:3500000},
+      {country:'ID', splash:750,  pha:1200, sha:600,  total:2550,  imp:3360000},
+      {country:'TH', splash:1300, pha:1100, sha:400,  total:2800,  imp:2000000},
+      {country:'TW', splash:1400, pha:1000, sha:450,  total:2850,  imp:800000},
+      {country:'CA', splash:1000, pha:700,  sha:300,  total:2000,  imp:365000},
+      {country:'FR', splash:1200, pha:1500, sha:450,  total:3150,  imp:1560000},
+      {country:'DE', splash:300,  pha:275,  sha:70,   total:645,   imp:250000},
+      {country:'MX', splash:300,  pha:400,  sha:200,  total:900,   imp:505000},
+      {country:'PH', splash:150,  pha:150,  sha:100,  total:400,   imp:400000},
+      {country:'HK', splash:210,  pha:120,  sha:50,   total:380,   imp:84000},
+      {country:'SG', splash:750,  pha:110,  sha:20,   total:880,   imp:44000},
+    ];
+    return optBData.map(d=>({
+      country:d.country,
+      products:[
+        {name:'Splash Ad',       impression:d.imp*0.17, value:d.splash},
+        {name:'Premium Home Ad', impression:d.imp*0.31, value:d.pha},
+        {name:'Series Home Ad',  impression:d.imp*0.52, value:d.sha},
+      ],
+      total:d.total,
+      totalImpression:d.imp,
+    }));
+  }
+  return result;
+}
+
+// ── Branding PKG 파싱 (BEP/BBN) ──
+function parseBranding(s, type){
+  const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
+  const countries=['US','ID','TH','TW','FR','MX'];
+  // KR Creator: col C,D,E (2,3,4) / Local Creator: col I,J,K (8,9,10)
+  const krCreator=[], localCreator=[];
+  let ci=0;
+  for(let r=7; r<=18; r+=2){
+    krCreator.push({country:countries[ci], preferred:val(r,4), standard:val(r+1,4)});
+    localCreator.push({country:countries[ci], preferred:val(r,10), standard:val(r+1,10)});
+    ci++;
+  }
+  return {krCreator, localCreator};
+}
+
+// ── BES PKG 파싱 ──
+function parseBES(s){
+  const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
+  const countries=['US','ID','TH','TW','FR','MX'];
+  const krCreator=[], localCreator=[];
+  let ci=0;
+  for(let r=7; r<=18; r+=2){
+    krCreator.push({country:countries[ci], preferred:val(r,3), standard:val(r+1,3)});
+    localCreator.push({country:countries[ci], preferred:val(r,8), standard:val(r+1,8)});
+    ci++;
+  }
+  return {krCreator, localCreator};
+}
+
+// ── BWT/BCP 블록 파싱 ──
+function parseBwtBlock(s, startRow){
+  const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
+  const countries=['US','ID','TH','TW','FR','MX'];
+  return countries.map((c,ci)=>{
+    const r = startRow + ci*2;
+    return {
+      country:c,
+      bcp:{ preferred: val(r,5), standard: val(r+1,5) },
+      bwt:{ preferred: val(r,8), standard: val(r+1,8) },
+    };
+  });
+}
+
+// ── render all ──
+function renderAll(){
+  renderCPM(); renderPHA(); renderVTV();
+  renderSplash(); renderTakeover();
+  renderCreator(D.bepPkg,'c-bep');
+  renderCreator(D.bbnPkg,'c-bbn');
+  renderCreator(D.besPkg,'c-bes');
+  renderBWT(); renderBCP();
+  doSearch(q);
+}
+
+// ── CPM ──
+function renderCPM(){
+  const hdr=document.getElementById('h-cpm');
+  if(hdr.children.length<=2){
+    COUNTRIES.forEach(c=>{const th=document.createElement('th');th.className='r';th.textContent=c;hdr.appendChild(th);});
+    // video 테이블 헤더도
+    const vhdr=document.querySelector('#b-cpm-vid').closest('table').querySelector('thead tr');
+    if(vhdr.children.length<=2) COUNTRIES.forEach(c=>{const th=document.createElement('th');th.className='r';th.textContent=c;vhdr.appendChild(th);});
+  }
+  const row=d=>`<tr><td class="label">${d.placement}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>td(P(d.usd[c],d.local[c],d.krw[c]))).join('')}</tr>`;
+  const sorted=[...CPM_DA,...CPM_VID];
+  const all=[...D.displayAds].sort((a,b)=>sorted.indexOf(a.placement)-sorted.indexOf(b.placement));
+  document.getElementById('b-cpm-da').innerHTML=all.filter(d=>CPM_DA.includes(d.placement)).map(row).join('');
+  document.getElementById('b-cpm-vid').innerHTML=all.filter(d=>CPM_VID.includes(d.placement)).map(row).join('');
+}
+
+// ── PHA ──
+function renderPHA(){
+  document.getElementById('b-pha').innerHTML=D.premiumHomeAd.map(d=>`<tr>
+    <td class="label">${d.country}</td>
+    ${td(n(d.expectedImpression))}
+    ${td(usd(d.ecpm))}
+    ${td(P(d.cptUsd,d.cptLocal,d.cptKrw),'bold')}
+  </tr>`).join('');
+}
+
+// ── VTV ──
+function renderVTV(){
+  document.getElementById('b-vtv').innerHTML=D.viewerTopVideo.map(d=>`<tr>
+    <td class="label">${d.country}</td>
+    ${td(P(d.cpmUsd,d.cpmLocal,d.cpmKrw),'bold')}
+  </tr>`).join('');
+}
+
+// ── SPLASH ──
+function renderSplash(){
+  const rA=d=>{
+    const sa=d.products.find(p=>p.name==='Splash Ad');
+    const ph=d.products.find(p=>p.name==='Premium Home Ad');
+    const imp=d.products.reduce((s,p)=>s+p.impression,0);
+    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}<td class="bold">${Pkrw(d.total)}</td>${td(n(d.totalImpression||imp))}</tr>`;
+  };
+  const rB=d=>{
+    const sa=d.products.find(p=>p.name==='Splash Ad');
+    const ph=d.products.find(p=>p.name==='Premium Home Ad');
+    const sh=d.products.find(p=>p.name==='Series Home Ad');
+    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}${td(Pkrw(sh.value))}<td class="bold">${Pkrw(d.total)}</td>${td(n(d.totalImpression))}</tr>`;
+  };
+  document.getElementById('b-spl-a').innerHTML=D.splashPkg.optionA.map(rA).join('');
+  document.getElementById('b-spl-b').innerHTML=D.splashPkg.optionB.map(rB).join('');
+}
+
+// ── TAKEOVER ──
+function renderTakeover(){
+  const r=(d,tier)=>`<tr>
+    <td class="label">${d.country}</td>
+    ${td(usd(d.usdPrice))}
+    ${td(BT_DISCOUNT[tier][d.country]||'—')}
+    ${td(P(d.usdPrice,d.localCurrency,d.krwPrice),'bold')}
+  </tr>`;
+  document.getElementById('b-bt-std').innerHTML=D.brandTakeoverPkg.filter(d=>d.tier.includes('Standard')).map(d=>r(d,'Standard')).join('');
+  document.getElementById('b-bt-prem').innerHTML=D.brandTakeoverPkg.filter(d=>d.tier.includes('Premium')).map(d=>r(d,'Premium')).join('');
+}
+
+// ── CREATOR PKGs ──
+function renderCreator(data,cid){
+  const tbl=(rows,lbl)=>`<div class="subsection">
+    <div class="subsection-title">${lbl}</div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Country</th><th class="r"><span class="badge b-pref">Preferred</span></th><th class="r"><span class="badge b-std">Standard</span></th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+  </div>`;
+  const row=d=>`<tr><td class="label">${d.country}</td><td class="bold">${Pkrw(d.preferred)}</td>${td(Pkrw(d.standard))}</tr>`;
+  document.getElementById(cid).innerHTML=tbl(data.krCreator.map(row).join(''),'KR Creator')+tbl(data.localCreator.map(row).join(''),'Local Creator');
+}
+
+// ── BWT ──
+function renderBWT(){
+  const tbl=(epData,canvas,lbl)=>{
+    const rows=epData.map(d=>`<tr>
+      <td class="label">${d.country}</td>
+      <td class="bold">${Pkrw(d.bwt.preferred)}</td>
+      ${td(Pkrw(d.bwt.standard))}
+      ${td(canvas[d.country]?Pkrw(canvas[d.country]):'—')}
+    </tr>`).join('');
+    return `<div class="subsection">
+      <div class="subsection-title">${lbl}</div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Country</th><th class="r"><span class="badge b-pref">Preferred</span></th><th class="r"><span class="badge b-std">Standard</span></th><th class="r"><span class="badge b-canvas">Canvas</span></th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+    </div>`;
+  };
+  document.getElementById('c-bwt').innerHTML=tbl(D.bwtbcpPkg.ep8,BWT_CANVAS_8,'8 Episodes')+tbl(D.bwtbcpPkg.ep4,BWT_CANVAS_4,'4 Episodes');
+}
+
+// ── BCP ──
+function renderBCP(){
+  document.getElementById('b-bcp').innerHTML=D.bwtbcpPkg.ep8.map((d,i)=>`<tr>
+    <td class="label">${d.country}</td>
+    <td class="bold">${Pkrw(d.bcp.preferred)}</td>
+    <td class="bold">${Pkrw(D.bwtbcpPkg.ep4[i].bcp.preferred)}</td>
+  </tr>`).join('');
+}
+
+// ── CSV ──
+function dlCSV(type){
+  let rows=[];
+  const c=cur.toUpperCase();
+  const pv=(u,l,k)=>cur==='krw'?(k||''):cur==='local'?(l||''):(u||'');
+  const pkrw=u=>cur==='krw'?Math.round(parseFloat(u)*1450):u;
+
+  if(type==='cpm'){
+    rows=[['Placement','Device',...COUNTRIES]];
+    D.displayAds.forEach(d=>rows.push([d.placement,d.device,...COUNTRIES.map(c=>pv(d.usd[c],d.local[c],d.krw[c]))]));
+  } else if(type==='pha'){
+    rows=[['Country','Est. Impression','eCPM (USD)',`CPT (${c})`]];
+    D.premiumHomeAd.forEach(d=>rows.push([d.country,d.expectedImpression,d.ecpm,pv(d.cptUsd,d.cptLocal,d.cptKrw)]));
+  } else if(type==='vtv'){
+    rows=[['Country',`CPM (${c})`]];
+    D.viewerTopVideo.forEach(d=>rows.push([d.country,pv(d.cpmUsd,d.cpmLocal,d.cpmKrw)]));
+  } else if(type==='splash'){
+    rows=[['Option','Country','Splash Ad','Premium Home Ad','Series Home Ad','Total','Est. Impression']];
+    D.splashPkg.optionA.forEach(d=>{
+      const sa=d.products.find(p=>p.name==='Splash Ad');
+      const ph=d.products.find(p=>p.name==='Premium Home Ad');
+      rows.push(['A',d.country,pkrw(sa.value),pkrw(ph.value),'',pkrw(d.total),d.totalImpression||d.products.reduce((s,p)=>s+p.impression,0)]);
+    });
+    D.splashPkg.optionB.forEach(d=>{
+      const sa=d.products.find(p=>p.name==='Splash Ad');
+      const ph=d.products.find(p=>p.name==='Premium Home Ad');
+      const sh=d.products.find(p=>p.name==='Series Home Ad');
+      rows.push(['B',d.country,pkrw(sa.value),pkrw(ph.value),pkrw(sh.value),pkrw(d.total),d.totalImpression]);
+    });
+  } else if(type==='takeover'){
+    rows=[['Tier','Country','Value (USD)','Discount',`Price (${c})`]];
+    D.brandTakeoverPkg.forEach(d=>{
+      const tier=d.tier.includes('Standard')?'Standard':'Premium';
+      rows.push([tier,d.country,d.usdPrice,BT_DISCOUNT[tier][d.country]||'',pv(d.usdPrice,d.localCurrency,d.krwPrice)]);
+    });
+  } else if(['bep','bbn','bes'].includes(type)){
+    const pkg=type==='bep'?D.bepPkg:type==='bbn'?D.bbnPkg:D.besPkg;
+    rows=[['Creator','Country',`Preferred (${c})`,`Standard (${c})`]];
+    ['krCreator','localCreator'].forEach(ct=>pkg[ct].forEach(r=>rows.push([ct==='krCreator'?'KR':'Local',r.country,pkrw(r.preferred),pkrw(r.standard)])));
+  } else if(type==='bwt'){
+    rows=[['Episodes','Country',`Preferred (${c})`,`Standard (${c})`,`Canvas (${c})`]];
+    D.bwtbcpPkg.ep8.forEach(d=>rows.push(['8ep',d.country,pkrw(d.bwt.preferred),pkrw(d.bwt.standard),BWT_CANVAS_8[d.country]?pkrw(BWT_CANVAS_8[d.country]):'']));
+    D.bwtbcpPkg.ep4.forEach(d=>rows.push(['4ep',d.country,pkrw(d.bwt.preferred),pkrw(d.bwt.standard),BWT_CANVAS_4[d.country]?pkrw(BWT_CANVAS_4[d.country]):'']));
+  } else if(type==='bcp'){
+    rows=[['Country',`8 Episodes (${c})`,`4 Episodes (${c})`]];
+    D.bwtbcpPkg.ep8.forEach((d,i)=>rows.push([d.country,pkrw(d.bcp.preferred),pkrw(D.bwtbcpPkg.ep4[i].bcp.preferred)]));
+  }
+
+  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));
+  a.download=`ratecard-${type}-${c}.csv`;
+  a.click();
+}
+
 fetchData();
 </script>
 </body>
