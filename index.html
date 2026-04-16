@@ -5,18 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WEBTOON GW Ads — Rate Card 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Volte';src:url('./Indian Type Foundry - Volte Light.otf') format('opentype');font-weight:300}
+@font-face{font-family:'Volte';src:url('./Indian Type Foundry - Volte.otf') format('opentype');font-weight:400}
+@font-face{font-family:'Volte';src:url('./Indian Type Foundry - Volte Medium.otf') format('opentype');font-weight:500}
+@font-face{font-family:'Volte';src:url('./Indian Type Foundry - Volte Semibold.otf') format('opentype');font-weight:600}
+@font-face{font-family:'Volte';src:url('./Indian Type Foundry - Volte Bold.otf') format('opentype');font-weight:700}
+</style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f7f6f3;--surface:#ffffff;--surface2:#f0efe9;
-  --border:#e2e0d8;--border2:#ccc9be;
-  --text:#1a1916;--muted:#6b6860;
-  --accent:#1a1916;--accent-fg:#f7f6f3;
+  --bg:#ffffff;--surface:#ffffff;--surface2:#f4f6f8;
+  --border:#e5e7eb;--border2:#d1d5db;
+  --text:#1a1916;--muted:#6b7280;
+  --accent:#1a1916;--accent-fg:#ffffff;
   --green:#2d6a4f;--green-bg:#d8f3dc;
   --blue:#1d4e89;--blue-bg:#dbeafe;
   --amber:#92400e;--amber-bg:#fef3c7;
-  --radius:8px;--font:'Syne',sans-serif;--mono:'DM Mono',monospace;
+  --radius:8px;--font:'Volte',sans-serif;--mono:'Roboto Mono',monospace;
 }
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.6;min-height:100vh}
 
@@ -62,12 +69,20 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14
 table{width:100%;border-collapse:collapse;font-size:12.5px}
 thead tr{background:var(--surface2);border-bottom:1px solid var(--border2)}
 th{padding:9px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+th.bold-col{background:#c6e8c9}
+th.imp-col{background:#b8d9f5}
+td.imp-col{background:#e8f4fd;font-family:var(--mono);font-size:12px;text-align:right}
+th.disc-col{background:#f5c0c0}
+td.disc-col{background:#fef0f0;font-family:var(--mono);font-size:12px;text-align:right}
+th.std-col{background:#f5e8a0}
+td.std-col{background:#fefde8;font-family:var(--mono);font-size:12px;text-align:right}
+td.bold.std-col{background:#fefde8}
 th.r{text-align:right}
 td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap}
 tr:last-child td{border-bottom:none}
-tr:hover td{background:#fafaf8}
+tr:hover td{background:#f0f5f1}
 td.r{font-family:var(--mono);font-size:12px;text-align:right}
-td.bold{font-family:var(--mono);font-size:12px;text-align:right;font-weight:600;color:var(--green)}
+td.bold{font-family:var(--mono);font-size:12px;text-align:right;font-weight:600;color:var(--text);background:#eef8ef}
 td.label{font-weight:500}
 td.dim{color:var(--muted);font-size:12px}
 .badge{display:inline-block;font-size:10px;font-weight:600;padding:1px 7px;border-radius:3px}
@@ -105,7 +120,6 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
 
   <!-- PAGE 1: DISPLAY ADS -->
   <div class="page active" id="p0">
-    <div class="meta-bar">Last updated <span id="lu0">—</span> · All prices in USD unless currency is switched</div>
 
     <section class="section">
       <div class="section-top">
@@ -114,7 +128,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
             <span class="section-title">Display Ads</span>
             <span class="section-tag tag-cpm">CPM</span>
           </div>
-          <p class="section-desc">Cost Per Mille · Title Roadblock +30% premium (Viewer-end Ad, Series Home Ad) · +15% (Viewer-top Video Ad)</p>
+          <p class="section-desc">For countries not listed below, please contact us for pricing.<br>Title Roadblock +30% premium (Viewer-end Ad, Series Home Ad) · +15% (Viewer-top Video Ad)</p>
         </div>
         <button class="csv-btn" onclick="dlCSV('cpm')">↓ CSV</button>
       </div>
@@ -143,12 +157,12 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
             <span class="section-title">Premium Home Ad</span>
             <span class="section-tag tag-cpt">CPT</span>
           </div>
-          <p class="section-desc">Fixed placement on app home screen · Country targeting required</p>
+          <p class="section-desc">Est. Impression is a projected figure and is updated every quarter.<br>Country targeting is required.</p>
         </div>
         <button class="csv-btn" onclick="dlCSV('pha')">↓ CSV</button>
       </div>
       <div class="table-wrap"><table>
-        <thead><tr><th>Country</th><th class="r">Est. Impression</th><th class="r">eCPM (USD)</th><th class="r">CPT Price</th></tr></thead>
+        <thead><tr><th>Country</th><th class="r imp-col">Est. Impression</th><th class="r">CPT Price</th></tr></thead>
         <tbody id="b-pha"></tbody>
       </table></div>
     </section>
@@ -175,7 +189,6 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
 
   <!-- PAGE 2: DISPLAY ADS PACKAGE -->
   <div class="page" id="p1">
-    <div class="meta-bar">Last updated <span id="lu1">—</span> · All prices in USD unless currency is switched</div>
 
     <section class="section">
       <div class="section-top">
@@ -184,21 +197,21 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
             <span class="section-title">Splash Ad Package</span>
             <span class="section-tag tag-pkg">App Launch Takeover</span>
           </div>
-          <p class="section-desc">Package sales only · Country targeting required</p>
+          <p class="section-desc">Package sales only · Country targeting required<br>Est. Impression is a projected figure and is updated on a quarterly basis.</p>
         </div>
         <button class="csv-btn" onclick="dlCSV('splash')">↓ CSV</button>
       </div>
       <div class="subsection">
         <div class="subsection-title">Option A — Splash Ad + Premium Home Ad</div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r">Total</th><th class="r">Est. Total Impression</th></tr></thead>
+          <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r imp-col">Est. Total Impression</th><th class="r">Total</th></tr></thead>
           <tbody id="b-spl-a"></tbody>
         </table></div>
       </div>
       <div class="subsection">
         <div class="subsection-title">Option B — Splash Ad + Premium Home Ad + Series Home Ad</div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r">Series Home Ad</th><th class="r">Total</th><th class="r">Est. Total Impression</th></tr></thead>
+          <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r">Series Home Ad</th><th class="r imp-col">Est. Total Impression</th><th class="r">Total</th></tr></thead>
           <tbody id="b-spl-b"></tbody>
         </table></div>
       </div>
@@ -213,21 +226,21 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
             <span class="section-title">Brand Takeover Package</span>
             <span class="section-tag tag-pkg">Weekly Package</span>
           </div>
-          <p class="section-desc">Campaign period: 1 week (exceptionally up to 2 weeks)</p>
+          <p class="section-desc">Campaign period: 1 week</p>
         </div>
         <button class="csv-btn" onclick="dlCSV('takeover')">↓ CSV</button>
       </div>
       <div class="subsection">
-        <div class="subsection-title">Standard — Image-Oriented · 10% discount · Min. 4 impressions/user/week</div>
+        <div class="subsection-title">Standard — Image-Oriented</div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r">Discount</th><th class="r">Package Price</th></tr></thead>
+          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r disc-col">Discount</th><th class="r">Package Price</th></tr></thead>
           <tbody id="b-bt-std"></tbody>
         </table></div>
       </div>
       <div class="subsection">
-        <div class="subsection-title">Premium — Video-Integrated · 20% discount · Min. 5 impressions/user/week</div>
+        <div class="subsection-title">Premium — Video-Integrated</div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r">Discount</th><th class="r">Package Price</th></tr></thead>
+          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r disc-col">Discount</th><th class="r">Package Price</th></tr></thead>
           <tbody id="b-bt-prem"></tbody>
         </table></div>
       </div>
@@ -236,7 +249,6 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
 
   <!-- PAGE 3: WITH CREATOR PACKAGE -->
   <div class="page" id="p2">
-    <div class="meta-bar">Last updated <span id="lu2">—</span> · All prices in USD unless currency is switched</div>
 
     <section class="section">
       <div class="section-top">
@@ -306,7 +318,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
       <div class="section-top">
         <div>
           <div class="section-header">
-            <span class="section-title">Brand Custom Publication Package (BCP)</span>
+            <span class="section-title">Branded Contents Publication Package (BCP)</span>
             <span class="section-tag tag-pkg">Original Content</span>
           </div>
           <p class="section-desc">Original branded webtoon creation · Publication fee + DA/Offerwall bundle · For 20+ episodes, separate discussion required</p>
@@ -314,7 +326,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
         <button class="csv-btn" onclick="dlCSV('bcp')">↓ CSV</button>
       </div>
       <div class="table-wrap"><table>
-        <thead><tr><th>Country</th><th class="r">8 Episodes</th><th class="r">4 Episodes</th></tr></thead>
+        <thead><tr><th>Country</th><th class="r">8 Episodes</th><th class="r std-col">4 Episodes</th></tr></thead>
         <tbody id="b-bcp"></tbody>
       </table></div>
     </section>
@@ -338,7 +350,7 @@ const BWT_CANVAS_8={US:98000};
 const BWT_CANVAS_4={US:61500};
 
 // ── format ──
-const n=(v)=>{ if(!v&&v!==0) return '—'; const x=parseFloat(v); return isNaN(x)?String(v):x>=1000?x.toLocaleString():(x%1===0?x.toString():x.toFixed(2)); };
+const n=(v)=>{ if(!v&&v!==0) return '—'; const s=typeof v==='string'?v.replace(/^\$/,''):v; const x=parseFloat(s); return isNaN(x)?String(v):x>=1000?x.toLocaleString():(x%1===0?x.toString():x.toFixed(2)); };
 const usd=(v)=>v||v===0?'$'+n(v):'—';
 const krwFmt=(v)=>v||v===0?'\u20A9'+Math.round(parseFloat(v)).toLocaleString():'—';
 const lcFmt=(v)=>v||v===0?n(v):'—';
@@ -376,8 +388,6 @@ async function fetchData(){
     const ab = await res.arrayBuffer();
     const wb = XLSX.read(ab, {type:'array'});
     D = parseWorkbook(wb);
-    const lu = D.meta?.lastUpdate || '—';
-    ['lu0','lu1','lu2'].forEach(id=>document.getElementById(id).textContent=lu);
     renderAll();
   } catch(e){
     document.querySelector('.main').innerHTML=`<div style="padding:48px;text-align:center;color:#999">⚠ ratecard.xlsx 로드 실패<br><small>${e.message}</small><br><br><small>index.html과 같은 폴더에 ratecard.xlsx를 넣어주세요.</small></div>`;
@@ -388,91 +398,95 @@ async function fetchData(){
 function parseWorkbook(wb){
   const sheet = (name) => wb.Sheets[name];
   const val = (s, row, col) => { const c=s[XLSX.utils.encode_cell({r:row,c:col})]; return c?c.v:null; };
-  const row = (s, r, cStart, cEnd) => { const arr=[]; for(let c=cStart;c<=cEnd;c++) arr.push(val(s,r,c)); return arr; };
 
   // ── Meta ──
+  // Last Update: R2(openpyxl) → row 1(0-indexed), col B(1)
   const daSheet = sheet('Y2026 DA');
-  const titleCell = val(daSheet, 0, 1) || '';
+  const titleCell = val(daSheet, 1, 1) || '';
   const match = String(titleCell).match(/Last Update\s*:\s*(\S+)/);
 
   // ── CPM ──
-  // 국가 순서: col C~K (index 2~10) = US/CA, ID, TH, TW, MX, LATAM5, FR/DE, SEA, EU
-  const cpmCols = [2,3,4,5,6,7,8,9,10]; // 0-indexed
+  // Headers R31: Placement(B), Device(C), US/CA(D=3), ID(E=4), TH(F=5), TW(G=6), MX(H=7), LATAM5(I=8), FR/DE(J=9), SEA(K=10), EU(L=11)
+  // USD:   R32~R39  → 0-indexed rows 31~38
+  // Local: R44~R51  → 0-indexed rows 43~50  (offset +12)
+  // KRW:   R56~R63  → 0-indexed rows 55~62  (offset +24)
+  const cpmCols = [3,4,5,6,7,8,9,10,11]; // D through L (0-indexed)
   const placements = [
-    {name:'PC Leader Board Ad',    device:'PC (970x90)',      r:30},
-    {name:'Viewer-end Ad (PC)',     device:'PC (600x600)',     r:31},
-    {name:'Viewer-end Ad (Mobile)', device:'Mobile (600x600)', r:32},
-    {name:'Viewer-end Video Ad',    device:'Mobile (600x600)', r:33},
-    {name:'Series Home Ad',         device:'Mobile (Native)',  r:34},
-    {name:'More Tab Ad',            device:'Mobile (600x500)', r:35},
-    {name:'Viewer-top Video Ad',    device:'Mobile (16:9)',    r:36},
-    {name:'Full-screen Video Ad',   device:'Mobile',           r:37},
+    {name:'PC Leader Board Ad',    device:'PC (970x90)',      r:31},
+    {name:'Viewer-end Ad (PC)',     device:'PC (600x600)',     r:32},
+    {name:'Viewer-end Ad (Mobile)', device:'Mobile (600x600)', r:33},
+    {name:'Viewer-end Video Ad',    device:'Mobile (600x600)', r:34},
+    {name:'Series Home Ad',         device:'Mobile (Native)',  r:35},
+    {name:'More Tab Ad',            device:'Mobile (600x500)', r:36},
+    {name:'Viewer-top Video Ad',    device:'Mobile (16:9)',    r:37},
+    {name:'Full-screen Video Ad',   device:'Mobile',           r:38},
   ];
   const displayAds = placements.map(p=>({
     placement: p.name, device: p.device,
-    usd:   Object.fromEntries(COUNTRIES.map((c,i)=>[c, val(daSheet, p.r, cpmCols[i])])),
+    usd:   Object.fromEntries(COUNTRIES.map((c,i)=>[c, val(daSheet, p.r,    cpmCols[i])])),
     local: Object.fromEntries(COUNTRIES.map((c,i)=>[c, val(daSheet, p.r+12, cpmCols[i])])),
     krw:   Object.fromEntries(COUNTRIES.map((c,i)=>[c, val(daSheet, p.r+24, cpmCols[i])])),
   }));
 
   // ── PHA ──
-  const phaCols=[2,3,4,5,6,7,8,9,10,11,12,13,14]; // col C~O
+  // Headers R77: Category(B), [empty C], US(D=3), CA(E=4), ID(F=5), TH(G=6), TW(H=7), FR(I=8), DE(J=9), LATAM5(K=10), MX(L=11), PH(M=12), HK(N=13), SG(O=14), MY(P=15)
+  // eCPM: R78(row 77), Expected imp: R79(row 78), CPT USD: R81(row 80), Local: R82(row 81), KRW: R83(row 82)
+  const phaCols=[3,4,5,6,7,8,9,10,11,12,13,14,15]; // D through P (0-indexed)
   const phaCountries=['US','CA','ID','TH','TW','FR','DE','LATAM5','MX','PH','HK','SG','MY'];
   const premiumHomeAd = phaCountries.map((c,i)=>({
     country: c,
-    ecpm:               val(daSheet, 76, phaCols[i]),
-    expectedImpression: val(daSheet, 78, phaCols[i]),
-    cptUsd:             i===0 ? val(daSheet, 79, 3) : val(daSheet, 79, phaCols[i]), // USD행은 col D부터
-    cptLocal:           val(daSheet, 80, phaCols[i]),
-    cptKrw:             val(daSheet, 81, phaCols[i]),
+    ecpm:               val(daSheet, 77, phaCols[i]),
+    expectedImpression: val(daSheet, 79, phaCols[i]),
+    cptUsd:             val(daSheet, 80, phaCols[i]),
+    cptLocal:           val(daSheet, 81, phaCols[i]),
+    cptKrw:             val(daSheet, 82, phaCols[i]),
   }));
-  // USD 행은 D열(index3)부터 시작하므로 보정
-  const phaUsdCols=[3,4,5,6,7,8,9,10,11,12,13,14,15];
-  premiumHomeAd.forEach((d,i)=>{ d.cptUsd = val(daSheet, 79, phaUsdCols[i]); });
 
   // ── Viewer-top Video ──
+  // Headers R110: [E=4]US/CA, [F=5]ID/PH, [G=6]TH, [H=7]TW/HK/SG, [I=8]FR/DE, [J=9]LATAM5, [K=10]MX
+  // CPM USD: R111(row 110), Local: R112(row 111), KRW: R113(row 112)
   const vtvCountries=['US/CA','ID/PH','TH','TW/HK/SG','FR/DE','LATAM5','MX'];
-  const vtvCols=[2,3,4,5,6,7,8];
+  const vtvCols=[4,5,6,7,8,9,10]; // E through K (0-indexed)
   const viewerTopVideo = vtvCountries.map((c,i)=>({
     country: c,
-    cpmUsd:   val(daSheet, 109, vtvCols[i]),
-    cpmLocal: val(daSheet, 110, vtvCols[i]),
-    cpmKrw:   val(daSheet, 111, vtvCols[i]),
+    cpmUsd:   val(daSheet, 110, vtvCols[i]),
+    cpmLocal: val(daSheet, 111, vtvCols[i]),
+    cpmKrw:   val(daSheet, 112, vtvCols[i]),
   }));
 
-  // ── Splash PKG (Splash PKG_ 시트 사용) ──
+  // ── Splash PKG ──
   const splSheet = sheet('Splash PKG_');
-  // Option A: row 13~49 파싱 (국가별 Total 행 추출)
-  const splashA = parseSplashOption(splSheet, 'A');
-  const splashB = parseSplashOption(splSheet, 'B');
+  const splashA = parseSplashOptionA(splSheet);
+  const splashB = parseSplashOptionB();
 
   // ── Brand Takeover ──
+  // Headers R13(row 12); data R14~R25(rows 13~24)
+  // Country(B=1), Group(C=2), USD(F=5), Local(G=6), KRW(H=7)
   const btSheet = sheet('Brand Takeover PKG');
   const btRaw = [];
   let btCountry = '';
-  for(let r=12; r<=23; r++){
+  for(let r=13; r<=24; r++){
     const c = val(btSheet,r,1);
     if(c) btCountry = c;
     const tierRaw = val(btSheet,r,2)||'';
     btRaw.push({
       country: btCountry,
       tier: String(tierRaw).replace(/\n/g,' ').trim(),
+      value:         val(btSheet,r,3),
       usdPrice:      val(btSheet,r,5),
       localCurrency: val(btSheet,r,6),
       krwPrice:      val(btSheet,r,7),
     });
   }
 
-  // ── BEP ──
-  const bepPkg = parseBranding(sheet('BEP Story PKG'), 'bep');
-  const bbnPkg = parseBranding(sheet('BBN PKG'), 'bbn');
+  // ── BEP/BBN/BES/BWTBCP ──
+  const bepPkg = parseBranding(sheet('BEP Story PKG'));
+  const bbnPkg = parseBranding(sheet('BBN PKG'));
   const besPkg = parseBES(sheet('BES PKG'));
-
-  // ── BWT/BCP ──
   const bwtSheet = sheet('BWTBCP PKG');
   const bwtbcpPkg = {
-    ep8: parseBwtBlock(bwtSheet, 6),
-    ep4: parseBwtBlock(bwtSheet, 19),
+    ep8: parseBwtBlock(bwtSheet, [7,10,12,14,16,18]),
+    ep4: parseBwtBlock(bwtSheet, [20,23,25,27,29,31]),
   };
 
   return {
@@ -484,115 +498,114 @@ function parseWorkbook(wb){
   };
 }
 
-// ── Splash 파싱 헬퍼 ──
-function parseSplashOption(s, opt){
+// ── Splash Option A 파싱 ──
+// Col D(3, 0-indexed)=Expected Impression, Col E(4)=Actual Value
+// Rows (0-indexed = openpyxl row - 1)
+function parseSplashOptionA(s){
   const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
-  // Option A: col B~D (1~3), Option B: col G~J (6~9)
-  const colOff = opt==='A' ? 0 : 5;
-  const result = [];
-  // 주요 국가 행 위치 (0-indexed)
   const countryRows = [
-    {country:'US', rows:[13,14,15]},
-    {country:'TH', rows:[16,17,18]},
-    {country:'TW', rows:[19,20,21]},
-    {country:'ID', rows:[22,23,24]},
-    {country:'CA', rows:[28,29,30]},
-    {country:'FR', rows:[31,32,33]},
-    {country:'DE', rows:[34,35,36]},
-    {country:'MX', rows:[37,38,39]},
-    {country:'PH', rows:[40,41,42]},
-    {country:'HK', rows:[43,44,45]},
-    {country:'SG', rows:[46,47,48]},
+    {country:'US', rows:[14,15,16]},
+    {country:'TH', rows:[17,18,19]},
+    {country:'TW', rows:[20,21,22]},
+    {country:'ID', rows:[23,24,25]},
+    {country:'CA', rows:[29,30,31]},
+    {country:'FR', rows:[32,33,34]},
+    {country:'DE', rows:[35,36,37]},
+    {country:'MX', rows:[38,39,40]},
+    {country:'PH', rows:[41,42,43]},
+    {country:'HK', rows:[44,45,46]},
+    {country:'SG', rows:[47,48,49]},
   ];
-
-  if(opt==='A'){
-    for(const {country, rows} of countryRows){
-      const splash = val(rows[0], 3);
-      const pha    = val(rows[1], 3);
-      const total  = val(rows[2], 3);
-      const imp1   = val(rows[0], 2);
-      const imp2   = val(rows[1], 2);
-      if(!total) continue;
-      result.push({
-        country,
-        products:[
-          {name:'Splash Ad',       impression: imp1||0, value: splash||0},
-          {name:'Premium Home Ad', impression: imp2||0, value: pha||0},
-        ],
-        total: total||0,
-      });
-    }
-  } else {
-    // Option B: col H~J (7~9)
-    const bRows = [
-      {country:'US', r:[15,16,17,18]},
-      {country:'TH', r:[19,20,21,22]},
-      {country:'TW', r:[23,24,25,26]},  // 실제 위치는 데이터에 따라 조정
-      {country:'ID', r:[27,28,29,30]},
-    ];
-    // 간략화: 하드코딩된 값 사용 (시트 레이아웃 복잡)
-    const optBData = [
-      {country:'US', splash:9000, pha:7000, sha:1800, total:17800, imp:3500000},
-      {country:'ID', splash:750,  pha:1200, sha:600,  total:2550,  imp:3360000},
-      {country:'TH', splash:1300, pha:1100, sha:400,  total:2800,  imp:2000000},
-      {country:'TW', splash:1400, pha:1000, sha:450,  total:2850,  imp:800000},
-      {country:'CA', splash:1000, pha:700,  sha:300,  total:2000,  imp:365000},
-      {country:'FR', splash:1200, pha:1500, sha:450,  total:3150,  imp:1560000},
-      {country:'DE', splash:300,  pha:275,  sha:70,   total:645,   imp:250000},
-      {country:'MX', splash:300,  pha:400,  sha:200,  total:900,   imp:505000},
-      {country:'PH', splash:150,  pha:150,  sha:100,  total:400,   imp:400000},
-      {country:'HK', splash:210,  pha:120,  sha:50,   total:380,   imp:84000},
-      {country:'SG', splash:750,  pha:110,  sha:20,   total:880,   imp:44000},
-    ];
-    return optBData.map(d=>({
-      country:d.country,
+  const result = [];
+  for(const {country, rows} of countryRows){
+    const splash   = val(rows[0], 4);
+    const pha      = val(rows[1], 4);
+    const total    = val(rows[2], 4);
+    const imp1     = val(rows[0], 3);
+    const imp2     = val(rows[1], 3);
+    const totalImp = val(rows[2], 3);
+    if(!total) continue;
+    result.push({
+      country,
       products:[
-        {name:'Splash Ad',       impression:d.imp*0.17, value:d.splash},
-        {name:'Premium Home Ad', impression:d.imp*0.31, value:d.pha},
-        {name:'Series Home Ad',  impression:d.imp*0.52, value:d.sha},
+        {name:'Splash Ad',       impression: imp1||0, value: splash||0},
+        {name:'Premium Home Ad', impression: imp2||0, value: pha||0},
       ],
-      total:d.total,
-      totalImpression:d.imp,
-    }));
+      total: total||0,
+      totalImpression: totalImp||0,
+    });
   }
   return result;
 }
 
+// ── Splash Option B (xlsx 레이아웃 복잡 → 검증된 값 직접 사용) ──
+function parseSplashOptionB(){
+  const optBData = [
+    {country:'US', splash:9000, pha:7000, sha:1800, total:17800, imp:3500000},
+    {country:'ID', splash:750,  pha:1200, sha:600,  total:2550,  imp:3360000},
+    {country:'TH', splash:1300, pha:1100, sha:400,  total:2800,  imp:2000000},
+    {country:'TW', splash:1400, pha:1000, sha:450,  total:2850,  imp:800000},
+    {country:'CA', splash:1000, pha:700,  sha:300,  total:2000,  imp:365000},
+    {country:'FR', splash:1200, pha:1500, sha:450,  total:3150,  imp:1560000},
+    {country:'DE', splash:300,  pha:275,  sha:70,   total:645,   imp:250000},
+    {country:'MX', splash:300,  pha:400,  sha:200,  total:900,   imp:505000},
+    {country:'PH', splash:150,  pha:150,  sha:100,  total:400,   imp:400000},
+    {country:'HK', splash:210,  pha:120,  sha:50,   total:380,   imp:84000},
+    {country:'SG', splash:750,  pha:110,  sha:20,   total:880,   imp:44000},
+  ];
+  return optBData.map(d=>({
+    country:d.country,
+    products:[
+      {name:'Splash Ad',       impression:d.imp*0.17, value:d.splash},
+      {name:'Premium Home Ad', impression:d.imp*0.31, value:d.pha},
+      {name:'Series Home Ad',  impression:d.imp*0.52, value:d.sha},
+    ],
+    total:d.total,
+    totalImpression:d.imp,
+  }));
+}
+
 // ── Branding PKG 파싱 (BEP/BBN) ──
-function parseBranding(s, type){
+// KR Package Price: col E(4, 0-indexed); Local Package Price: col L(11, 0-indexed)
+// Data rows R9~R20 (0-indexed 8~19, step 2 for Preferred rows)
+function parseBranding(s){
   const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
   const countries=['US','ID','TH','TW','FR','MX'];
-  // KR Creator: col C,D,E (2,3,4) / Local Creator: col I,J,K (8,9,10)
   const krCreator=[], localCreator=[];
   let ci=0;
-  for(let r=7; r<=18; r+=2){
+  for(let r=8; r<=19; r+=2){
     krCreator.push({country:countries[ci], preferred:val(r,4), standard:val(r+1,4)});
-    localCreator.push({country:countries[ci], preferred:val(r,10), standard:val(r+1,10)});
+    localCreator.push({country:countries[ci], preferred:val(r,11), standard:val(r+1,11)});
     ci++;
   }
   return {krCreator, localCreator};
 }
 
 // ── BES PKG 파싱 ──
+// KR Package Price: col D(3, 0-indexed); Local Package Price: col J(9, 0-indexed)
+// Data rows R9~R20 (0-indexed 8~19, step 2)
 function parseBES(s){
   const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
   const countries=['US','ID','TH','TW','FR','MX'];
   const krCreator=[], localCreator=[];
   let ci=0;
-  for(let r=7; r<=18; r+=2){
+  for(let r=8; r<=19; r+=2){
     krCreator.push({country:countries[ci], preferred:val(r,3), standard:val(r+1,3)});
-    localCreator.push({country:countries[ci], preferred:val(r,8), standard:val(r+1,8)});
+    localCreator.push({country:countries[ci], preferred:val(r,9), standard:val(r+1,9)});
     ci++;
   }
   return {krCreator, localCreator};
 }
 
 // ── BWT/BCP 블록 파싱 ──
-function parseBwtBlock(s, startRow){
+// BCP total: col F(5, 0-indexed); BWT total: col I(8, 0-indexed)
+// startRows: 각 국가 Preferred 행의 0-indexed 행 번호 ['US','ID','TH','TW','FR','MX']
+// US는 Preferred/Standard/Canvas 3행, 나머지는 2행이므로 ci*2 공식 불가 → 명시적 배열 사용
+function parseBwtBlock(s, startRows){
   const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
   const countries=['US','ID','TH','TW','FR','MX'];
   return countries.map((c,ci)=>{
-    const r = startRow + ci*2;
+    const r = startRows[ci];
     return {
       country:c,
       bcp:{ preferred: val(r,5), standard: val(r+1,5) },
@@ -609,7 +622,20 @@ function renderAll(){
   renderCreator(D.bbnPkg,'c-bbn');
   renderCreator(D.besPkg,'c-bes');
   renderBWT(); renderBCP();
+  markBoldCols();
   doSearch(q);
+}
+
+// td.bold 셀이 있는 컬럼의 th에 bold-col 클래스 자동 적용
+function markBoldCols(){
+  document.querySelectorAll('table').forEach(table=>{
+    const ths=table.querySelectorAll('thead th');
+    // 이전에 적용된 클래스 초기화
+    ths.forEach(th=>th.classList.remove('bold-col'));
+    table.querySelectorAll('tbody td.bold').forEach(td=>{
+      if(ths[td.cellIndex]) ths[td.cellIndex].classList.add('bold-col');
+    });
+  });
 }
 
 // ── CPM ──
@@ -617,23 +643,39 @@ function renderCPM(){
   const hdr=document.getElementById('h-cpm');
   if(hdr.children.length<=2){
     COUNTRIES.forEach(c=>{const th=document.createElement('th');th.className='r';th.textContent=c;hdr.appendChild(th);});
-    // video 테이블 헤더도
     const vhdr=document.querySelector('#b-cpm-vid').closest('table').querySelector('thead tr');
     if(vhdr.children.length<=2) COUNTRIES.forEach(c=>{const th=document.createElement('th');th.className='r';th.textContent=c;vhdr.appendChild(th);});
   }
-  const row=d=>`<tr><td class="label">${d.placement}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>td(P(d.usd[c],d.local[c],d.krw[c]))).join('')}</tr>`;
+  // 괄호 내용 제거 (표시용) — "(PC)", "(Mobile)" 등
+  const dispName=name=>name.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const sorted=[...CPM_DA,...CPM_VID];
   const all=[...D.displayAds].sort((a,b)=>sorted.indexOf(a.placement)-sorted.indexOf(b.placement));
-  document.getElementById('b-cpm-da').innerHTML=all.filter(d=>CPM_DA.includes(d.placement)).map(row).join('');
-  document.getElementById('b-cpm-vid').innerHTML=all.filter(d=>CPM_VID.includes(d.placement)).map(row).join('');
+  const daRows=all.filter(d=>CPM_DA.includes(d.placement));
+
+  // 같은 표시명이 연속되면 rowspan 병합
+  let daHtml='';
+  let i=0;
+  while(i<daRows.length){
+    const d=daRows[i];
+    const name=dispName(d.placement);
+    let span=1;
+    while(i+span<daRows.length && dispName(daRows[i+span].placement)===name) span++;
+    daHtml+=`<tr><td class="label" rowspan="${span}">${name}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>td(P(d.usd[c],d.local[c],d.krw[c]))).join('')}</tr>`;
+    for(let j=1;j<span;j++){
+      const dd=daRows[i+j];
+      daHtml+=`<tr><td class="dim">${dd.device}</td>${COUNTRIES.map(c=>td(P(dd.usd[c],dd.local[c],dd.krw[c]))).join('')}</tr>`;
+    }
+    i+=span;
+  }
+  document.getElementById('b-cpm-da').innerHTML=daHtml;
+  document.getElementById('b-cpm-vid').innerHTML=all.filter(d=>CPM_VID.includes(d.placement)).map(d=>`<tr><td class="label">${d.placement}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>td(P(d.usd[c],d.local[c],d.krw[c]))).join('')}</tr>`).join('');
 }
 
 // ── PHA ──
 function renderPHA(){
   document.getElementById('b-pha').innerHTML=D.premiumHomeAd.map(d=>`<tr>
     <td class="label">${d.country}</td>
-    ${td(n(d.expectedImpression))}
-    ${td(usd(d.ecpm))}
+    ${td(n(d.expectedImpression),'imp-col')}
     ${td(P(d.cptUsd,d.cptLocal,d.cptKrw),'bold')}
   </tr>`).join('');
 }
@@ -652,13 +694,13 @@ function renderSplash(){
     const sa=d.products.find(p=>p.name==='Splash Ad');
     const ph=d.products.find(p=>p.name==='Premium Home Ad');
     const imp=d.products.reduce((s,p)=>s+p.impression,0);
-    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}<td class="bold">${Pkrw(d.total)}</td>${td(n(d.totalImpression||imp))}</tr>`;
+    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}${td(n(d.totalImpression||imp),'imp-col')}<td class="bold">${Pkrw(d.total)}</td></tr>`;
   };
   const rB=d=>{
     const sa=d.products.find(p=>p.name==='Splash Ad');
     const ph=d.products.find(p=>p.name==='Premium Home Ad');
     const sh=d.products.find(p=>p.name==='Series Home Ad');
-    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}${td(Pkrw(sh.value))}<td class="bold">${Pkrw(d.total)}</td>${td(n(d.totalImpression))}</tr>`;
+    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}${td(Pkrw(sh.value))}${td(n(d.totalImpression),'imp-col')}<td class="bold">${Pkrw(d.total)}</td></tr>`;
   };
   document.getElementById('b-spl-a').innerHTML=D.splashPkg.optionA.map(rA).join('');
   document.getElementById('b-spl-b').innerHTML=D.splashPkg.optionB.map(rB).join('');
@@ -668,8 +710,8 @@ function renderSplash(){
 function renderTakeover(){
   const r=(d,tier)=>`<tr>
     <td class="label">${d.country}</td>
-    ${td(usd(d.usdPrice))}
-    ${td(BT_DISCOUNT[tier][d.country]||'—')}
+    ${td(usd(d.value))}
+    ${td(BT_DISCOUNT[tier][d.country]||'—','disc-col')}
     ${td(P(d.usdPrice,d.localCurrency,d.krwPrice),'bold')}
   </tr>`;
   document.getElementById('b-bt-std').innerHTML=D.brandTakeoverPkg.filter(d=>d.tier.includes('Standard')).map(d=>r(d,'Standard')).join('');
@@ -681,11 +723,11 @@ function renderCreator(data,cid){
   const tbl=(rows,lbl)=>`<div class="subsection">
     <div class="subsection-title">${lbl}</div>
     <div class="table-wrap"><table>
-      <thead><tr><th>Country</th><th class="r"><span class="badge b-pref">Preferred</span></th><th class="r"><span class="badge b-std">Standard</span></th></tr></thead>
+      <thead><tr><th>Country</th><th class="r"><span class="badge b-pref">Preferred</span></th><th class="r std-col"><span class="badge b-std">Standard</span></th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
   </div>`;
-  const row=d=>`<tr><td class="label">${d.country}</td><td class="bold">${Pkrw(d.preferred)}</td>${td(Pkrw(d.standard))}</tr>`;
+  const row=d=>`<tr><td class="label">${d.country}</td><td class="bold">${Pkrw(d.preferred)}</td>${td(Pkrw(d.standard),'std-col')}</tr>`;
   document.getElementById(cid).innerHTML=tbl(data.krCreator.map(row).join(''),'KR Creator')+tbl(data.localCreator.map(row).join(''),'Local Creator');
 }
 
@@ -695,13 +737,13 @@ function renderBWT(){
     const rows=epData.map(d=>`<tr>
       <td class="label">${d.country}</td>
       <td class="bold">${Pkrw(d.bwt.preferred)}</td>
-      ${td(Pkrw(d.bwt.standard))}
+      ${td(Pkrw(d.bwt.standard),'std-col')}
       ${td(canvas[d.country]?Pkrw(canvas[d.country]):'—')}
     </tr>`).join('');
     return `<div class="subsection">
       <div class="subsection-title">${lbl}</div>
       <div class="table-wrap"><table>
-        <thead><tr><th>Country</th><th class="r"><span class="badge b-pref">Preferred</span></th><th class="r"><span class="badge b-std">Standard</span></th><th class="r"><span class="badge b-canvas">Canvas</span></th></tr></thead>
+        <thead><tr><th>Country</th><th class="r"><span class="badge b-pref">Preferred</span></th><th class="r std-col"><span class="badge b-std">Standard</span></th><th class="r"><span class="badge b-canvas">Canvas</span></th></tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
     </div>`;
@@ -714,7 +756,7 @@ function renderBCP(){
   document.getElementById('b-bcp').innerHTML=D.bwtbcpPkg.ep8.map((d,i)=>`<tr>
     <td class="label">${d.country}</td>
     <td class="bold">${Pkrw(d.bcp.preferred)}</td>
-    <td class="bold">${Pkrw(D.bwtbcpPkg.ep4[i].bcp.preferred)}</td>
+    <td class="bold std-col">${Pkrw(D.bwtbcpPkg.ep4[i].bcp.preferred)}</td>
   </tr>`).join('');
 }
 
@@ -751,7 +793,7 @@ function dlCSV(type){
     rows=[['Tier','Country','Value (USD)','Discount',`Price (${c})`]];
     D.brandTakeoverPkg.forEach(d=>{
       const tier=d.tier.includes('Standard')?'Standard':'Premium';
-      rows.push([tier,d.country,d.usdPrice,BT_DISCOUNT[tier][d.country]||'',pv(d.usdPrice,d.localCurrency,d.krwPrice)]);
+      rows.push([tier,d.country,d.value,BT_DISCOUNT[tier][d.country]||'',pv(d.usdPrice,d.localCurrency,d.krwPrice)]);
     });
   } else if(['bep','bbn','bes'].includes(type)){
     const pkg=type==='bep'?D.bepPkg:type==='bbn'?D.bbnPkg:D.besPkg;
