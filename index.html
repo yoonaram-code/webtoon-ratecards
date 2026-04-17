@@ -61,6 +61,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 .section-desc{font-size:13px;color:var(--muted);margin-top:4px;margin-bottom:14px;line-height:1.7}
 .csv-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;font-size:12px;font-weight:600;font-family:var(--font);background:none;border:1px solid var(--border2);border-radius:var(--radius);color:var(--muted);cursor:pointer;transition:all 0.15s;white-space:nowrap;margin-top:2px}
 .csv-btn:hover{background:var(--surface2);color:var(--text);border-color:var(--accent)}
+.guide-link{font-size:12px;font-weight:500;color:#555;text-decoration:underline;margin-left:8px;white-space:nowrap;text-transform:none;letter-spacing:normal}
+.guide-link:hover{color:#1a6fdb}
 
 .subsection{margin-bottom:24px}
 .subsection-title{font-size:12px;font-weight:700;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
@@ -141,14 +143,14 @@ td.search-dim{color:#d1d5db}
         <button class="csv-btn" onclick="dlCSV('cpm')">↓ CSV</button>
       </div>
       <div class="subsection">
-        <div class="subsection-title">Display Ads</div>
+        <div class="subsection-title">Display Ads <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/display-ads" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a></div>
         <div class="table-wrap"><table>
           <thead><tr id="h-cpm"><th>Placement</th><th>Device</th></tr></thead>
           <tbody id="b-cpm-da"></tbody>
         </table></div>
       </div>
       <div class="subsection">
-        <div class="subsection-title">Display Ads Video</div>
+        <div class="subsection-title">Display Ads Video <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/video-ads" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a></div>
         <div class="table-wrap"><table>
           <thead><tr><th>Placement</th><th>Device</th></tr></thead>
           <tbody id="b-cpm-vid"></tbody>
@@ -164,35 +166,19 @@ td.search-dim{color:#d1d5db}
           <div class="section-header">
             <span class="section-title">Premium Home Ad</span>
             <span class="section-tag tag-cpt">CPT</span>
+            <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/display-ads/premium-home-ad" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a>
           </div>
           <p class="section-desc">Est. Impression is a projected figure and is updated every quarter.<br>Country targeting is required.</p>
         </div>
         <button class="csv-btn" onclick="dlCSV('pha')">↓ CSV</button>
       </div>
       <div class="table-wrap"><table>
+        <colgroup><col><col style="width:300px"><col style="width:300px"></colgroup>
         <thead><tr><th>Country</th><th class="r imp-col">Est. Impression</th><th class="r">CPT Price</th></tr></thead>
         <tbody id="b-pha"></tbody>
       </table></div>
     </section>
 
-    <hr class="div">
-
-    <section class="section">
-      <div class="section-top">
-        <div>
-          <div class="section-header">
-            <span class="section-title">Viewer-top Video Ad</span>
-            <span class="section-tag tag-cpm">CPM · 15s Non-skip</span>
-          </div>
-          <p class="section-desc">Mobile 16:9 · Exposed in every free episode (except ep 1–10 per title)</p>
-        </div>
-        <button class="csv-btn" onclick="dlCSV('vtv')">↓ CSV</button>
-      </div>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Country</th><th class="r">CPM Price</th></tr></thead>
-        <tbody id="b-vtv"></tbody>
-      </table></div>
-    </section>
   </div>
 
   <!-- PAGE 2: DISPLAY ADS PACKAGE -->
@@ -204,6 +190,7 @@ td.search-dim{color:#d1d5db}
           <div class="section-header">
             <span class="section-title">Splash Ad Package</span>
             <span class="section-tag tag-pkg">App Launch Takeover</span>
+            <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/display-ads/splash-ad-package" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a>
           </div>
           <p class="section-desc">Package sales only · Country targeting required<br>Est. Impression is a projected figure and is updated on a quarterly basis.</p>
         </div>
@@ -212,6 +199,7 @@ td.search-dim{color:#d1d5db}
       <div class="subsection">
         <div class="subsection-title">Option A — Splash Ad + Premium Home Ad</div>
         <div class="table-wrap"><table>
+          <colgroup><col><col><col><col style="width:200px"><col style="width:200px"></colgroup>
           <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r imp-col">Est. Total Impression</th><th class="r">Total</th></tr></thead>
           <tbody id="b-spl-a"></tbody>
         </table></div>
@@ -219,6 +207,7 @@ td.search-dim{color:#d1d5db}
       <div class="subsection">
         <div class="subsection-title">Option B — Splash Ad + Premium Home Ad + Series Home Ad</div>
         <div class="table-wrap"><table>
+          <colgroup><col><col><col><col><col style="width:200px"><col style="width:200px"></colgroup>
           <thead><tr><th>Country</th><th class="r">Splash Ad</th><th class="r">Premium Home Ad</th><th class="r">Series Home Ad</th><th class="r imp-col">Est. Total Impression</th><th class="r">Total</th></tr></thead>
           <tbody id="b-spl-b"></tbody>
         </table></div>
@@ -264,6 +253,7 @@ td.search-dim{color:#d1d5db}
           <div class="section-header">
             <span class="section-title">Branded Epilogue Story Package (BEP)</span>
             <span class="section-tag tag-pkg">With Creator</span>
+            <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/with-creator-ads/branded-epilogue-story-bep" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a>
           </div>
           <p class="section-desc">Branded story placed in the epilogue section of a webtoon episode</p>
         </div>
@@ -296,6 +286,7 @@ td.search-dim{color:#d1d5db}
           <div class="section-header">
             <span class="section-title">Branded Episode Package (BES)</span>
             <span class="section-tag tag-pkg">With Creator</span>
+            <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/with-creator-ads/branded-episode-bes" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a>
           </div>
           <p class="section-desc">Full branded episode created in collaboration with webtoon creator</p>
         </div>
@@ -312,8 +303,9 @@ td.search-dim{color:#d1d5db}
           <div class="section-header">
             <span class="section-title">Brand Webtoon Package (BWT)</span>
             <span class="section-tag tag-pkg">Original Content</span>
+            <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/with-creator-ads/branded-webtoon-bwt" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a>
           </div>
-          <p class="section-desc">Full webtoon series with DA/Offerwall bundle included · For 20+ episodes, separate discussion required</p>
+          <p class="section-desc">Full webtoon series with DA/Offerwall bundle included · For 20+ episodes, separate discussion required<br><em>Prices below apply to collaboration with local creators. For collaboration with Korean creators, separate discussion is required.</em></p>
         </div>
         <button class="csv-btn" onclick="dlCSV('bwt')">↓ CSV</button>
       </div>
@@ -361,13 +353,22 @@ const BT_DISCOUNT={
 };
 const BWT_CANVAS_8={US:98000};
 const BWT_CANVAS_4={US:61500};
+const FX={US:1,CA:1,ID:16000,TH:35,TW:30,FR:0.85,DE:0.85,MX:1,PH:60,HK:1,SG:1.3};
+const CURSYM={
+  US:'$',CA:'$',MX:'$',LATAM5:'$',SEA:'$','US/CA':'$',
+  ID:'Rp\u00a0','ID/PH':'Rp\u00a0',
+  TH:'\u0e3f',
+  TW:'NT$','TW(HK,SG)':'NT$','TW/HK/SG':'NT$',HK:'NT$',
+  SG:'S$',PH:'\u20b1',MY:'RM\u00a0',
+  FR:'\u20ac',DE:'\u20ac','FR/DE':'\u20ac',EU:'\u20ac',
+};
 
 // ── format ──
-const n=(v)=>{ if(!v&&v!==0) return '—'; const s=typeof v==='string'?v.replace(/^\$/,''):v; const x=parseFloat(s); return isNaN(x)?String(v):x>=1000?x.toLocaleString():(x%1===0?x.toString():x.toFixed(2)); };
+const n=(v)=>{ if(!v&&v!==0) return '—'; const s=typeof v==='string'?v.replace(/^\$/,'').replace(/,/g,''):v; const x=parseFloat(s); return isNaN(x)?String(v):x>=1000?x.toLocaleString():(x%1===0?x.toString():x.toFixed(2)); };
 const usd=(v)=>v||v===0?'$'+n(v):'—';
 const krwFmt=(v)=>v||v===0?'\u20A9'+Math.round(parseFloat(v)).toLocaleString():'—';
 const lcFmt=(v)=>v||v===0?n(v):'—';
-const P=(uv,lv,kv)=>cur==='krw'?krwFmt(kv):cur==='local'?lcFmt(lv):usd(uv);
+const P=(uv,lv,kv,country)=>cur==='krw'?krwFmt(kv):cur==='local'?((CURSYM[country]||'')+lcFmt(lv)):usd(uv);
 const Pkrw=(uv)=>cur==='krw'?krwFmt(parseFloat(uv)*1450):usd(uv);
 const td=(v,cls='r')=>`<td class="${cls}">${v}</td>`;
 
@@ -534,21 +535,25 @@ function parseWorkbook(wb){
   const splashB = parseSplashOptionB();
 
   // ── Brand Takeover ──
-  // Headers R13(row 12); data R14~R25(rows 13~24)
-  // Country(B=1), Group(C=2), USD(F=5), Local(G=6), KRW(H=7)
+  // Summary R14~R25(rows 13~24): Country(B=1), Group(C=2), Value(D=3), USD(F=5), KRW(H=7)
+  // Detail local currency: M(col12)=Standard, AA(col26)=Premium — first Splash Ads row per country
   const btSheet = sheet('Brand Takeover PKG');
+  const btDetailLocalRows = {US:31, ID:36, TH:41, TW:46, FR:51, MX:56};
   const btRaw = [];
   let btCountry = '';
   for(let r=13; r<=24; r++){
     const c = val(btSheet,r,1);
     if(c) btCountry = c;
     const tierRaw = val(btSheet,r,2)||'';
+    const tier = String(tierRaw).replace(/\n/g,' ').trim();
+    const isStd = tier.includes('Standard');
+    const detRow = btDetailLocalRows[btCountry];
     btRaw.push({
       country: btCountry,
-      tier: String(tierRaw).replace(/\n/g,' ').trim(),
+      tier: tier,
       value:         val(btSheet,r,3),
       usdPrice:      val(btSheet,r,5),
-      localCurrency: val(btSheet,r,6),
+      localCurrency: detRow!=null ? val(btSheet, detRow, isStd ? 12 : 26) : val(btSheet,r,6),
       krwPrice:      val(btSheet,r,7),
     });
   }
@@ -559,8 +564,8 @@ function parseWorkbook(wb){
   const besPkg = parseBES(sheet('BES PKG'));
   const bwtSheet = sheet('BWTBCP PKG');
   const bwtbcpPkg = {
-    ep8: parseBwtBlock(bwtSheet, [7,10,12,14,16,18]),
-    ep4: parseBwtBlock(bwtSheet, [20,23,25,27,29,31]),
+    ep8: parseBwtBlock(bwtSheet, [7,10,12,14,16,18], [38,41,43,45,47,49]),
+    ep4: parseBwtBlock(bwtSheet, [20,23,25,27,29,31], [51,54,56,58,60,62]),
   };
 
   return {
@@ -640,57 +645,66 @@ function parseSplashOptionB(){
 }
 
 // ── Branding PKG 파싱 (BEP/BBN) ──
-// KR Package Price: col E(4, 0-indexed); Local Package Price: col L(11, 0-indexed)
-// Data rows R9~R20 (0-indexed 8~19, step 2 for Preferred rows)
+// USD R9~R20 (0-indexed 8~19) / Local +17 offset (rows 25~36) / KRW +34 offset (rows 42~53)
+// KR: col E(4); Local Creator: col L(11)
 function parseBranding(s){
   const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
   const countries=['US','ID','TH','TW','FR','MX'];
   const krCreator=[], localCreator=[];
   let ci=0;
   for(let r=8; r<=19; r+=2){
-    krCreator.push({country:countries[ci], preferred:val(r,4), standard:val(r+1,4)});
-    localCreator.push({country:countries[ci], preferred:val(r,11), standard:val(r+1,11)});
+    krCreator.push({country:countries[ci],
+      preferred:val(r,4),       preferredLocal:val(r+17,4),  preferredKrw:val(r+34,4),
+      standard:val(r+1,4),      standardLocal:val(r+18,4),   standardKrw:val(r+35,4)});
+    localCreator.push({country:countries[ci],
+      preferred:val(r,11),      preferredLocal:val(r+17,11), preferredKrw:val(r+34,11),
+      standard:val(r+1,11),     standardLocal:val(r+18,11),  standardKrw:val(r+35,11)});
     ci++;
   }
   return {krCreator, localCreator};
 }
 
 // ── BES PKG 파싱 ──
-// KR Package Price: col D(3, 0-indexed); Local Package Price: col J(9, 0-indexed)
-// Data rows R9~R20 (0-indexed 8~19, step 2)
+// USD R9~R20 (0-indexed 8~19) / Local +16 offset (rows 24~35) / KRW +32 offset (rows 40~51)
+// KR: col D(3); Local Creator: col J(9)
 function parseBES(s){
   const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
   const countries=['US','ID','TH','TW','FR','MX'];
   const krCreator=[], localCreator=[];
   let ci=0;
   for(let r=8; r<=19; r+=2){
-    krCreator.push({country:countries[ci], preferred:val(r,3), standard:val(r+1,3)});
-    localCreator.push({country:countries[ci], preferred:val(r,9), standard:val(r+1,9)});
+    krCreator.push({country:countries[ci],
+      preferred:val(r,3),       preferredLocal:val(r+16,3),  preferredKrw:val(r+32,3),
+      standard:val(r+1,3),      standardLocal:val(r+17,3),   standardKrw:val(r+33,3)});
+    localCreator.push({country:countries[ci],
+      preferred:val(r,9),       preferredLocal:val(r+16,9),  preferredKrw:val(r+32,9),
+      standard:val(r+1,9),      standardLocal:val(r+17,9),   standardKrw:val(r+33,9)});
     ci++;
   }
   return {krCreator, localCreator};
 }
 
 // ── BWT/BCP 블록 파싱 ──
-// BCP total: col F(5, 0-indexed); BWT total: col I(8, 0-indexed)
-// startRows: 각 국가 Preferred 행의 0-indexed 행 번호 ['US','ID','TH','TW','FR','MX']
-// US는 Preferred/Standard/Canvas 3행, 나머지는 2행이므로 ci*2 공식 불가 → 명시적 배열 사용
-function parseBwtBlock(s, startRows){
+// BCP total: col F(5); BWT total: col I(8)
+// localRows: Local Currency Based 섹션의 국가별 Preferred 행 번호
+function parseBwtBlock(s, startRows, localRows){
   const val=(r,c)=>{ const cell=s[XLSX.utils.encode_cell({r,c})]; return cell?cell.v:null; };
   const countries=['US','ID','TH','TW','FR','MX'];
   return countries.map((c,ci)=>{
     const r = startRows[ci];
+    const lr = localRows ? localRows[ci] : null;
     return {
       country:c,
-      bcp:{ preferred: val(r,5), standard: val(r+1,5) },
-      bwt:{ preferred: val(r,8), standard: val(r+1,8) },
+      bcp:{ preferred: val(r,5), preferredLocal: lr!=null?val(lr,5):null, standard: val(r+1,5) },
+      bwt:{ preferred: val(r,8), preferredLocal: lr!=null?val(lr,8):null,
+            standard: val(r+1,8), standardLocal: lr!=null?val(lr+1,8):null },
     };
   });
 }
 
 // ── render all ──
 function renderAll(){
-  renderCPM(); renderPHA(); renderVTV();
+  renderCPM(); renderPHA();
   renderSplash(); renderTakeover();
   renderCreator(D.bepPkg,'c-bep');
   renderCreator(D.bbnPkg,'c-bbn');
@@ -734,15 +748,15 @@ function renderCPM(){
     const name=dispName(d.placement);
     let span=1;
     while(i+span<daRows.length && dispName(daRows[i+span].placement)===name) span++;
-    daHtml+=`<tr><td class="label" rowspan="${span}">${name}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>`<td class="r" data-c="${c}">${P(d.usd[c],d.local[c],d.krw[c])}</td>`).join('')}</tr>`;
+    daHtml+=`<tr><td class="label" rowspan="${span}">${name}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>`<td class="r" data-c="${c}">${P(d.usd[c],d.local[c],d.krw[c],c)}</td>`).join('')}</tr>`;
     for(let j=1;j<span;j++){
       const dd=daRows[i+j];
-      daHtml+=`<tr><td class="dim">${dd.device}</td>${COUNTRIES.map(c=>`<td class="r" data-c="${c}">${P(dd.usd[c],dd.local[c],dd.krw[c])}</td>`).join('')}</tr>`;
+      daHtml+=`<tr><td class="dim">${dd.device}</td>${COUNTRIES.map(c=>`<td class="r" data-c="${c}">${P(dd.usd[c],dd.local[c],dd.krw[c],c)}</td>`).join('')}</tr>`;
     }
     i+=span;
   }
   document.getElementById('b-cpm-da').innerHTML=daHtml;
-  document.getElementById('b-cpm-vid').innerHTML=all.filter(d=>CPM_VID.includes(d.placement)).map(d=>`<tr><td class="label">${d.placement}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>`<td class="r" data-c="${c}">${P(d.usd[c],d.local[c],d.krw[c])}</td>`).join('')}</tr>`).join('');
+  document.getElementById('b-cpm-vid').innerHTML=all.filter(d=>CPM_VID.includes(d.placement)).map(d=>`<tr><td class="label">${d.placement}</td><td class="dim">${d.device}</td>${COUNTRIES.map(c=>`<td class="r" data-c="${c}">${P(d.usd[c],d.local[c],d.krw[c],c)}</td>`).join('')}</tr>`).join('');
 }
 
 // ── PHA ──
@@ -750,7 +764,7 @@ function renderPHA(){
   document.getElementById('b-pha').innerHTML=D.premiumHomeAd.map(d=>`<tr>
     <td class="label">${d.country}</td>
     ${td(n(d.expectedImpression),'imp-col')}
-    ${td(P(d.cptUsd,d.cptLocal,d.cptKrw),'bold')}
+    ${td(P(d.cptUsd,d.cptLocal,d.cptKrw,d.country),'bold')}
   </tr>`).join('');
 }
 
@@ -758,23 +772,30 @@ function renderPHA(){
 function renderVTV(){
   document.getElementById('b-vtv').innerHTML=D.viewerTopVideo.map(d=>`<tr>
     <td class="label">${d.country}</td>
-    ${td(P(d.cpmUsd,d.cpmLocal,d.cpmKrw),'bold')}
+    ${td(P(d.cpmUsd,d.cpmLocal,d.cpmKrw,d.country),'bold')}
   </tr>`).join('');
 }
 
 // ── SPLASH ──
 function renderSplash(){
+  const Pspl=(country,uv)=>{
+    if(!uv&&uv!==0) return '—';
+    const v=parseFloat(uv);
+    if(cur==='krw') return krwFmt(v*1450);
+    if(cur==='local'){const r=FX[country]||1;const sym=CURSYM[country]||'';return sym+n(r===1?v:Math.round(v*r));}
+    return usd(uv);
+  };
   const rA=d=>{
     const sa=d.products.find(p=>p.name==='Splash Ad');
     const ph=d.products.find(p=>p.name==='Premium Home Ad');
     const imp=d.products.reduce((s,p)=>s+p.impression,0);
-    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}${td(n(d.totalImpression||imp),'imp-col')}<td class="bold">${Pkrw(d.total)}</td></tr>`;
+    return `<tr><td class="label">${d.country}</td>${td(Pspl(d.country,sa.value))}${td(Pspl(d.country,ph.value))}${td(n(d.totalImpression||imp),'imp-col')}<td class="bold">${Pspl(d.country,d.total)}</td></tr>`;
   };
   const rB=d=>{
     const sa=d.products.find(p=>p.name==='Splash Ad');
     const ph=d.products.find(p=>p.name==='Premium Home Ad');
     const sh=d.products.find(p=>p.name==='Series Home Ad');
-    return `<tr><td class="label">${d.country}</td>${td(Pkrw(sa.value))}${td(Pkrw(ph.value))}${td(Pkrw(sh.value))}${td(n(d.totalImpression),'imp-col')}<td class="bold">${Pkrw(d.total)}</td></tr>`;
+    return `<tr><td class="label">${d.country}</td>${td(Pspl(d.country,sa.value))}${td(Pspl(d.country,ph.value))}${td(Pspl(d.country,sh.value))}${td(n(d.totalImpression),'imp-col')}<td class="bold">${Pspl(d.country,d.total)}</td></tr>`;
   };
   document.getElementById('b-spl-a').innerHTML=D.splashPkg.optionA.map(rA).join('');
   document.getElementById('b-spl-b').innerHTML=D.splashPkg.optionB.map(rB).join('');
@@ -786,7 +807,7 @@ function renderTakeover(){
     <td class="label">${d.country}</td>
     ${td(usd(d.value))}
     ${td(BT_DISCOUNT[tier][d.country]||'—','disc-col')}
-    ${td(P(d.usdPrice,d.localCurrency,d.krwPrice),'bold')}
+    ${td(P(d.usdPrice,d.localCurrency,d.krwPrice,d.country),'bold')}
   </tr>`;
   document.getElementById('b-bt-std').innerHTML=D.brandTakeoverPkg.filter(d=>d.tier.includes('Standard')).map(d=>r(d,'Standard')).join('');
   document.getElementById('b-bt-prem').innerHTML=D.brandTakeoverPkg.filter(d=>d.tier.includes('Premium')).map(d=>r(d,'Premium')).join('');
@@ -801,18 +822,24 @@ function renderCreator(data,cid){
       <tbody>${rows}</tbody>
     </table></div>
   </div>`;
-  const row=d=>`<tr><td class="label">${d.country}</td><td class="bold">${Pkrw(d.preferred)}</td>${td(Pkrw(d.standard),'std-col')}</tr>`;
+  const row=d=>`<tr><td class="label">${d.country}</td><td class="bold">${P(d.preferred,d.preferredLocal,d.preferredKrw,d.country)}</td>${td(P(d.standard,d.standardLocal,d.standardKrw,d.country),'std-col')}</tr>`;
   document.getElementById(cid).innerHTML=tbl(data.krCreator.map(row).join(''),'KR Creator')+tbl(data.localCreator.map(row).join(''),'Local Creator');
 }
 
 // ── BWT ──
 function renderBWT(){
+  const Pbwt=(country,uv,lv)=>{
+    if(!uv&&uv!==0) return '—';
+    if(cur==='krw') return krwFmt(parseFloat(uv)*1450);
+    if(cur==='local') return (CURSYM[country]||'')+n(lv!=null?lv:uv);
+    return usd(uv);
+  };
   const tbl=(epData,canvas,lbl)=>{
     const rows=epData.map(d=>`<tr>
       <td class="label">${d.country}</td>
-      <td class="bold">${Pkrw(d.bwt.preferred)}</td>
-      ${td(Pkrw(d.bwt.standard),'std-col')}
-      ${td(canvas[d.country]?Pkrw(canvas[d.country]):'—')}
+      <td class="bold">${Pbwt(d.country,d.bwt.preferred,d.bwt.preferredLocal)}</td>
+      ${td(Pbwt(d.country,d.bwt.standard,d.bwt.standardLocal),'std-col')}
+      ${td(canvas[d.country]?Pbwt(d.country,canvas[d.country],null):'—')}
     </tr>`).join('');
     return `<div class="subsection">
       <div class="subsection-title">${lbl}</div>
@@ -827,10 +854,16 @@ function renderBWT(){
 
 // ── BCP ──
 function renderBCP(){
+  const Pbcp=(country,uv,lv)=>{
+    if(!uv&&uv!==0) return '—';
+    if(cur==='krw') return krwFmt(parseFloat(uv)*1450);
+    if(cur==='local') return (CURSYM[country]||'')+n(lv!=null?lv:uv);
+    return usd(uv);
+  };
   document.getElementById('b-bcp').innerHTML=D.bwtbcpPkg.ep8.map((d,i)=>`<tr>
     <td class="label">${d.country}</td>
-    <td class="bold">${Pkrw(d.bcp.preferred)}</td>
-    <td class="bold std-col">${Pkrw(D.bwtbcpPkg.ep4[i].bcp.preferred)}</td>
+    <td class="bold">${Pbcp(d.country,d.bcp.preferred,d.bcp.preferredLocal)}</td>
+    <td class="bold std-col">${Pbcp(D.bwtbcpPkg.ep4[i].country,D.bwtbcpPkg.ep4[i].bcp.preferred,D.bwtbcpPkg.ep4[i].bcp.preferredLocal)}</td>
   </tr>`).join('');
 }
 
@@ -851,17 +884,18 @@ function dlCSV(type){
     rows=[['Country',`CPM (${c})`]];
     D.viewerTopVideo.forEach(d=>rows.push([d.country,pv(d.cpmUsd,d.cpmLocal,d.cpmKrw)]));
   } else if(type==='splash'){
+    const psplCsv=(country,uv)=>{const v=parseFloat(uv);if(cur==='krw')return Math.round(v*1450);if(cur==='local'){const r=FX[country]||1;return r===1?v:Math.round(v*r);}return uv;};
     rows=[['Option','Country','Splash Ad','Premium Home Ad','Series Home Ad','Total','Est. Impression']];
     D.splashPkg.optionA.forEach(d=>{
       const sa=d.products.find(p=>p.name==='Splash Ad');
       const ph=d.products.find(p=>p.name==='Premium Home Ad');
-      rows.push(['A',d.country,pkrw(sa.value),pkrw(ph.value),'',pkrw(d.total),d.totalImpression||d.products.reduce((s,p)=>s+p.impression,0)]);
+      rows.push(['A',d.country,psplCsv(d.country,sa.value),psplCsv(d.country,ph.value),'',psplCsv(d.country,d.total),d.totalImpression||d.products.reduce((s,p)=>s+p.impression,0)]);
     });
     D.splashPkg.optionB.forEach(d=>{
       const sa=d.products.find(p=>p.name==='Splash Ad');
       const ph=d.products.find(p=>p.name==='Premium Home Ad');
       const sh=d.products.find(p=>p.name==='Series Home Ad');
-      rows.push(['B',d.country,pkrw(sa.value),pkrw(ph.value),pkrw(sh.value),pkrw(d.total),d.totalImpression]);
+      rows.push(['B',d.country,psplCsv(d.country,sa.value),psplCsv(d.country,ph.value),psplCsv(d.country,sh.value),psplCsv(d.country,d.total),d.totalImpression]);
     });
   } else if(type==='takeover'){
     rows=[['Tier','Country','Value (USD)','Discount',`Price (${c})`]];
