@@ -101,6 +101,14 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
 .toc-item{display:block;width:100%;background:none;border:none;border-left:2px solid var(--border);text-align:left;font-size:11px;font-family:var(--font);color:var(--muted);padding:4px 6px 4px 10px;cursor:pointer;line-height:1.4;transition:color 0.15s,border-color 0.15s;margin-bottom:2px;white-space:normal;word-break:keep-all}
 .toc-item:hover{color:var(--text);border-left-color:var(--border2)}
 .toc-item.toc-active{color:var(--text);font-weight:600;border-left-color:var(--accent)}
+.toc-filter{margin-top:18px;padding-top:14px;border-top:1px solid var(--border)}
+.toc-filter-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-left:2px}
+.toc-filter-chips{display:flex;flex-wrap:wrap;gap:4px}
+.filter-chip{font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;border:1px solid var(--border2);background:none;color:var(--muted);cursor:pointer;font-family:var(--font);transition:all 0.15s;line-height:1.6}
+.filter-chip.active{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.filter-chip:hover:not(.active){background:var(--surface2);color:var(--text)}
+.filter-reset{display:block;margin-top:8px;font-size:10px;color:var(--muted);cursor:pointer;background:none;border:none;font-family:var(--font);padding:0;text-decoration:underline;text-align:left}
+.filter-reset:hover{color:var(--text)}
 td.search-dim{color:#d1d5db}
 </style>
 </head>
@@ -116,7 +124,7 @@ td.search-dim{color:#d1d5db}
   <div class="controls">
     <div class="search-wrap">
       <span class="search-icon">⌕</span>
-      <input class="search-input" id="q" type="text" placeholder="Search…" oninput="doSearch(this.value)">
+      <input class="search-input" id="q" type="text" placeholder="Search…" oninput="handleSearch(this.value)">
     </div>
     <div class="seg" id="cseg">
       <button class="active" onclick="setCur('usd')">USD</button>
@@ -337,12 +345,19 @@ td.search-dim{color:#d1d5db}
 <nav class="toc" id="toc">
   <div class="toc-label">Index</div>
   <div id="toc-list"></div>
+  <div class="toc-filter">
+    <div class="toc-filter-label">Countries</div>
+    <div class="toc-filter-chips" id="filter-chips"></div>
+    <button class="filter-reset" onclick="clearCountryFilter()">Clear filter</button>
+  </div>
 </nav>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
 const XLSX_URL='./ratecard.xlsx';
 let D=null, cur='usd', q='';
+let selectedCountries=new Set();
+const FILTER_COUNTRIES=['US','CA','ID','TH','TW','HK','SG','FR','DE','MX','PH','MY','LATAM5','SEA','EU'];
 
 const COUNTRIES=['US/CA','ID','TH','TW(HK,SG)','MX','LATAM5','FR/DE','SEA','EU'];
 const CPM_DA=['Viewer-end Ad (Mobile)','Viewer-end Ad (PC)','Series Home Ad','More Tab Ad','PC Leader Board Ad'];
@@ -428,32 +443,109 @@ function setCur(c){
   if(D) renderAll();
 }
 
-// ── search ──
-function doSearch(v){
-  q=v.toLowerCase().trim();
-  // 이전 dim 초기화
-  document.querySelectorAll('.search-dim').forEach(el=>el.classList.remove('search-dim'));
-  document.querySelectorAll('tbody tr').forEach(r=>{
-    r.classList.remove('hidden-row');
-    if(!q) return;
-    const countryCells=[...r.querySelectorAll('[data-c]')];
-    if(countryCells.length>0){
-      // 컬럼 기반 테이블(CPM): 매칭되는 국가 컬럼만 강조, 나머지 흐리게
-      const colMatch=countryCells.some(td=>td.dataset.c.toLowerCase().includes(q));
-      if(colMatch){
-        countryCells.forEach(td=>{
-          if(!td.dataset.c.toLowerCase().includes(q)) td.classList.add('search-dim');
-        });
-      } else {
-        // 국가 컬럼 미매칭 → placement명 등 행 텍스트로 폴백
-        if(!r.textContent.toLowerCase().includes(q)) r.classList.add('hidden-row');
-      }
-    } else {
-      // 행 기반 테이블(PHA, VTV 등): 기존 방식 그대로
-      if(!r.textContent.toLowerCase().includes(q)) r.classList.add('hidden-row');
-    }
+// ── country filter ──
+function buildFilterChips(){
+  document.getElementById('filter-chips').innerHTML=FILTER_COUNTRIES.map(c=>
+    `<button class="filter-chip" data-country="${c}" onclick="toggleCountry('${c}')">${c}</button>`
+  ).join('');
+}
+function toggleCountry(c){
+  if(selectedCountries.has(c)) selectedCountries.delete(c);
+  else selectedCountries.add(c);
+  updateChipUI();
+  applyCountryFilter();
+}
+function clearCountryFilter(){
+  selectedCountries.clear();
+  updateChipUI();
+  applyCountryFilter();
+}
+function updateChipUI(){
+  document.querySelectorAll('.filter-chip').forEach(btn=>{
+    btn.classList.toggle('active',selectedCountries.has(btn.dataset.country));
   });
 }
+function cMatch(label){
+  if(selectedCountries.size===0) return true;
+  const parts=label.trim().split(/[\/,\(\)\s]+/).filter(Boolean);
+  for(const c of selectedCountries){ if(parts.includes(c)) return true; }
+  return false;
+}
+// ── unified filter (search + country) ──
+function applyFilters(){
+  document.querySelectorAll('.search-dim').forEach(el=>el.classList.remove('search-dim'));
+
+  // sections whose title matches q
+  const titleSecs=new Set();
+  if(q){
+    document.querySelectorAll('.section').forEach(sec=>{
+      const t=sec.querySelector('.section-title');
+      if(t&&t.textContent.toLowerCase().includes(q)) titleSecs.add(sec);
+    });
+  }
+
+  document.querySelectorAll('tbody tr').forEach(tr=>{
+    const cells=[...tr.querySelectorAll('[data-c]')];
+    if(cells.length){
+      // CPM column-based: filter by row text, dim non-matching country cols
+      if(!q||titleSecs.size>0){
+        tr.style.display='';
+      } else {
+        const colHit=cells.some(td=>td.dataset.c.toLowerCase().includes(q));
+        const rowHit=tr.textContent.toLowerCase().includes(q);
+        if(colHit){
+          tr.style.display='';
+          cells.forEach(td=>{if(!td.dataset.c.toLowerCase().includes(q))td.classList.add('search-dim');});
+        } else {
+          tr.style.display=rowHit?'':'none';
+        }
+      }
+      return;
+    }
+    // Row-based: apply both search and country filter
+    const lbl=tr.querySelector('td.label');
+    if(!lbl){tr.style.display='';return;}
+    const countryOk=selectedCountries.size===0||cMatch(lbl.textContent);
+    let searchOk=true;
+    if(q){
+      if(titleSecs.size>0) searchOk=[...titleSecs].some(s=>s.contains(tr));
+      else searchOk=tr.textContent.toLowerCase().includes(q);
+    }
+    tr.style.display=(countryOk&&searchOk)?'':'none';
+  });
+
+  // CPM column country filter
+  document.querySelectorAll('table').forEach(tbl=>{
+    if(!tbl.querySelector('td[data-c]')) return;
+    tbl.querySelectorAll('thead th').forEach(th=>{
+      const c=th.textContent.trim();
+      if(!FILTER_COUNTRIES.some(fc=>c.split(/[\/,\(\)\s]+/).includes(fc))) return;
+      const show=selectedCountries.size===0||cMatch(c);
+      th.style.display=show?'':'none';
+      tbl.querySelectorAll(`td[data-c="${c}"]`).forEach(td=>td.style.display=show?'':'none');
+    });
+  });
+}
+function applyCountryFilter(){ applyFilters(); }
+
+// ── search ──
+function handleSearch(v){
+  q=v.toLowerCase().trim();
+  if(q){
+    const pages=[...document.querySelectorAll('.page')];
+    const cur=pages.findIndex(p=>p.classList.contains('active'));
+    if(cur!==-1&&!pages[cur].textContent.toLowerCase().includes(q)){
+      const target=pages.findIndex(p=>p.textContent.toLowerCase().includes(q));
+      if(target!==-1){
+        document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('active',j===target));
+        pages.forEach((p,j)=>p.classList.toggle('active',j===target));
+        buildTOC(target);
+      }
+    }
+  }
+  applyFilters();
+}
+function doSearch(v){ q=v.toLowerCase().trim(); applyFilters(); }
 
 // ── xlsx fetch & parse ──
 async function fetchData(){
@@ -711,7 +803,7 @@ function renderAll(){
   renderCreator(D.besPkg,'c-bes');
   renderBWT(); renderBCP();
   markBoldCols();
-  doSearch(q);
+  applyFilters();
 }
 
 // td.bold 셀이 있는 컬럼의 th에 bold-col 클래스 자동 적용
@@ -925,6 +1017,7 @@ function dlCSV(type){
 
 fetchData();
 buildTOC(0);
+buildFilterChips();
 </script>
 </body>
 </html>
