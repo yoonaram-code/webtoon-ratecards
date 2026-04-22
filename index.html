@@ -238,14 +238,14 @@ td.search-dim{color:#d1d5db}
       <div class="subsection">
         <div class="subsection-title">Standard — Image-Oriented</div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r disc-col">Discount</th><th class="r">Package Price</th></tr></thead>
+          <thead><tr><th>Country</th><th class="r bt-val-hdr">Value (USD)</th><th class="r disc-col">Discount</th><th class="r">Package Price</th></tr></thead>
           <tbody id="b-bt-std"></tbody>
         </table></div>
       </div>
       <div class="subsection">
         <div class="subsection-title">Premium — Video-Integrated</div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Country</th><th class="r">Value (USD)</th><th class="r disc-col">Discount</th><th class="r">Package Price</th></tr></thead>
+          <thead><tr><th>Country</th><th class="r bt-val-hdr">Value (USD)</th><th class="r disc-col">Discount</th><th class="r">Package Price</th></tr></thead>
           <tbody id="b-bt-prem"></tbody>
         </table></div>
       </div>
@@ -627,10 +627,8 @@ function parseWorkbook(wb){
   const splashB = parseSplashOptionB();
 
   // ── Brand Takeover ──
-  // Summary R14~R25(rows 13~24): Country(B=1), Group(C=2), Value(D=3), USD(F=5), KRW(H=7)
-  // Detail local currency: M(col12)=Standard, AA(col26)=Premium — first Splash Ads row per country
+  // Summary R14~R25(rows 13~24): Country(B=1), Group(C=2), Value(D=3), USD(F=5), Local(G=6), KRW(H=7)
   const btSheet = sheet('Brand Takeover PKG');
-  const btDetailLocalRows = {US:31, ID:36, TH:41, TW:46, FR:51, MX:56};
   const btRaw = [];
   let btCountry = '';
   for(let r=13; r<=24; r++){
@@ -638,14 +636,12 @@ function parseWorkbook(wb){
     if(c) btCountry = c;
     const tierRaw = val(btSheet,r,2)||'';
     const tier = String(tierRaw).replace(/\n/g,' ').trim();
-    const isStd = tier.includes('Standard');
-    const detRow = btDetailLocalRows[btCountry];
     btRaw.push({
       country: btCountry,
       tier: tier,
       value:         val(btSheet,r,3),
       usdPrice:      val(btSheet,r,5),
-      localCurrency: detRow!=null ? val(btSheet, detRow, isStd ? 12 : 26) : val(btSheet,r,6),
+      localCurrency: val(btSheet,r,6),
       krwPrice:      val(btSheet,r,7),
     });
   }
@@ -659,6 +655,12 @@ function parseWorkbook(wb){
     ep8: parseBwtBlock(bwtSheet, [7,10,12,14,16,18], [38,41,43,45,47,49]),
     ep4: parseBwtBlock(bwtSheet, [20,23,25,27,29,31], [51,54,56,58,60,62]),
   };
+
+  // ── Manual corrections ──
+  const moreTab=displayAds.find(d=>d.placement==='More Tab Ad');
+  if(moreTab) moreTab.usd['TW(HK,SG)']=38;
+  const deRow=premiumHomeAd.find(d=>d.country==='DE');
+  if(deRow) deRow.cptUsd=234;
 
   return {
     meta: { lastUpdate: match?match[1]:'' },
@@ -895,9 +897,18 @@ function renderSplash(){
 
 // ── TAKEOVER ──
 function renderTakeover(){
+  const Pval=(country,uv)=>{
+    if(!uv&&uv!==0) return '—';
+    const v=parseFloat(uv);
+    if(cur==='krw') return krwFmt(v*1450);
+    if(cur==='local'){const rate=FX[country]||1;const sym=CURSYM[country]||'';return sym+n(rate===1?v:Math.round(v*rate));}
+    return usd(uv);
+  };
+  const curLabel=cur==='krw'?'KRW':cur==='local'?'Local':'USD';
+  document.querySelectorAll('.bt-val-hdr').forEach(th=>th.textContent=`Value (${curLabel})`);
   const r=(d,tier)=>`<tr>
     <td class="label">${d.country}</td>
-    ${td(usd(d.value))}
+    ${td(Pval(d.country,d.value))}
     ${td(BT_DISCOUNT[tier][d.country]||'—','disc-col')}
     ${td(P(d.usdPrice,d.localCurrency,d.krwPrice,d.country),'bold')}
   </tr>`;
