@@ -110,6 +110,11 @@ hr.div{border:none;border-top:1px solid var(--border);margin:40px 0}
 .filter-reset{display:block;margin-top:8px;font-size:10px;color:var(--muted);cursor:pointer;background:none;border:none;font-family:var(--font);padding:0;text-decoration:underline;text-align:left}
 .filter-reset:hover{color:var(--text)}
 td.search-dim{color:#d1d5db}
+.tag-cpa{background:#ede9fe;color:#6d28d9}
+.tag-cps{background:#fce7f3;color:#9d174d}
+.ow-platform-bar{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.ow-platform-label{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+.ow-platform-countries{font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -120,6 +125,7 @@ td.search-dim{color:#d1d5db}
     <button class="tab-btn active" onclick="switchTab(0)">Display Ads</button>
     <button class="tab-btn" onclick="switchTab(1)">Display Ads Package</button>
     <button class="tab-btn" onclick="switchTab(2)">With Creator Package</button>
+    <button class="tab-btn" onclick="switchTab(3)">Offerwall</button>
   </nav>
   <div class="controls">
     <div class="search-wrap">
@@ -340,6 +346,238 @@ td.search-dim{color:#d1d5db}
     </section>
   </div>
 
+  <!-- PAGE 4: OFFERWALL -->
+  <div class="page" id="p3">
+
+    <div style="margin-bottom:8px">
+      <div class="section-header" style="margin-bottom:6px">
+        <span class="section-title" style="font-size:26px">Treasure Hunt / Coin Hunter</span>
+        <span class="section-tag tag-pkg">Offerwall</span>
+        <a class="guide-link" href="https://guides.advertising.webtoon.com/J1suphMzPP344bYELGyP/creative-guidelines/treasure-hunt-coin-hunter-offer-wall" target="_blank" rel="noopener">↗ Product Detail &amp; Creative Guide</a>
+      </div>
+      <p class="section-desc">The unit prices listed below are the minimum rates per action and are subject to upward adjustment upon discussion to optimize campaign performance.</p>
+    </div>
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title" style="font-size:18px">Single Mission</span>
+            <span class="section-tag tag-cpa">CPA</span>
+          </div>
+        </div>
+      </div>
+      <div class="ow-platform-bar">
+        <span class="ow-platform-label">Platform</span>
+        <div class="seg">
+          <button class="active" onclick="setPlatformSection(this.closest('.section'),'en')">EN Platform</button>
+          <button onclick="setPlatformSection(this.closest('.section'),'other')">Other Language</button>
+        </div>
+        <span class="ow-platform-countries">US · CA · PH · IN · MY</span>
+      </div>
+      <div class="ow-en">
+        <div class="subsection">
+          <div class="subsection-title">EN Platform · US, CA, PH, IN, MY</div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Category</th><th>Action Details</th><th class="r">US</th><th class="r">CA</th><th class="r">PH</th><th class="r">IN</th><th class="r">MY</th></tr></thead>
+            <tbody>
+              <tr><td class="label">App Launch</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+              <tr><td class="label" rowspan="2">Registration</td><td class="dim">Simple Registration</td><td class="r">$2.00</td><td class="r">$2.00</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
+              <tr><td class="dim">—</td><td class="r">$3.00</td><td class="r">$3.00</td><td class="r">$1.00</td><td class="r">$0.60</td><td class="r">$1.00</td></tr>
+              <tr><td class="label" rowspan="2">Subscription</td><td class="dim">FB / IG / X / TT / YT</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+              <tr><td class="dim">LinkedIn</td><td class="r">$2.00</td><td class="r">$1.50</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
+              <tr><td class="label">Add Stream Wishlist</td><td class="dim">—</td><td class="r">$1.50</td><td class="r">$1.50</td><td class="r">$0.50</td><td class="r">$0.30</td><td class="r">$0.50</td></tr>
+              <tr><td class="label">CPQ (Quiz)</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+              <tr><td class="label">Game Pre-registration</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+      <div class="ow-other" style="display:none">
+        <div class="subsection">
+          <div class="subsection-title">Other Language · TW, ID, TH, FR, MX</div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Category</th><th>Action Details</th><th class="r">TW</th><th class="r">ID</th><th class="r">TH</th><th class="r">FR</th><th class="r">MX</th></tr></thead>
+            <tbody>
+              <tr><td class="label">App Launch</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+              <tr><td class="label" rowspan="2">Registration</td><td class="dim">Simple Registration</td><td class="r">$0.80</td><td class="r">$0.50</td><td class="r">$0.70</td><td class="r">$1.00</td><td class="r">$0.80</td></tr>
+              <tr><td class="dim">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td></tr>
+              <tr><td class="label" rowspan="2">Subscription</td><td class="dim">FB / IG / X / TT / YT</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+              <tr><td class="dim">LinkedIn</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td></tr>
+              <tr><td class="label">Add Stream Wishlist</td><td class="dim">—</td><td class="r">$0.60</td><td class="r">$0.40</td><td class="r">$0.50</td><td class="r">$0.75</td><td class="r">$0.60</td></tr>
+              <tr><td class="label">CPQ (Quiz)</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+              <tr><td class="label">Game Pre-registration</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title" style="font-size:18px">Multi Mission — Casual Game</span>
+            <span class="section-tag tag-cpa">CPA</span>
+          </div>
+          <p class="section-desc">Minimum unit price guidelines based on average time to complete the mission · Can be increased through further consultation</p>
+        </div>
+      </div>
+      <div class="ow-platform-bar">
+        <span class="ow-platform-label">Platform</span>
+        <div class="seg">
+          <button class="active" onclick="setPlatformSection(this.closest('.section'),'en')">EN Platform</button>
+          <button onclick="setPlatformSection(this.closest('.section'),'other')">Other Language</button>
+        </div>
+        <span class="ow-platform-countries">US · CA · PH · IN · MY</span>
+      </div>
+      <div class="ow-en">
+        <div class="subsection">
+          <div class="subsection-title">EN Platform · US, CA, PH, IN, MY</div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Completion Time</th><th class="r">US</th><th class="r">CA</th><th class="r">PH</th><th class="r">IN</th><th class="r">MY</th></tr></thead>
+            <tbody>
+              <tr><td class="label">~10 mins</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+              <tr><td class="label">~30 mins</td><td class="r">$1.50</td><td class="r">$1.50</td><td class="r">$0.53</td><td class="r">$0.30</td><td class="r">$0.53</td></tr>
+              <tr><td class="label">~1 hour</td><td class="r">$3.00</td><td class="r">$3.00</td><td class="r">$1.05</td><td class="r">$0.60</td><td class="r">$1.05</td></tr>
+              <tr><td class="label">~3 hours</td><td class="r">$5.00</td><td class="r">$5.00</td><td class="r">$1.75</td><td class="r">$1.00</td><td class="r">$1.75</td></tr>
+              <tr><td class="label">~6 hours</td><td class="r">$8.00</td><td class="r">$8.00</td><td class="r">$2.80</td><td class="r">$1.60</td><td class="r">$2.80</td></tr>
+              <tr><td class="label">~12 hours</td><td class="r">$15.00</td><td class="r">$15.00</td><td class="r">$5.25</td><td class="r">$3.00</td><td class="r">$5.25</td></tr>
+              <tr><td class="label">~1 day</td><td class="r">$20.00</td><td class="r">$20.00</td><td class="r">$7.00</td><td class="r">$4.00</td><td class="r">$7.00</td></tr>
+              <tr><td class="label">~3 days</td><td class="r">$28.00</td><td class="r">$28.00</td><td class="r">$9.80</td><td class="r">$5.60</td><td class="r">$9.80</td></tr>
+              <tr><td class="label">~5 days</td><td class="r">$36.00</td><td class="r">$36.00</td><td class="r">$12.60</td><td class="r">$7.20</td><td class="r">$12.60</td></tr>
+              <tr><td class="label">~7 days</td><td class="r">$44.00</td><td class="r">$44.00</td><td class="r">$15.40</td><td class="r">$8.80</td><td class="r">$15.40</td></tr>
+              <tr><td class="label">~10 days</td><td class="r">$56.00</td><td class="r">$56.00</td><td class="r">$19.60</td><td class="r">$11.20</td><td class="r">$19.60</td></tr>
+              <tr><td class="label">~15 days</td><td class="r">$76.00</td><td class="r">$76.00</td><td class="r">$26.60</td><td class="r">$15.20</td><td class="r">$26.60</td></tr>
+              <tr><td class="label">~20 days</td><td class="r">$96.00</td><td class="r">$96.00</td><td class="r">$33.60</td><td class="r">$19.20</td><td class="r">$33.60</td></tr>
+              <tr><td class="label">~30 days</td><td class="r">$136.00</td><td class="r">$136.00</td><td class="r">$47.60</td><td class="r">$27.20</td><td class="r">$47.60</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+      <div class="ow-other" style="display:none">
+        <div class="subsection">
+          <div class="subsection-title">Other Language · TW, ID, TH, FR, MX</div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Completion Time</th><th class="r">TW</th><th class="r">ID</th><th class="r">TH</th><th class="r">FR</th><th class="r">MX</th></tr></thead>
+            <tbody>
+              <tr><td class="label">~10 mins</td><td class="r">$0.60</td><td class="r">$0.30</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+              <tr><td class="label">~30 mins</td><td class="r">$0.90</td><td class="r">$0.45</td><td class="r">$0.53</td><td class="r">$0.75</td><td class="r">$0.60</td></tr>
+              <tr><td class="label">~1 hour</td><td class="r">$1.80</td><td class="r">$0.90</td><td class="r">$1.05</td><td class="r">$1.50</td><td class="r">$1.20</td></tr>
+              <tr><td class="label">~3 hours</td><td class="r">$3.00</td><td class="r">$1.50</td><td class="r">$1.75</td><td class="r">$2.50</td><td class="r">$2.00</td></tr>
+              <tr><td class="label">~6 hours</td><td class="r">$4.80</td><td class="r">$2.40</td><td class="r">$2.80</td><td class="r">$4.00</td><td class="r">$3.20</td></tr>
+              <tr><td class="label">~12 hours</td><td class="r">$9.00</td><td class="r">$4.50</td><td class="r">$5.25</td><td class="r">$7.50</td><td class="r">$6.00</td></tr>
+              <tr><td class="label">~1 day</td><td class="r">$12.00</td><td class="r">$6.00</td><td class="r">$7.00</td><td class="r">$10.00</td><td class="r">$8.00</td></tr>
+              <tr><td class="label">~3 days</td><td class="r">$16.80</td><td class="r">$8.40</td><td class="r">$9.80</td><td class="r">$14.00</td><td class="r">$11.20</td></tr>
+              <tr><td class="label">~5 days</td><td class="r">$21.60</td><td class="r">$10.80</td><td class="r">$12.60</td><td class="r">$18.00</td><td class="r">$14.40</td></tr>
+              <tr><td class="label">~7 days</td><td class="r">$26.40</td><td class="r">$13.20</td><td class="r">$15.40</td><td class="r">$22.00</td><td class="r">$17.60</td></tr>
+              <tr><td class="label">~10 days</td><td class="r">$33.60</td><td class="r">$16.80</td><td class="r">$19.60</td><td class="r">$28.00</td><td class="r">$22.40</td></tr>
+              <tr><td class="label">~15 days</td><td class="r">$45.60</td><td class="r">$22.80</td><td class="r">$26.60</td><td class="r">$38.00</td><td class="r">$30.40</td></tr>
+              <tr><td class="label">~20 days</td><td class="r">$57.60</td><td class="r">$28.80</td><td class="r">$33.60</td><td class="r">$48.00</td><td class="r">$38.40</td></tr>
+              <tr><td class="label">~30 days</td><td class="r">$81.60</td><td class="r">$40.80</td><td class="r">$47.60</td><td class="r">$68.00</td><td class="r">$54.40</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title" style="font-size:18px">Multi Mission — Non-Casual Game</span>
+            <span class="section-tag tag-cpa">CPA</span>
+          </div>
+          <p class="section-desc">Minimum unit price guidelines based on average time to complete the mission · Can be increased through further consultation</p>
+        </div>
+      </div>
+      <div class="ow-platform-bar">
+        <span class="ow-platform-label">Platform</span>
+        <div class="seg">
+          <button class="active" onclick="setPlatformSection(this.closest('.section'),'en')">EN Platform</button>
+          <button onclick="setPlatformSection(this.closest('.section'),'other')">Other Language</button>
+        </div>
+        <span class="ow-platform-countries">US · CA · PH · IN · MY</span>
+      </div>
+      <div class="ow-en">
+        <div class="subsection">
+          <div class="subsection-title">EN Platform · US, CA, PH, IN, MY</div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Completion Time</th><th class="r">US</th><th class="r">CA</th><th class="r">PH</th><th class="r">IN</th><th class="r">MY</th></tr></thead>
+            <tbody>
+              <tr><td class="label">~10 mins</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+              <tr><td class="label">~30 mins</td><td class="r">$2.00</td><td class="r">$2.00</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
+              <tr><td class="label">~1 hour</td><td class="r">$4.00</td><td class="r">$4.00</td><td class="r">$1.40</td><td class="r">$0.80</td><td class="r">$1.40</td></tr>
+              <tr><td class="label">~3 hours</td><td class="r">$7.00</td><td class="r">$7.00</td><td class="r">$2.45</td><td class="r">$1.40</td><td class="r">$2.45</td></tr>
+              <tr><td class="label">~6 hours</td><td class="r">$10.00</td><td class="r">$10.00</td><td class="r">$3.50</td><td class="r">$2.00</td><td class="r">$3.50</td></tr>
+              <tr><td class="label">~12 hours</td><td class="r">$20.00</td><td class="r">$20.00</td><td class="r">$7.00</td><td class="r">$4.00</td><td class="r">$7.00</td></tr>
+              <tr><td class="label">~1 day</td><td class="r">$26.00</td><td class="r">$26.00</td><td class="r">$9.10</td><td class="r">$5.20</td><td class="r">$9.10</td></tr>
+              <tr><td class="label">~3 days</td><td class="r">$36.00</td><td class="r">$36.00</td><td class="r">$12.60</td><td class="r">$7.20</td><td class="r">$12.60</td></tr>
+              <tr><td class="label">~5 days</td><td class="r">$47.00</td><td class="r">$47.00</td><td class="r">$16.45</td><td class="r">$9.40</td><td class="r">$16.45</td></tr>
+              <tr><td class="label">~7 days</td><td class="r">$57.00</td><td class="r">$57.00</td><td class="r">$19.95</td><td class="r">$11.40</td><td class="r">$19.95</td></tr>
+              <tr><td class="label">~10 days</td><td class="r">$73.00</td><td class="r">$73.00</td><td class="r">$25.55</td><td class="r">$14.60</td><td class="r">$25.55</td></tr>
+              <tr><td class="label">~15 days</td><td class="r">$99.00</td><td class="r">$99.00</td><td class="r">$34.65</td><td class="r">$19.80</td><td class="r">$34.65</td></tr>
+              <tr><td class="label">~20 days</td><td class="r">$125.00</td><td class="r">$125.00</td><td class="r">$43.75</td><td class="r">$25.00</td><td class="r">$43.75</td></tr>
+              <tr><td class="label">~30 days</td><td class="r">$177.00</td><td class="r">$177.00</td><td class="r">$61.95</td><td class="r">$35.40</td><td class="r">$61.95</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+      <div class="ow-other" style="display:none">
+        <div class="subsection">
+          <div class="subsection-title">Other Language · TW, ID, TH, FR, MX</div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Completion Time</th><th class="r">TW</th><th class="r">ID</th><th class="r">TH</th><th class="r">FR</th><th class="r">MX</th></tr></thead>
+            <tbody>
+              <tr><td class="label">~10 mins</td><td class="r">$0.60</td><td class="r">$0.30</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+              <tr><td class="label">~30 mins</td><td class="r">$1.20</td><td class="r">$0.60</td><td class="r">$0.70</td><td class="r">$1.00</td><td class="r">$0.80</td></tr>
+              <tr><td class="label">~1 hour</td><td class="r">$2.40</td><td class="r">$1.20</td><td class="r">$1.40</td><td class="r">$2.00</td><td class="r">$1.60</td></tr>
+              <tr><td class="label">~3 hours</td><td class="r">$4.20</td><td class="r">$2.10</td><td class="r">$2.45</td><td class="r">$3.50</td><td class="r">$2.80</td></tr>
+              <tr><td class="label">~6 hours</td><td class="r">$6.00</td><td class="r">$3.00</td><td class="r">$3.50</td><td class="r">$5.00</td><td class="r">$4.00</td></tr>
+              <tr><td class="label">~12 hours</td><td class="r">$12.00</td><td class="r">$6.00</td><td class="r">$7.00</td><td class="r">$10.00</td><td class="r">$8.00</td></tr>
+              <tr><td class="label">~1 day</td><td class="r">$15.60</td><td class="r">$7.80</td><td class="r">$9.10</td><td class="r">$13.00</td><td class="r">$10.40</td></tr>
+              <tr><td class="label">~3 days</td><td class="r">$21.60</td><td class="r">$10.80</td><td class="r">$12.60</td><td class="r">$18.00</td><td class="r">$14.40</td></tr>
+              <tr><td class="label">~5 days</td><td class="r">$28.20</td><td class="r">$14.10</td><td class="r">$16.45</td><td class="r">$23.50</td><td class="r">$18.80</td></tr>
+              <tr><td class="label">~7 days</td><td class="r">$34.20</td><td class="r">$17.10</td><td class="r">$19.95</td><td class="r">$28.50</td><td class="r">$22.80</td></tr>
+              <tr><td class="label">~10 days</td><td class="r">$43.80</td><td class="r">$21.90</td><td class="r">$25.55</td><td class="r">$36.50</td><td class="r">$29.20</td></tr>
+              <tr><td class="label">~15 days</td><td class="r">$59.40</td><td class="r">$29.70</td><td class="r">$34.65</td><td class="r">$49.50</td><td class="r">$39.60</td></tr>
+              <tr><td class="label">~20 days</td><td class="r">$75.00</td><td class="r">$37.50</td><td class="r">$43.75</td><td class="r">$62.50</td><td class="r">$50.00</td></tr>
+              <tr><td class="label">~30 days</td><td class="r">$106.20</td><td class="r">$53.10</td><td class="r">$61.95</td><td class="r">$88.50</td><td class="r">$70.80</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="div">
+
+    <section class="section">
+      <div class="section-top">
+        <div>
+          <div class="section-header">
+            <span class="section-title" style="font-size:18px">Cost Per Sale</span>
+            <span class="section-tag tag-cps">CPS</span>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Category / Product</th><th>Rate</th></tr></thead>
+        <tbody>
+          <tr><td class="label">First Purchase</td><td>50% of the average first-purchase Average Transaction Value (ATV)</td></tr>
+          <tr><td class="label">Purchase over a certain amount</td><td>30% of a specific amount</td></tr>
+          <tr><td class="label">Purchase of a specific product</td><td>30% of the price of a particular item</td></tr>
+          <tr><td class="label">Purchase in-game items</td><td>70% of the item's price</td></tr>
+          <tr><td class="label">Perform a specific action</td><td>To be discussed separately</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+  </div>
+
 </main>
 
 <nav class="toc" id="toc">
@@ -517,16 +755,36 @@ function applyFilters(){
   // CPM column country filter
   document.querySelectorAll('table').forEach(tbl=>{
     if(!tbl.querySelector('td[data-c]')) return;
+    // FILTER_COUNTRIES 외 컬럼(예: IN)도 data-c가 있으면 필터 적용
+    const usedDc=new Set([...tbl.querySelectorAll('td[data-c]')].map(td=>td.dataset.c));
     tbl.querySelectorAll('thead th').forEach(th=>{
       const c=th.textContent.trim();
-      if(!FILTER_COUNTRIES.some(fc=>c.split(/[\/,\(\)\s]+/).includes(fc))) return;
+      const inFilterList=FILTER_COUNTRIES.some(fc=>c.split(/[\/,\(\)\s]+/).includes(fc));
+      if(!inFilterList&&!usedDc.has(c)) return;
       const show=selectedCountries.size===0||cMatch(c);
       th.style.display=show?'':'none';
       tbl.querySelectorAll(`td[data-c="${c}"]`).forEach(td=>td.style.display=show?'':'none');
     });
   });
 }
-function applyCountryFilter(){ applyFilters(); }
+function autoSwitchOfferwallPlatform(){
+  if(!document.getElementById('p3').classList.contains('active')) return;
+  const OW_EN=new Set(['US','CA','PH','IN','MY']);
+  const OW_OTHER=new Set(['TW','ID','TH','FR','MX']);
+  const hasEn=[...selectedCountries].some(c=>OW_EN.has(c));
+  const hasOther=[...selectedCountries].some(c=>OW_OTHER.has(c));
+  let target=null;
+  if(selectedCountries.size===0) target='en';          // 필터 해제 → EN 기본값
+  else if(hasOther&&!hasEn) target='other';             // Other Language 국가만 선택
+  else if(hasEn&&!hasOther) target='en';               // EN 국가만 선택
+  // 두 그룹 혼재 → 자동 전환 없음
+  if(target){
+    document.querySelectorAll('#p3 .section').forEach(sec=>{
+      if(sec.querySelector('.ow-platform-bar')) setPlatformSection(sec,target);
+    });
+  }
+}
+function applyCountryFilter(){ applyFilters(); autoSwitchOfferwallPlatform(); }
 
 // ── search ──
 function handleSearch(v){
@@ -1026,9 +1284,40 @@ function dlCSV(type){
   a.click();
 }
 
+// Offerwall 테이블의 thead 국가 컬럼 위치를 읽어 tbody 셀에 data-c 자동 부여
+// rowspan 행은 priceOffset(첫 td.r 위치)으로 컬럼 인덱스를 보정
+function initOfferwallTables(){
+  document.querySelectorAll('#p3 table').forEach(tbl=>{
+    const ths=[...tbl.querySelectorAll('thead th')];
+    const headers=ths.map(th=>th.textContent.trim());
+    // th.r 클래스가 붙은 첫 번째 th 위치 = 가격 컬럼 시작 (IN 포함 모두 data-c 부여)
+    const firstCtryTh=ths.findIndex(th=>th.classList.contains('r'));
+    if(firstCtryTh===-1) return;
+    tbl.querySelectorAll('tbody tr').forEach(tr=>{
+      const cells=[...tr.querySelectorAll('td')];
+      const priceOffset=cells.findIndex(td=>td.classList.contains('r'));
+      if(priceOffset===-1) return;
+      cells.forEach((td,i)=>{
+        if(!td.classList.contains('r')) return;
+        const hi=firstCtryTh+(i-priceOffset);
+        if(hi>=0&&hi<headers.length) td.dataset.c=headers[hi];
+      });
+    });
+  });
+}
+
+function setPlatformSection(sec, p){
+  sec.querySelectorAll('.ow-platform-bar .seg button').forEach((b,i)=>b.classList.toggle('active',['en','other'][i]===p));
+  const lbl=sec.querySelector('.ow-platform-countries');
+  if(lbl) lbl.textContent=p==='en'?'US · CA · PH · IN · MY':'TW · ID · TH · FR · MX';
+  sec.querySelectorAll('.ow-en').forEach(el=>el.style.display=p==='en'?'':'none');
+  sec.querySelectorAll('.ow-other').forEach(el=>el.style.display=p==='other'?'':'none');
+}
+
 fetchData();
 buildTOC(0);
 buildFilterChips();
+initOfferwallTables();
 </script>
 </body>
 </html>
