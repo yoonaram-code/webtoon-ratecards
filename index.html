@@ -115,6 +115,11 @@ td.search-dim{color:#d1d5db}
 .ow-platform-bar{display:flex;align-items:center;gap:12px;margin-bottom:28px}
 .ow-platform-label{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
 .ow-platform-countries{font-size:13px;color:var(--muted)}
+.notice-box{display:flex;gap:12px;align-items:flex-start;background:var(--surface2);border-radius:var(--radius);padding:14px 16px;font-size:15px;line-height:1.6;color:var(--text);margin-top:4px}
+.notice-box-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--muted);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.platform-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px}
+.platform-card-header{padding:10px 14px;background:var(--surface2);font-size:13px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)}
+.platform-card .table-wrap{border:none;border-radius:0}
 </style>
 </head>
 <body>
@@ -367,49 +372,37 @@ td.search-dim{color:#d1d5db}
           </div>
         </div>
       </div>
-      <div class="ow-platform-bar">
-        <span class="ow-platform-label">Platform</span>
-        <div class="seg">
-          <button class="active" onclick="setPlatformSection(this.closest('.section'),'en')">EN Platform</button>
-          <button onclick="setPlatformSection(this.closest('.section'),'other')">Other Language</button>
-        </div>
-        <span class="ow-platform-countries">US · CA · PH · IN · MY</span>
+      <div class="platform-card">
+        <div class="platform-card-header">EN Platform — US, CA, PH, IN, MY</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Category</th><th>Action Details</th><th class="r">US</th><th class="r">CA</th><th class="r">PH</th><th class="r">IN</th><th class="r">MY</th></tr></thead>
+          <tbody>
+            <tr><td class="label">App Launch</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+            <tr><td class="label" rowspan="2">Registration</td><td class="dim">Simple Registration</td><td class="r">$2.00</td><td class="r">$2.00</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
+            <tr><td class="dim">—</td><td class="r">$3.00</td><td class="r">$3.00</td><td class="r">$1.00</td><td class="r">$0.60</td><td class="r">$1.00</td></tr>
+            <tr><td class="label" rowspan="2">Subscription</td><td class="dim">FB / IG / X / TT / YT</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+            <tr><td class="dim">LinkedIn</td><td class="r">$2.00</td><td class="r">$1.50</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
+            <tr><td class="label">Add Stream Wishlist</td><td class="dim">—</td><td class="r">$1.50</td><td class="r">$1.50</td><td class="r">$0.50</td><td class="r">$0.30</td><td class="r">$0.50</td></tr>
+            <tr><td class="label">CPQ (Quiz)</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+            <tr><td class="label">Game Pre-registration</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
+          </tbody>
+        </table></div>
       </div>
-      <div class="ow-en">
-        <div class="subsection">
-          <div class="subsection-title">EN Platform · US, CA, PH, IN, MY</div>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Category</th><th>Action Details</th><th class="r">US</th><th class="r">CA</th><th class="r">PH</th><th class="r">IN</th><th class="r">MY</th></tr></thead>
-            <tbody>
-              <tr><td class="label">App Launch</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
-              <tr><td class="label" rowspan="2">Registration</td><td class="dim">Simple Registration</td><td class="r">$2.00</td><td class="r">$2.00</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
-              <tr><td class="dim">—</td><td class="r">$3.00</td><td class="r">$3.00</td><td class="r">$1.00</td><td class="r">$0.60</td><td class="r">$1.00</td></tr>
-              <tr><td class="label" rowspan="2">Subscription</td><td class="dim">FB / IG / X / TT / YT</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
-              <tr><td class="dim">LinkedIn</td><td class="r">$2.00</td><td class="r">$1.50</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
-              <tr><td class="label">Add Stream Wishlist</td><td class="dim">—</td><td class="r">$1.50</td><td class="r">$1.50</td><td class="r">$0.50</td><td class="r">$0.30</td><td class="r">$0.50</td></tr>
-              <tr><td class="label">CPQ (Quiz)</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
-              <tr><td class="label">Game Pre-registration</td><td class="dim">—</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-      </div>
-      <div class="ow-other" style="display:none">
-        <div class="subsection">
-          <div class="subsection-title">Other Language · TW, ID, TH, FR, MX</div>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Category</th><th>Action Details</th><th class="r">TW</th><th class="r">ID</th><th class="r">TH</th><th class="r">FR</th><th class="r">MX</th></tr></thead>
-            <tbody>
-              <tr><td class="label">App Launch</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
-              <tr><td class="label" rowspan="2">Registration</td><td class="dim">Simple Registration</td><td class="r">$0.80</td><td class="r">$0.50</td><td class="r">$0.70</td><td class="r">$1.00</td><td class="r">$0.80</td></tr>
-              <tr><td class="dim">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td></tr>
-              <tr><td class="label" rowspan="2">Subscription</td><td class="dim">FB / IG / X / TT / YT</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
-              <tr><td class="dim">LinkedIn</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td></tr>
-              <tr><td class="label">Add Stream Wishlist</td><td class="dim">—</td><td class="r">$0.60</td><td class="r">$0.40</td><td class="r">$0.50</td><td class="r">$0.75</td><td class="r">$0.60</td></tr>
-              <tr><td class="label">CPQ (Quiz)</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
-              <tr><td class="label">Game Pre-registration</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
-            </tbody>
-          </table></div>
-        </div>
+      <div class="platform-card">
+        <div class="platform-card-header">Other Language — TW, ID, TH, FR, MX</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Category</th><th>Action Details</th><th class="r">TW</th><th class="r">ID</th><th class="r">TH</th><th class="r">FR</th><th class="r">MX</th></tr></thead>
+          <tbody>
+            <tr><td class="label">App Launch</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+            <tr><td class="label" rowspan="2">Registration</td><td class="dim">Simple Registration</td><td class="r">$0.80</td><td class="r">$0.50</td><td class="r">$0.70</td><td class="r">$1.00</td><td class="r">$0.80</td></tr>
+            <tr><td class="dim">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td></tr>
+            <tr><td class="label" rowspan="2">Subscription</td><td class="dim">FB / IG / X / TT / YT</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+            <tr><td class="dim">LinkedIn</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td></tr>
+            <tr><td class="label">Add Stream Wishlist</td><td class="dim">—</td><td class="r">$0.60</td><td class="r">$0.40</td><td class="r">$0.50</td><td class="r">$0.75</td><td class="r">$0.60</td></tr>
+            <tr><td class="label">CPQ (Quiz)</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+            <tr><td class="label">Game Pre-registration</td><td class="dim">—</td><td class="r">$0.40</td><td class="r">$0.25</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
+          </tbody>
+        </table></div>
       </div>
     </section>
 
@@ -419,137 +412,14 @@ td.search-dim{color:#d1d5db}
       <div class="section-top">
         <div>
           <div class="section-header">
-            <span class="section-title" style="font-size:18px">Multi Mission — Casual Game</span>
+            <span class="section-title" style="font-size:18px">Multi Mission</span>
             <span class="section-tag tag-cpa">CPA</span>
           </div>
-          <p class="section-desc">Minimum unit price guidelines based on average time to complete the mission · Can be increased through further consultation</p>
         </div>
       </div>
-      <div class="ow-platform-bar">
-        <span class="ow-platform-label">Platform</span>
-        <div class="seg">
-          <button class="active" onclick="setPlatformSection(this.closest('.section'),'en')">EN Platform</button>
-          <button onclick="setPlatformSection(this.closest('.section'),'other')">Other Language</button>
-        </div>
-        <span class="ow-platform-countries">US · CA · PH · IN · MY</span>
-      </div>
-      <div class="ow-en">
-        <div class="subsection">
-          <div class="subsection-title">EN Platform · US, CA, PH, IN, MY</div>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Completion Time</th><th class="r">US</th><th class="r">CA</th><th class="r">PH</th><th class="r">IN</th><th class="r">MY</th></tr></thead>
-            <tbody>
-              <tr><td class="label">~10 mins</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
-              <tr><td class="label">~30 mins</td><td class="r">$1.50</td><td class="r">$1.50</td><td class="r">$0.53</td><td class="r">$0.30</td><td class="r">$0.53</td></tr>
-              <tr><td class="label">~1 hour</td><td class="r">$3.00</td><td class="r">$3.00</td><td class="r">$1.05</td><td class="r">$0.60</td><td class="r">$1.05</td></tr>
-              <tr><td class="label">~3 hours</td><td class="r">$5.00</td><td class="r">$5.00</td><td class="r">$1.75</td><td class="r">$1.00</td><td class="r">$1.75</td></tr>
-              <tr><td class="label">~6 hours</td><td class="r">$8.00</td><td class="r">$8.00</td><td class="r">$2.80</td><td class="r">$1.60</td><td class="r">$2.80</td></tr>
-              <tr><td class="label">~12 hours</td><td class="r">$15.00</td><td class="r">$15.00</td><td class="r">$5.25</td><td class="r">$3.00</td><td class="r">$5.25</td></tr>
-              <tr><td class="label">~1 day</td><td class="r">$20.00</td><td class="r">$20.00</td><td class="r">$7.00</td><td class="r">$4.00</td><td class="r">$7.00</td></tr>
-              <tr><td class="label">~3 days</td><td class="r">$28.00</td><td class="r">$28.00</td><td class="r">$9.80</td><td class="r">$5.60</td><td class="r">$9.80</td></tr>
-              <tr><td class="label">~5 days</td><td class="r">$36.00</td><td class="r">$36.00</td><td class="r">$12.60</td><td class="r">$7.20</td><td class="r">$12.60</td></tr>
-              <tr><td class="label">~7 days</td><td class="r">$44.00</td><td class="r">$44.00</td><td class="r">$15.40</td><td class="r">$8.80</td><td class="r">$15.40</td></tr>
-              <tr><td class="label">~10 days</td><td class="r">$56.00</td><td class="r">$56.00</td><td class="r">$19.60</td><td class="r">$11.20</td><td class="r">$19.60</td></tr>
-              <tr><td class="label">~15 days</td><td class="r">$76.00</td><td class="r">$76.00</td><td class="r">$26.60</td><td class="r">$15.20</td><td class="r">$26.60</td></tr>
-              <tr><td class="label">~20 days</td><td class="r">$96.00</td><td class="r">$96.00</td><td class="r">$33.60</td><td class="r">$19.20</td><td class="r">$33.60</td></tr>
-              <tr><td class="label">~30 days</td><td class="r">$136.00</td><td class="r">$136.00</td><td class="r">$47.60</td><td class="r">$27.20</td><td class="r">$47.60</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-      </div>
-      <div class="ow-other" style="display:none">
-        <div class="subsection">
-          <div class="subsection-title">Other Language · TW, ID, TH, FR, MX</div>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Completion Time</th><th class="r">TW</th><th class="r">ID</th><th class="r">TH</th><th class="r">FR</th><th class="r">MX</th></tr></thead>
-            <tbody>
-              <tr><td class="label">~10 mins</td><td class="r">$0.60</td><td class="r">$0.30</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
-              <tr><td class="label">~30 mins</td><td class="r">$0.90</td><td class="r">$0.45</td><td class="r">$0.53</td><td class="r">$0.75</td><td class="r">$0.60</td></tr>
-              <tr><td class="label">~1 hour</td><td class="r">$1.80</td><td class="r">$0.90</td><td class="r">$1.05</td><td class="r">$1.50</td><td class="r">$1.20</td></tr>
-              <tr><td class="label">~3 hours</td><td class="r">$3.00</td><td class="r">$1.50</td><td class="r">$1.75</td><td class="r">$2.50</td><td class="r">$2.00</td></tr>
-              <tr><td class="label">~6 hours</td><td class="r">$4.80</td><td class="r">$2.40</td><td class="r">$2.80</td><td class="r">$4.00</td><td class="r">$3.20</td></tr>
-              <tr><td class="label">~12 hours</td><td class="r">$9.00</td><td class="r">$4.50</td><td class="r">$5.25</td><td class="r">$7.50</td><td class="r">$6.00</td></tr>
-              <tr><td class="label">~1 day</td><td class="r">$12.00</td><td class="r">$6.00</td><td class="r">$7.00</td><td class="r">$10.00</td><td class="r">$8.00</td></tr>
-              <tr><td class="label">~3 days</td><td class="r">$16.80</td><td class="r">$8.40</td><td class="r">$9.80</td><td class="r">$14.00</td><td class="r">$11.20</td></tr>
-              <tr><td class="label">~5 days</td><td class="r">$21.60</td><td class="r">$10.80</td><td class="r">$12.60</td><td class="r">$18.00</td><td class="r">$14.40</td></tr>
-              <tr><td class="label">~7 days</td><td class="r">$26.40</td><td class="r">$13.20</td><td class="r">$15.40</td><td class="r">$22.00</td><td class="r">$17.60</td></tr>
-              <tr><td class="label">~10 days</td><td class="r">$33.60</td><td class="r">$16.80</td><td class="r">$19.60</td><td class="r">$28.00</td><td class="r">$22.40</td></tr>
-              <tr><td class="label">~15 days</td><td class="r">$45.60</td><td class="r">$22.80</td><td class="r">$26.60</td><td class="r">$38.00</td><td class="r">$30.40</td></tr>
-              <tr><td class="label">~20 days</td><td class="r">$57.60</td><td class="r">$28.80</td><td class="r">$33.60</td><td class="r">$48.00</td><td class="r">$38.40</td></tr>
-              <tr><td class="label">~30 days</td><td class="r">$81.60</td><td class="r">$40.80</td><td class="r">$47.60</td><td class="r">$68.00</td><td class="r">$54.40</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="div">
-
-    <section class="section">
-      <div class="section-top">
-        <div>
-          <div class="section-header">
-            <span class="section-title" style="font-size:18px">Multi Mission — Non-Casual Game</span>
-            <span class="section-tag tag-cpa">CPA</span>
-          </div>
-          <p class="section-desc">Minimum unit price guidelines based on average time to complete the mission · Can be increased through further consultation</p>
-        </div>
-      </div>
-      <div class="ow-platform-bar">
-        <span class="ow-platform-label">Platform</span>
-        <div class="seg">
-          <button class="active" onclick="setPlatformSection(this.closest('.section'),'en')">EN Platform</button>
-          <button onclick="setPlatformSection(this.closest('.section'),'other')">Other Language</button>
-        </div>
-        <span class="ow-platform-countries">US · CA · PH · IN · MY</span>
-      </div>
-      <div class="ow-en">
-        <div class="subsection">
-          <div class="subsection-title">EN Platform · US, CA, PH, IN, MY</div>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Completion Time</th><th class="r">US</th><th class="r">CA</th><th class="r">PH</th><th class="r">IN</th><th class="r">MY</th></tr></thead>
-            <tbody>
-              <tr><td class="label">~10 mins</td><td class="r">$1.00</td><td class="r">$1.00</td><td class="r">$0.35</td><td class="r">$0.20</td><td class="r">$0.35</td></tr>
-              <tr><td class="label">~30 mins</td><td class="r">$2.00</td><td class="r">$2.00</td><td class="r">$0.70</td><td class="r">$0.40</td><td class="r">$0.70</td></tr>
-              <tr><td class="label">~1 hour</td><td class="r">$4.00</td><td class="r">$4.00</td><td class="r">$1.40</td><td class="r">$0.80</td><td class="r">$1.40</td></tr>
-              <tr><td class="label">~3 hours</td><td class="r">$7.00</td><td class="r">$7.00</td><td class="r">$2.45</td><td class="r">$1.40</td><td class="r">$2.45</td></tr>
-              <tr><td class="label">~6 hours</td><td class="r">$10.00</td><td class="r">$10.00</td><td class="r">$3.50</td><td class="r">$2.00</td><td class="r">$3.50</td></tr>
-              <tr><td class="label">~12 hours</td><td class="r">$20.00</td><td class="r">$20.00</td><td class="r">$7.00</td><td class="r">$4.00</td><td class="r">$7.00</td></tr>
-              <tr><td class="label">~1 day</td><td class="r">$26.00</td><td class="r">$26.00</td><td class="r">$9.10</td><td class="r">$5.20</td><td class="r">$9.10</td></tr>
-              <tr><td class="label">~3 days</td><td class="r">$36.00</td><td class="r">$36.00</td><td class="r">$12.60</td><td class="r">$7.20</td><td class="r">$12.60</td></tr>
-              <tr><td class="label">~5 days</td><td class="r">$47.00</td><td class="r">$47.00</td><td class="r">$16.45</td><td class="r">$9.40</td><td class="r">$16.45</td></tr>
-              <tr><td class="label">~7 days</td><td class="r">$57.00</td><td class="r">$57.00</td><td class="r">$19.95</td><td class="r">$11.40</td><td class="r">$19.95</td></tr>
-              <tr><td class="label">~10 days</td><td class="r">$73.00</td><td class="r">$73.00</td><td class="r">$25.55</td><td class="r">$14.60</td><td class="r">$25.55</td></tr>
-              <tr><td class="label">~15 days</td><td class="r">$99.00</td><td class="r">$99.00</td><td class="r">$34.65</td><td class="r">$19.80</td><td class="r">$34.65</td></tr>
-              <tr><td class="label">~20 days</td><td class="r">$125.00</td><td class="r">$125.00</td><td class="r">$43.75</td><td class="r">$25.00</td><td class="r">$43.75</td></tr>
-              <tr><td class="label">~30 days</td><td class="r">$177.00</td><td class="r">$177.00</td><td class="r">$61.95</td><td class="r">$35.40</td><td class="r">$61.95</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-      </div>
-      <div class="ow-other" style="display:none">
-        <div class="subsection">
-          <div class="subsection-title">Other Language · TW, ID, TH, FR, MX</div>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Completion Time</th><th class="r">TW</th><th class="r">ID</th><th class="r">TH</th><th class="r">FR</th><th class="r">MX</th></tr></thead>
-            <tbody>
-              <tr><td class="label">~10 mins</td><td class="r">$0.60</td><td class="r">$0.30</td><td class="r">$0.35</td><td class="r">$0.50</td><td class="r">$0.40</td></tr>
-              <tr><td class="label">~30 mins</td><td class="r">$1.20</td><td class="r">$0.60</td><td class="r">$0.70</td><td class="r">$1.00</td><td class="r">$0.80</td></tr>
-              <tr><td class="label">~1 hour</td><td class="r">$2.40</td><td class="r">$1.20</td><td class="r">$1.40</td><td class="r">$2.00</td><td class="r">$1.60</td></tr>
-              <tr><td class="label">~3 hours</td><td class="r">$4.20</td><td class="r">$2.10</td><td class="r">$2.45</td><td class="r">$3.50</td><td class="r">$2.80</td></tr>
-              <tr><td class="label">~6 hours</td><td class="r">$6.00</td><td class="r">$3.00</td><td class="r">$3.50</td><td class="r">$5.00</td><td class="r">$4.00</td></tr>
-              <tr><td class="label">~12 hours</td><td class="r">$12.00</td><td class="r">$6.00</td><td class="r">$7.00</td><td class="r">$10.00</td><td class="r">$8.00</td></tr>
-              <tr><td class="label">~1 day</td><td class="r">$15.60</td><td class="r">$7.80</td><td class="r">$9.10</td><td class="r">$13.00</td><td class="r">$10.40</td></tr>
-              <tr><td class="label">~3 days</td><td class="r">$21.60</td><td class="r">$10.80</td><td class="r">$12.60</td><td class="r">$18.00</td><td class="r">$14.40</td></tr>
-              <tr><td class="label">~5 days</td><td class="r">$28.20</td><td class="r">$14.10</td><td class="r">$16.45</td><td class="r">$23.50</td><td class="r">$18.80</td></tr>
-              <tr><td class="label">~7 days</td><td class="r">$34.20</td><td class="r">$17.10</td><td class="r">$19.95</td><td class="r">$28.50</td><td class="r">$22.80</td></tr>
-              <tr><td class="label">~10 days</td><td class="r">$43.80</td><td class="r">$21.90</td><td class="r">$25.55</td><td class="r">$36.50</td><td class="r">$29.20</td></tr>
-              <tr><td class="label">~15 days</td><td class="r">$59.40</td><td class="r">$29.70</td><td class="r">$34.65</td><td class="r">$49.50</td><td class="r">$39.60</td></tr>
-              <tr><td class="label">~20 days</td><td class="r">$75.00</td><td class="r">$37.50</td><td class="r">$43.75</td><td class="r">$62.50</td><td class="r">$50.00</td></tr>
-              <tr><td class="label">~30 days</td><td class="r">$106.20</td><td class="r">$53.10</td><td class="r">$61.95</td><td class="r">$88.50</td><td class="r">$70.80</td></tr>
-            </tbody>
-          </table></div>
-        </div>
+      <div class="notice-box">
+        <span class="notice-box-icon">i</span>
+        <span>For Multi-Mission campaigns, rates are determined based on the average time required per action and may vary by campaign.<br>Please reach out to your WEBTOON representative for pricing.</span>
       </div>
     </section>
 
