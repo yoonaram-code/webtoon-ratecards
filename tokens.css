@@ -1,0 +1,126 @@
+/**
+ * WEBTOON Design Tokens — tokens.css
+ * Design System v1.0
+ */
+
+/* ─── COLOR PRIMITIVES ─────────────────────── */
+:root {
+  --primitive-black-1000:   #000000;
+  --primitive-black-300:    rgba(0, 0, 0, 0.20);
+  --primitive-white-1000:   #FFFFFF;
+  --primitive-gray-600:     #444444;
+  --primitive-gray-500:     #777777;
+  --primitive-gray-450:     #8C8C8C;
+  --primitive-gray-400:     #999999;
+  --primitive-gray-350:     #B7B7B7;
+  --primitive-gray-300:     #E5E5E5;
+  --primitive-gray-200:     #EBEBEB;
+  --primitive-gray-100:     #F6F6F6;
+  --primitive-gray-50:      #FAFAFA;
+  --primitive-blue-500:     #3B6CEF;
+  --primitive-brand-600:    #00C855;
+  --primitive-brand-500:    #00DC64;
+  --primitive-brand-400:    rgba(0, 220, 100, 0.50);
+  --primitive-brand-300:    rgba(0, 220, 100, 0.20);
+  --primitive-brand-200:    #D4EFE0;
+  --primitive-brand-100:    #ECF7F1;
+  --primitive-danger-500:   #E90000;
+}
+
+/* ─── COLOR SEMANTIC ───────────────────────── */
+:root {
+  --color-text-default:     var(--primitive-black-1000);
+  --color-text-secondary:   var(--primitive-gray-600);
+  --color-text-tertiary:    var(--primitive-gray-500);
+  --color-text-muted:       var(--primitive-gray-400);
+  --color-text-subtle:      var(--primitive-black-300);
+  --color-text-green:       var(--primitive-brand-600);
+  --color-text-link:        var(--primitive-blue-500);
+
+  --color-bg-default:       var(--primitive-white-1000);
+  --color-bg-secondary:     var(--primitive-gray-100);
+  --color-bg-tertiary:      var(--primitive-gray-200);
+  --color-bg-subtle:        var(--primitive-gray-50);
+  --color-bg-green:         var(--primitive-brand-100);
+
+  --color-border-default:   var(--primitive-gray-300);
+  --color-border-image:     var(--primitive-black-300);
+
+  --color-icon-default:     var(--primitive-black-1000);
+  --color-icon-secondary:   var(--primitive-gray-450);
+  --color-icon-tertiary:    var(--primitive-gray-350);
+
+  --color-danger-default:   var(--primitive-danger-500);
+
+  --color-brand:            var(--primitive-brand-500);
+  --color-brand-dark:       var(--primitive-brand-600);
+}
+
+/* ─── TYPOGRAPHY ───────────────────────────── */
+:root {
+  --font-kr:          'Pretendard', -apple-system, sans-serif;
+  --font-en-sans:     'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-en-display:  'Volte', 'Pretendard', sans-serif;
+  --font-jp:          'Noto Sans JP', sans-serif;
+
+  --font-size-01:  12px;
+  --font-size-02:  13px;
+  --font-size-03:  15px;
+  --font-size-04:  16px;
+  --font-size-05:  18px;
+  --font-size-06:  20px;
+  --font-size-07:  24px;
+  --font-size-08:  28px;
+  --font-size-09:  32px;
+  --font-size-10:  40px;
+  --font-size-11:  48px;
+  --font-size-12:  68px;
+
+  --line-height-01: 18px;
+  --line-height-02: 20px;
+  --line-height-03: 23px;
+  --line-height-04: 24px;
+  --line-height-05: 27px;
+  --line-height-06: 30px;
+  --line-height-07: 36px;
+  --line-height-08: 34px;
+  --line-height-09: 38px;
+  --line-height-10: 48px;
+  --line-height-11: 58px;
+  --line-height-12: 82px;
+
+  --font-weight-thin:       100;
+  --font-weight-extralight: 200;
+  --font-weight-light:      300;
+  --font-weight-regular:    400;
+  --font-weight-medium:     500;
+  --font-weight-semibold:   600;
+  --font-weight-bold:       700;
+  --font-weight-extrabold:  800;
+  --font-weight-black:      900;
+}
+
+/* ─── SIZE TOKENS ──────────────────────────── */
+:root {
+  --radius-100:  4px;
+  --radius-full: 9999px;
+
+  --space-0:    0px;
+  --space-050:  2px;
+  --space-100:  4px;
+  --space-150:  6px;
+  --space-200:  8px;
+  --space-300:  12px;
+  --space-400:  16px;
+  --space-500:  20px;
+  --space-600:  24px;
+  --space-750:  30px;
+  --space-1000: 40px;
+  --space-1200: 48px;
+  --space-1400: 56px;
+  --space-1500: 60px;
+  --space-2000: 80px;
+
+  --stroke-border:    1px;
+  --stroke-highlight: 2px;
+}
