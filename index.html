@@ -599,10 +599,14 @@ function updateChipUI(){
     btn.classList.toggle('active',selectedCountries.has(btn.dataset.country));
   });
 }
+const DA_GROUP_MAP={MY:'SEA',PH:'SEA'};
 function cMatch(label){
   if(selectedCountries.size===0) return true;
   const parts=label.trim().split(/[\/,\(\)\s]+/).filter(Boolean);
-  for(const c of selectedCountries){ if(parts.includes(c)) return true; }
+  for(const c of selectedCountries){
+    if(parts.includes(c)) return true;
+    if(DA_GROUP_MAP[c]&&parts.includes(DA_GROUP_MAP[c])) return true;
+  }
   return false;
 }
 // ── unified filter (search + country) ──
