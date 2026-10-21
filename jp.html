@@ -145,7 +145,8 @@ td.search-dim{color:var(--color-border-default)}
 
 /* ── JP ─────────────────────────────────────── */
 tr.total-row td{background:var(--color-bg-secondary);font-weight:var(--font-weight-semibold)}
-tr.total-row td.bold{background:var(--primitive-brand-100)}
+.neg-note{font-family:var(--font-en-display);font-size:var(--font-size-01);color:var(--color-text-tertiary)}
+tr.promo-row td,tr.promo-row:hover td{background:var(--primitive-brand-100);font-weight:var(--font-weight-semibold);border-top:2px solid var(--color-border-default)}
 </style>
 </head>
 <body>
@@ -252,12 +253,12 @@ tr.total-row td.bold{background:var(--primitive-brand-100)}
 const JP={
   meta:{lastUpdate:'2026.07.23',fxPeriod:'26.H1',fx:{krw:9.3,usd:0.0065}},
   displayAds:[
-    {placement:'Viewer-end Ads',device:'Mobile App',promoPeriod:'~26.Q3',discount:0.25,
+    {placement:'Viewer-end Ads',device:'Mobile App',promoPeriod:'~26.Q4',discount:0.25,
      jpy:{cpm:400,minBudget:500000,promo:300},krw:{cpm:4000,minBudget:4650000,promo:3000},usd:{cpm:3,minBudget:3250,promo:2.25}},
     {placement:'Full Screen Video Ads',device:'Mobile App',promoPeriod:'~26.Q4',discount:0.1666666667,
      jpy:{cpm:3000,minBudget:500000,promo:2500},krw:{cpm:28000,minBudget:4650000,promo:21000},usd:{cpm:20,minBudget:3250,promo:15}}
   ],
-  premiumHomeAd:{promoPeriod:'~26.Q3',rows:[
+  premiumHomeAd:{promoPeriod:'~26.Q4',rows:[
     {option:'Option 1) Early',type:'CPT (00:00–13:59)',impression:9000000,
      jpy:{price:2500000,minBudget:null,promo:1250000},krw:{price:23000000,minBudget:null,promo:11500000},usd:{price:16000,minBudget:null,promo:8000}},
     {option:'Option 2) Late',type:'CPT (14:00–23:59)',impression:10000000,
@@ -265,7 +266,7 @@ const JP={
     {option:'Remaining inventory',type:'CPM',impression:null,
      jpy:{price:400,minBudget:500000,promo:null},krw:{price:3700,minBudget:5000000,promo:null},usd:{price:2.6,minBudget:5000,promo:null}}
   ]},
-  splashPkg:{promoPeriod:'~26.Q3',
+  splashPkg:{promoPeriod:'~26.Q4',
     products:[
       {name:'Splash Ads',type:'CPD (1 day)',impression:7000000,jpy:{original:3500000,pkg:3500000},krw:{original:33000000,pkg:33000000},usd:{original:23000,pkg:23000}},
       {name:'Premium Home Ads (Early or Late)',type:'CPT (10 or 14 hours)',impression:9000000,jpy:{original:2500000,pkg:1500000},krw:{original:23000000,pkg:14000000},usd:{original:16000,pkg:10000}}
@@ -282,6 +283,7 @@ const SYM={jpy:'¥',krw:'₩',usd:'$'};
 const n=(v)=>{ if(v==null) return '—'; return v>=1000?v.toLocaleString():(v%1===0?v.toString():v.toFixed(2)); };
 const P=(v)=>v==null?'—':SYM[cur]+n(v);
 const pct=(v)=>v==null?'—':(Math.round(v*1000)/10)+'%';
+const MB=(v)=>v==null?'—':P(v)+' <span class="neg-note">*Negotiable</span>';
 const td=(v,cls='r')=>`<td class="${cls}">${v}</td>`;
 
 // ── render ──
@@ -295,12 +297,12 @@ function renderAll(){
 
   document.getElementById('b-cpm').innerHTML=JP.displayAds.map(d=>{const p=d[cur];return `<tr>
     <td class="label">${d.placement}</td><td class="dim">${d.device}</td>
-    ${td(P(p.cpm))}${td(P(p.minBudget))}${td(P(p.promo),'bold')}${td(pct(d.discount),'disc-col')}<td class="dim">${d.promoPeriod}</td>
+    ${td(P(p.cpm))}${td(MB(p.minBudget))}${td(P(p.promo),'bold')}${td(pct(d.discount),'disc-col')}<td class="dim">${d.promoPeriod}</td>
   </tr>`;}).join('');
 
   document.getElementById('b-pha').innerHTML=JP.premiumHomeAd.rows.map(d=>{const p=d[cur];return `<tr>
     <td class="label">${d.option}</td><td class="dim">${d.type}</td>
-    ${td(n(d.impression),'imp-col')}${td(P(p.price))}${td(P(p.minBudget))}${td(P(p.promo),'bold')}
+    ${td(n(d.impression),'imp-col')}${td(P(p.price))}${td(MB(p.minBudget))}${td(P(p.promo),'bold')}
   </tr>`;}).join('');
 
   const s=JP.splashPkg, t=s.total, tp=t[cur];
@@ -309,7 +311,7 @@ function renderAll(){
     ${td(n(d.impression),'imp-col')}${td(P(p.original))}${td(P(p.pkg))}${td('','disc-col')}
   </tr>`;}).join('')+`
   <tr class="total-row"><td class="label">Package Total</td><td class="dim"></td>${td(n(t.impression),'imp-col')}${td(P(tp.original))}${td(P(tp.pkg),'bold')}${td(pct(t.discount),'disc-col')}</tr>
-  <tr class="total-row"><td class="label">Launch Promo Price</td><td class="dim">${s.promoPeriod} · +20% off</td>${td('','imp-col')}${td('')}${td(P(tp.launch),'bold')}${td(pct(t.launchDiscount),'disc-col')}</tr>`;
+  <tr class="promo-row"><td class="label">Launch Promo Price</td><td class="dim">${s.promoPeriod} · +20% off</td>${td('','imp-col')}${td('')}${td(P(tp.launch),'bold')}${td(pct(t.launchDiscount),'disc-col')}</tr>`;
 
   markBoldCols();
   applySearch();
